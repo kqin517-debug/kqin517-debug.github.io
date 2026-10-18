@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="林之的头像插画">
+  <defs>
+    <clipPath id="avatarClip"><circle cx="120" cy="120" r="120"/></clipPath>
+    <linearGradient id="avatarBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9dcc7"/>
+      <stop offset="1" stop-color="#c3c9ad"/>
+    </linearGradient>
+    <pattern id="avatarGrain" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+      <line x1="0" y1="0" x2="0" y2="7" stroke="#3a3a26" stroke-opacity=".06"/>
+    </pattern>
+  </defs>
+  <g clip-path="url(#avatarClip)">
+    <rect width="240" height="240" fill="url(#avatarBg)"/>
+    <circle cx="176" cy="52" r="46" fill="#e8d9b6" opacity=".7"/>
+
+    <!-- 肩膀与衣领 -->
+    <path d="M18 240 C 26 190 62 168 120 168 C 178 168 214 190 222 240 Z" fill="#6e7f63"/>
+    <path d="M120 168 L 104 196 L 120 214 L 136 196 Z" fill="#f4ecdb"/>
+    <path d="M104 196 L 120 214 L 112 240 L 84 240 Z" fill="#c9cdb8"/>
+    <path d="M136 196 L 120 214 L 128 240 L 156 240 Z" fill="#c9cdb8"/>
+
+    <!-- 脖子 -->
+    <path d="M102 148 h36 v30 q-18 12 -36 0 Z" fill="#e2c49c"/>
+
+    <!-- 头发（后） -->
+    <path d="M62 116 C 58 62 84 34 120 34 C 158 34 184 64 180 118 L 180 140 L 160 140 L 156 100 L 84 100 L 80 140 L 62 140 Z" fill="#2f2a24"/>
+
+    <!-- 脸 -->
+    <path d="M84 96 C 84 66 100 56 120 56 C 140 56 156 66 156 96 L 156 120 C 156 146 140 160 120 160 C 100 160 84 146 84 120 Z" fill="#efd9b9"/>
+    <path d="M84 96 C 84 66 100 56 120 56 C 140 56 156 66 156 96 L 156 104 C 140 92 100 92 84 104 Z" fill="#2f2a24"/>
+
+    <!-- 五官（极简） -->
+    <g fill="#3a3129">
+      <circle cx="104" cy="114" r="3.4"/>
+      <circle cx="136" cy="114" r="3.4"/>
+      <path d="M114 138 q6 4 12 0" fill="none" stroke="#3a3129" stroke-width="2.4" stroke-linecap="round"/>
+    </g>
+    <g fill="#d9a77f" opacity=".45">
+      <ellipse cx="98" cy="128" rx="7" ry="3"/>
+      <ellipse cx="142" cy="128" rx="7" ry="3"/>
+    </g>
+
+    <!-- 围巾 / 点睛色 -->
+    <path d="M90 160 q30 16 60 0 l4 18 q-34 16 -68 0 Z" fill="#b5482c"/>
+    <path d="M150 172 l14 30 l-16 4 l-8 -26 Z" fill="#b5482c"/>
+
+    <!-- 眼镜 -->
+    <g fill="none" stroke="#443a2f" stroke-width="2.2" opacity=".85">
+      <circle cx="104" cy="114" r="13"/>
+      <circle cx="136" cy="114" r="13"/>
+      <path d="M117 114 h6"/>
+      <path d="M91 111 l-10 -2"/>
+      <path d="M149 111 l10 -2"/>
+    </g>
+  </g>
+  <rect width="240" height="240" fill="url(#avatarGrain)"/>
+</svg>

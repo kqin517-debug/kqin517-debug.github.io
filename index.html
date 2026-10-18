@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7f2e8">
+<meta name="description" content="开源拾遗 · 收集 GitHub 上真正好用的开源项目：效率工具、自托管服务、前端组件、学习资源与 AI 工具，附中文简介和直达链接。">
+<title>开源拾遗 · 把 GitHub 好项目捡回来</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23b5482c'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' fill='%23fff8ee' font-family='serif'%3E%E6%8B%BE%3C/text%3E%3C/svg%3E">
+<script>
+  (function () {
+    var root = document.documentElement;
+    root.classList.add("js");
+    try {
+      var saved = localStorage.getItem("sg-theme");
+      var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      root.setAttribute("data-theme", theme);
+    } catch (e) {
+      root.setAttribute("data-theme", "light");
+    }
+  })();
+</script>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/projects.css">
+</head>
+<body id="top">
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.2 8.2 0 1 0 10.2 10.2Z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.2"/><path d="m3.8 7 8.2 6 8.2-6"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M19 14v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.58 1.1 6.47L12 17.45 6.2 20.5l1.1-6.47L2.6 9.45l6.5-.95L12 2.6Z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13.8a4.2 4.2 0 0 0 6 0l3-3a4.24 4.24 0 0 0-6-6l-1.6 1.6"/><path d="M14 10.2a4.2 4.2 0 0 0-6 0l-3 3a4.24 4.24 0 0 0 6 6l1.6-1.6"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="开源拾遗 · 返回首页">
+      <span class="seal" aria-hidden="true">拾</span>
+      <span class="brand-text">
+        <span class="brand-name">开源拾遗</span>
+        <span class="brand-sub">Open Source Picks</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="主导航">
+      <a href="#featured">推荐</a>
+      <a href="#projects">收藏</a>
+      <a href="#standards">标准</a>
+      <a href="#about">关于</a>
+      <a href="#subscribe">订阅</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="icon-btn header-github" href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="打开 GitHub" title="GitHub">
+        <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+      </a>
+      <button class="icon-btn theme-toggle" data-theme-toggle type="button" aria-label="切换深色模式" title="切换深浅色">
+        <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" data-menu-toggle type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="打开菜单">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="移动端导航">
+    <a href="#featured">推荐</a>
+    <a href="#projects">收藏</a>
+    <a href="#standards">标准</a>
+    <a href="#about">关于</a>
+    <a href="#subscribe">订阅</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">GitHub 精选 · Vol. 01</p>
+        <h1 class="hero-title">把好东西，<br><span class="hl">捡回来</span><span class="period">。</span></h1>
+        <p class="hero-lead">
+          GitHub 上每天都有好项目诞生，也每天都有好项目被埋没。
+          这里收着我实际用过、愿意推荐的开源清单：效率工具、自托管服务、
+          前端组件和一点学习资源，每一个都附上中文简介与直达链接，拿来即用。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">浏览收藏
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+          <a class="link-arrow" href="mailto:hi@shiyi.notes?subject=%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE">推荐一个项目
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+        <div class="hero-meta">
+          <span><strong data-total>13</strong> 个项目</span>
+          <span class="dot" aria-hidden="true"></span>
+          <span><strong data-category-count>06</strong> 个分类</span>
+          <span class="dot" aria-hidden="true"></span>
+          <span>每月更新一次</span>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <figure class="hero-figure">
+          <img src="assets/img/hero-shelf.svg" alt="拱形壁龛里的书架，摆满彩色的项目积木和一台小终端" width="720" height="860">
+        </figure>
+        <div class="hero-tag">
+          <span class="hero-tag-label">本期</span>
+          <span class="hero-tag-text">13 个项目，持续更新</span>
+        </div>
+        <span class="hero-caption" aria-hidden="true">Open Source · Vol.01</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured -->
+  <section class="section" id="featured">
+    <div class="wrap">
+      <header class="section-head">
+        <div>
+          <span class="section-index">01 — 本期推荐</span>
+          <h2 class="section-title">这周先看这个</h2>
+        </div>
+        <p class="section-note">CURATED PICK · 2026.10</p>
+      </header>
+
+      <a class="feature-card reveal" href="https://github.com/excalidraw/excalidraw" target="_blank" rel="noopener noreferrer">
+        <div class="feature-visual">
+          <img src="assets/img/featured-whiteboard.svg" alt="白板上的手绘草图：矩形、圆形、箭头、便签和选中框" width="800" height="600">
+          <span class="feature-badge">本期置顶</span>
+        </div>
+        <div class="feature-body">
+          <div class="feature-kicker">
+            <span class="project-cat">效率工具</span>
+            <span class="dot" aria-hidden="true"></span>
+            <span>excalidraw/excalidraw</span>
+          </div>
+          <h3 class="feature-title">Excalidraw</h3>
+          <p class="feature-lead">
+            打开浏览器就能画的白板，手绘风格让草图看起来不那么严肃。
+            画流程图、系统架构、会议草稿都很顺手，而且不注册也能用。
+          </p>
+          <ul class="feature-points">
+            <li>本地优先：内容默认只存在浏览器里，不经过服务器</li>
+            <li>手绘线条：自带轻微抖动，白板更像草稿纸</li>
+            <li>支持实时协作，可导出 PNG、SVG 与源文件</li>
+          </ul>
+          <div class="feature-foot">
+            <div class="feature-meta">
+              <span class="project-lang"><i style="--lang:#3178c6"></i>TypeScript</span>
+              <span class="stars-line"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>10 万+</span>
+              <span>MIT</span>
+            </div>
+            <span class="btn btn-primary">打开 GitHub
+              <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section" id="projects">
+    <div class="wrap">
+      <header class="section-head">
+        <div>
+          <span class="section-index">02 — 全部收藏</span>
+          <h2 class="section-title">捡回来的 <span data-grid-count>12</span> 个</h2>
+        </div>
+        <p class="section-note">共 <span data-grid-count>12</span> 个 · 点击卡片直达 GitHub</p>
+      </header>
+
+      <div class="projects-toolbar">
+        <div class="chips" id="projectFilters" role="group" aria-label="按分类筛选项目">
+          <button class="chip is-active" type="button" data-filter="all">全部</button>
+        </div>
+        <div class="search">
+          <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+          <label class="sr-only" for="projectSearch">搜索项目</label>
+          <input id="projectSearch" type="search" placeholder="搜索项目、语言或用途…" autocomplete="off">
+        </div>
+      </div>
+
+      <div class="project-grid" id="projectGrid"></div>
+
+      <noscript>
+        <p class="empty-state">项目清单需要 JavaScript 渲染，请在浏览器中开启 JavaScript。</p>
+      </noscript>
+
+      <p class="empty-state" id="emptyState" hidden>没有找到匹配的项目，换个关键词试试。</p>
+
+      <div class="projects-note">
+        <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+        <span>所有项目均直达 GitHub 原仓库。Star 数为整理时的大致数量，会随时间变化。</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Standards -->
+  <section class="standards-band" id="standards">
+    <div class="wrap">
+      <header class="section-head section-head--band">
+        <div>
+          <span class="section-index">03 — 挑选标准</span>
+          <h2 class="section-title">不是什么都收</h2>
+        </div>
+        <p class="section-note">一点点门槛，省你很多时间</p>
+      </header>
+      <ol class="standard-list">
+        <li class="standard reveal">
+          <span class="standard-num">01</span>
+          <h3>实际用过</h3>
+          <p>推荐之前，至少在自己的工作流里用过一段时间，确认它真的解决问题，而不是看起来很美。</p>
+        </li>
+        <li class="standard reveal">
+          <span class="standard-num">02</span>
+          <h3>仍在维护</h3>
+          <p>最近一年有提交，issue 有人回应，文档不是三年前的。开源项目最怕写着写着就没人了。</p>
+        </li>
+        <li class="standard reveal">
+          <span class="standard-num">03</span>
+          <h3>上手不难</h3>
+          <p>文档清楚，半小时内能跑起来。再强的工具，如果装三天还没成功，也不适合放进这份清单。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-media reveal">
+        <div class="about-photo">
+          <img src="assets/img/avatar.svg" alt="收藏者林之的插画头像：短发、圆框眼镜、红色围巾" width="240" height="240">
+        </div>
+        <span class="about-badge">since 2022</span>
+      </div>
+
+      <div class="about-copy reveal">
+        <span class="section-index">04 — 关于</span>
+        <h2 class="section-title">关于这份清单</h2>
+        <p>
+          我是林之，白天做界面设计，晚上翻 GitHub。这个站用来收那些
+          「早该被更多人知道」的开源项目——不追热点，也不做排行榜，
+          只收真正能解决问题的。
+        </p>
+        <p>
+          清单每月整理一次，项目都直达 GitHub 原仓库。如果某个项目帮到了你，
+          或者你想推荐一个，欢迎写信告诉我。
+        </p>
+
+        <dl class="facts">
+          <div>
+            <dt>已收录</dt>
+            <dd><span data-total>13</span> 个项目</dd>
+          </div>
+          <div>
+            <dt>分类</dt>
+            <dd><span data-category-count>6</span> 个</dd>
+          </div>
+          <div>
+            <dt>更新</dt>
+            <dd>每月一次</dd>
+          </div>
+          <div>
+            <dt>推荐 / 纠错</dt>
+            <dd><a href="mailto:hi@shiyi.notes">hi@shiyi.notes</a></dd>
+          </div>
+        </dl>
+
+        <div class="socials">
+          <a href="mailto:hi@shiyi.notes?subject=%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE">
+            <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>推荐一个项目
+          </a>
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub
+          </a>
+          <a href="#subscribe">
+            <svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>订阅更新
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe -->
+  <section class="subscribe" id="subscribe">
+    <div class="wrap">
+      <div class="subscribe-inner">
+        <div class="subscribe-copy">
+          <span class="section-index">05 — 订阅</span>
+          <h2 class="subscribe-title">每月一封，<br>只寄新捡到的项目。</h2>
+          <p>不刷屏，不推销。下次整理完清单，第一时间发到你的邮箱。</p>
+        </div>
+        <form class="subscribe-form" data-subscribe novalidate>
+          <label class="sr-only" for="email">邮箱地址</label>
+          <div class="field">
+            <input id="email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+            <button class="btn btn-primary" type="submit">订阅
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </button>
+          </div>
+          <p class="form-hint" data-form-hint>我尊重你的收件箱，随时可以退订。</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <a class="brand" href="index.html" aria-label="开源拾遗 · 返回首页">
+        <span class="seal" aria-hidden="true">拾</span>
+        <span class="brand-text">
+          <span class="brand-name">开源拾遗</span>
+          <span class="brand-sub">Open Source Picks</span>
+        </span>
+      </a>
+      <p>一张慢慢长大的开源清单。把好用的项目捡回来，也把时间留给真正重要的事。</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="页脚导航">
+      <p class="footer-title">浏览</p>
+      <a href="#featured">本期推荐</a>
+      <a href="#projects">全部收藏</a>
+      <a href="#standards">挑选标准</a>
+      <a href="#about">关于</a>
+      <a href="#subscribe">订阅</a>
+    </nav>
+
+    <div class="footer-contact">
+      <p class="footer-title">联系</p>
+      <a href="mailto:hi@shiyi.notes">hi@shiyi.notes</a>
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <p>每月整理一次<br>欢迎推荐项目或纠正信息</p>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <span>© 2026 开源拾遗 · Open Source Picks</span>
+    <span>与所收录项目无隶属关系 · Star 数仅供参考</span>
+  </div>
+</footer>
+
+<button class="back-to-top" data-back-to-top type="button" aria-label="回到顶部" title="回到顶部">
+  <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg>
+</button>
+
+<script src="assets/js/projects.js" defer></script>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

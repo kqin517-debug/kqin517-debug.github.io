@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="白板上的手绘草图：矩形、圆形、箭头、便签和选中框">
+  <defs>
+    <pattern id="boardGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="#2c2925" stroke-opacity=".055" stroke-width="1"/>
+    </pattern>
+    <pattern id="boardGrain" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#3a2a18" stroke-opacity=".045"/>
+    </pattern>
+  </defs>
+
+  <rect width="800" height="600" fill="#f7f2e7"/>
+  <rect width="800" height="600" fill="url(#boardGrid)"/>
+
+  <!-- 手绘矩形 -->
+  <g transform="rotate(-1.2 230 230)">
+    <rect x="120" y="160" width="200" height="130" rx="6" fill="none" stroke="#4a7bd0" stroke-width="3.2"/>
+    <path d="M148 200 h84 M148 220 h128 M148 240 h100 M148 260 h62" stroke="#2c2925" stroke-width="3" stroke-linecap="round" opacity=".75"/>
+  </g>
+
+  <!-- 手绘圆形 -->
+  <g transform="rotate(1.5 480 240)">
+    <ellipse cx="480" cy="240" rx="86" ry="62" fill="none" stroke="#c25a37" stroke-width="3.2"/>
+    <path d="M444 238 q22 -16 44 0 q18 14 40 -2" fill="none" stroke="#c25a37" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+  </g>
+
+  <!-- 箭头 -->
+  <g transform="rotate(-2 340 210)">
+    <path d="M330 214 C 364 188 392 260 424 246" fill="none" stroke="#2c2925" stroke-width="3.2" stroke-linecap="round"/>
+    <path d="M410 238 L 428 245 L 414 258" fill="none" stroke="#2c2925" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- 选中框 -->
+  <g>
+    <rect x="372" y="158" width="220" height="170" fill="none" stroke="#4a7bd0" stroke-width="1.6" stroke-dasharray="7 7"/>
+    <g fill="#f7f2e7" stroke="#4a7bd0" stroke-width="1.6">
+      <rect x="367" y="153" width="10" height="10"/>
+      <rect x="587" y="153" width="10" height="10"/>
+      <rect x="367" y="323" width="10" height="10"/>
+      <rect x="587" y="323" width="10" height="10"/>
+    </g>
+  </g>
+
+  <!-- 便签 -->
+  <g transform="rotate(4 590 420)">
+    <path d="M540 360 h112 l22 22 v88 a6 6 0 0 1 -6 6 h-128 a6 6 0 0 1 -6 -6 v-104 a6 6 0 0 1 6 -6 Z" fill="#f2d98a"/>
+    <path d="M652 360 v22 h22" fill="#e5c465"/>
+    <path d="M562 396 h72 M562 414 h88 M562 432 h60" stroke="#6b5424" stroke-width="3" stroke-linecap="round" opacity=".65"/>
+  </g>
+
+  <!-- 涂鸦文字 -->
+  <g stroke="#2c2925" stroke-width="3" stroke-linecap="round" fill="none" opacity=".8">
+    <path d="M120 450 q22 -14 44 0 q22 14 44 0 q22 -14 44 0 q20 12 40 0"/>
+    <path d="M120 478 q18 -10 36 0 q20 12 40 0 q18 -10 36 0"/>
+    <path d="M120 506 q26 -12 52 0 q24 12 48 0"/>
+  </g>
+
+  <!-- 光标 + 名字标签 -->
+  <g>
+    <path d="M616 300 L 616 344 L 628 333 L 638 356 L 650 350 L 640 328 L 656 327 Z" fill="#2c2925"/>
+    <rect x="656" y="296" width="78" height="30" rx="15" fill="#b5482c"/>
+    <text x="695" y="316" font-family="'Noto Sans SC','Microsoft YaHei',sans-serif" font-size="14" fill="#fff8ee" text-anchor="middle">林之</text>
+  </g>
+
+  <!-- 星星与加号 -->
+  <g fill="none" stroke="#c8943f" stroke-width="2.6" stroke-linecap="round">
+    <path d="M60 120 l6 14 l15 2 l-11 10 l3 15 l-13 -7 l-13 7 l3 -15 l-11 -10 l15 -2 Z" fill="#e7c98d" stroke="#c8943f" stroke-width="2"/>
+    <path d="M700 120 v22 M689 131 h22"/>
+    <path d="M90 540 v16 M82 548 h16"/>
+  </g>
+
+  <!-- 底部小字 -->
+  <text x="120" y="556" font-family="ui-monospace, Consolas, monospace" font-size="13" fill="#8c8276">excalidraw / infinite canvas</text>
+
+  <rect width="800" height="600" fill="url(#boardGrain)"/>
+</svg>

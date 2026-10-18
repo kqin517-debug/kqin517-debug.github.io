@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 860" width="720" height="860" role="img" aria-label="拱形壁龛里的书架，摆满彩色的项目积木和一台小终端">
+  <defs>
+    <linearGradient id="shelfWall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eedcbe"/>
+      <stop offset="1" stop-color="#e2c9a3"/>
+    </linearGradient>
+    <linearGradient id="shelfNiche" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f9f0df"/>
+      <stop offset="1" stop-color="#efdfc2"/>
+    </linearGradient>
+    <linearGradient id="shelfPlank" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e0c79c"/>
+      <stop offset=".18" stop-color="#d3b381"/>
+      <stop offset="1" stop-color="#bd9c6b"/>
+    </linearGradient>
+    <pattern id="shelfStripe" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(90)">
+      <line x1="0" y1="0" x2="0" y2="14" stroke="#8a6a42" stroke-opacity=".05"/>
+    </pattern>
+    <pattern id="shelfGrain" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#3a2a18" stroke-opacity=".05"/>
+    </pattern>
+    <radialGradient id="lampGlow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ffe7b0" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#ffe7b0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="720" height="860" fill="url(#shelfWall)"/>
+  <rect width="720" height="860" fill="url(#shelfStripe)"/>
+
+  <!-- 拱形壁龛 -->
+  <path d="M96 828 V356 A264 264 0 0 1 624 356 V828 Z" fill="#f8f0e1"/>
+  <path d="M96 828 V356 A264 264 0 0 1 624 356 V828 Z" fill="none" stroke="#c9aa7c" stroke-width="2" opacity=".65"/>
+  <path d="M122 828 V356 A238 238 0 0 1 598 356 V828 Z" fill="url(#shelfNiche)"/>
+  <path d="M122 828 V356 A238 238 0 0 1 598 356 V828 Z" fill="none" stroke="#d3b78c" stroke-width="3" opacity=".5"/>
+
+  <!-- 吊灯 -->
+  <g>
+    <line x1="360" y1="122" x2="360" y2="208" stroke="#8a6a42" stroke-width="2.5"/>
+    <path d="M318 208 H402 L388 258 H332 Z" fill="#c8943f"/>
+    <path d="M318 208 H402" stroke="#a9762c" stroke-width="2"/>
+    <circle cx="360" cy="264" r="8" fill="#f6e2af"/>
+    <circle cx="360" cy="274" r="86" fill="url(#lampGlow)"/>
+  </g>
+
+  <!-- 第一层 -->
+  <g>
+    <rect x="150" y="340" width="40" height="100" rx="5" fill="#2f5d59"/>
+    <path d="M158 356 h24 M158 368 h16" stroke="#f3e2bf" stroke-width="2" stroke-linecap="round" opacity=".55"/>
+    <rect x="196" y="308" width="46" height="132" rx="5" fill="#b5482c"/>
+    <path d="M208 326 h22 M208 340 h14" stroke="#f3e2bf" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+    <g transform="rotate(-8 271 390)">
+      <rect x="254" y="340" width="34" height="100" rx="4" fill="#c8943f"/>
+      <path d="M262 356 h18 M262 368 h12" stroke="#6b4a22" stroke-width="2" stroke-linecap="round" opacity=".45"/>
+    </g>
+    <rect x="310" y="386" width="82" height="54" rx="4" fill="#6e7f63"/>
+    <rect x="318" y="364" width="66" height="22" rx="4" fill="#819274"/>
+    <rect x="432" y="356" width="72" height="84" rx="8" fill="#7a5468"/>
+    <path d="M432 378 h72" stroke="#e0c9d4" stroke-width="2" opacity=".5"/>
+    <rect x="448" y="394" width="40" height="8" rx="4" fill="#e0c9d4" opacity=".55"/>
+    <g transform="rotate(6 536 400)">
+      <rect x="520" y="360" width="32" height="80" rx="3" fill="#fbf5e6" stroke="#d8c5a3" stroke-width="2"/>
+      <path d="M528 378 h16 M528 390 h16 M528 402 h10" stroke="#b9a17c" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <rect x="122" y="440" width="476" height="14" fill="url(#shelfPlank)"/>
+    <rect x="122" y="440" width="476" height="3" fill="#ecdab9" opacity=".8"/>
+  </g>
+
+  <!-- 第二层 -->
+  <g>
+    <rect x="150" y="520" width="196" height="100" rx="10" fill="#2c2925"/>
+    <path d="M150 542 V530 a10 10 0 0 1 10 -10 h176 a10 10 0 0 1 10 10 v12 Z" fill="#3a3730"/>
+    <circle cx="168" cy="531" r="3.4" fill="#b5482c"/>
+    <circle cx="181" cy="531" r="3.4" fill="#c8943f"/>
+    <circle cx="194" cy="531" r="3.4" fill="#6e7f63"/>
+    <g fill="#f3e2bf">
+      <rect x="168" y="558" width="92" height="5" rx="2.5" opacity=".8"/>
+      <rect x="168" y="574" width="132" height="5" rx="2.5" fill="#7fb0a9" opacity=".9"/>
+      <rect x="168" y="590" width="66" height="5" rx="2.5" fill="#e0714f" opacity=".9"/>
+      <rect x="168" y="606" width="104" height="5" rx="2.5" opacity=".5"/>
+    </g>
+
+    <g>
+      <path d="M380 596 h44 l-5 24 h-34 Z" fill="#b5482c"/>
+      <path d="M402 596 C 394 566 380 550 366 540" fill="none" stroke="#5c6e52" stroke-width="4" stroke-linecap="round"/>
+      <path d="M402 596 C 414 562 432 548 446 538" fill="none" stroke="#5c6e52" stroke-width="4" stroke-linecap="round"/>
+      <ellipse cx="363" cy="536" rx="10" ry="18" transform="rotate(-36 363 536)" fill="#6e7f63"/>
+      <ellipse cx="392" cy="556" rx="9" ry="17" transform="rotate(-12 392 556)" fill="#819274"/>
+      <ellipse cx="449" cy="534" rx="10" ry="18" transform="rotate(38 449 534)" fill="#6e7f63"/>
+      <ellipse cx="420" cy="558" rx="9" ry="17" transform="rotate(16 420 558)" fill="#819274"/>
+    </g>
+
+    <g>
+      <rect x="466" y="604" width="104" height="14" rx="5" fill="#c8943f"/>
+      <rect x="472" y="590" width="92" height="14" rx="5" fill="#2f5d59"/>
+      <rect x="480" y="576" width="78" height="14" rx="5" fill="#b5482c"/>
+    </g>
+
+    <rect x="122" y="620" width="476" height="14" fill="url(#shelfPlank)"/>
+    <rect x="122" y="620" width="476" height="3" fill="#ecdab9" opacity=".8"/>
+  </g>
+
+  <!-- 第三层 -->
+  <g>
+    <rect x="150" y="740" width="70" height="60" rx="8" fill="#b5482c"/>
+    <path d="M166 758 h38 M166 774 h24" stroke="#f3e2bf" stroke-width="2.5" stroke-linecap="round" opacity=".55"/>
+    <rect x="164" y="702" width="44" height="36" rx="6" fill="#e1b46a"/>
+    <circle cx="186" cy="720" r="6" fill="#a9762c" opacity=".55"/>
+
+    <g>
+      <path d="M276 752 v-8 a8 8 0 0 1 8 -8 h26 l8 10 h74 a8 8 0 0 1 8 8 v46 a8 8 0 0 1 -8 8 h-108 a8 8 0 0 1 -8 -8 Z" fill="#6e7f63"/>
+      <path d="M276 766 H400" stroke="#f3e2bf" stroke-width="2" opacity=".4"/>
+    </g>
+
+    <g>
+      <rect x="424" y="736" width="64" height="64" rx="13" fill="#3f6e8c"/>
+      <path d="M446 768 h20 M456 758 v20" stroke="#f3e2bf" stroke-width="4" stroke-linecap="round"/>
+    </g>
+
+    <g>
+      <path d="M520 800 v-44 M532 800 v-52 M544 800 v-38" stroke="#8a6a42" stroke-width="4" stroke-linecap="round"/>
+      <path d="M512 800 h44 l-4 -36 h-36 Z" fill="#2f5d59"/>
+      <path d="M512 800 h44 l-1 -8 h-42 Z" fill="#3d6b64"/>
+    </g>
+
+    <rect x="122" y="800" width="476" height="14" fill="url(#shelfPlank)"/>
+    <rect x="122" y="800" width="476" height="3" fill="#ecdab9" opacity=".8"/>
+  </g>
+
+  <!-- 底部地面阴影 -->
+  <path d="M96 828 H624" stroke="#b5966a" stroke-width="2" opacity=".45"/>
+  <rect x="80" y="830" width="560" height="16" rx="4" fill="#dcc39d"/>
+  <rect x="80" y="830" width="560" height="5" rx="2.5" fill="#efdfc2"/>
+
+  <!-- 飘落的小颗粒 -->
+  <g fill="#b5482c" opacity=".35">
+    <circle cx="142" cy="270" r="3"/>
+    <circle cx="586" cy="330" r="2.5"/>
+    <circle cx="616" cy="474" r="2"/>
+  </g>
+
+  <rect width="720" height="860" fill="url(#shelfGrain)"/>
+</svg>
