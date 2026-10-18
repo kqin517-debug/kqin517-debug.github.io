@@ -8,6 +8,11 @@
   var root = document.documentElement;
   var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* ---------- 站点配置（可在 index.html 里改） ---------- */
+  var SITE = window.SITE_CONFIG || {};
+  var CONTACT_EMAIL = SITE.contactEmail || "hi@shiyi.notes";
+  var SUBSCRIBE_ENDPOINT = SITE.subscribeEndpoint || "";
+
   function escapeHtml(value) {
     return String(value)
       .replace(/&/g, "&amp;")
@@ -67,34 +72,54 @@
   var mobileNav = document.getElementById("mobileNav");
   if (menuBtn && mobileNav) {
     var menuIcon = menuBtn.querySelector("use");
-    var closeMenu = function () {
+    var lastFocused = null;
+
+    if (!mobileNav.hasAttribute("aria-hidden")) mobileNav.setAttribute("aria-hidden", "true");
+
+    var closeMenu = function (restoreFocus) {
+      if (!mobileNav.classList.contains("is-open")) return;
+      var focusInNav = mobileNav.contains(document.activeElement);
       mobileNav.classList.remove("is-open");
+      mobileNav.setAttribute("aria-hidden", "true");
       menuBtn.setAttribute("aria-expanded", "false");
       menuBtn.setAttribute("aria-label", "打开菜单");
+      document.body.classList.remove("is-nav-open");
       if (menuIcon) menuIcon.setAttribute("href", "#i-menu");
+      if (restoreFocus && focusInNav) menuBtn.focus({ preventScroll: true });
+      lastFocused = null;
     };
     var openMenu = function () {
+      lastFocused = document.activeElement;
       mobileNav.classList.add("is-open");
+      mobileNav.setAttribute("aria-hidden", "false");
       menuBtn.setAttribute("aria-expanded", "true");
       menuBtn.setAttribute("aria-label", "关闭菜单");
+      document.body.classList.add("is-nav-open");
       if (menuIcon) menuIcon.setAttribute("href", "#i-close");
+      var firstLink = mobileNav.querySelector("a");
+      if (firstLink) {
+        // 等一帧，确保 visibility 已切换，元素可被聚焦
+        window.requestAnimationFrame(function () {
+          firstLink.focus({ preventScroll: true });
+        });
+      }
     };
     menuBtn.addEventListener("click", function () {
-      if (mobileNav.classList.contains("is-open")) closeMenu(); else openMenu();
+      if (mobileNav.classList.contains("is-open")) closeMenu(true); else openMenu();
     });
     mobileNav.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", closeMenu);
+      link.addEventListener("click", function () { closeMenu(false); });
     });
     document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") closeMenu();
+      if (e.key === "Escape") closeMenu(true);
     });
     window.addEventListener("resize", function () {
-      if (window.innerWidth > 860) closeMenu();
+      if (window.innerWidth > 860) closeMenu(false);
     });
     document.addEventListener("click", function (e) {
       if (!mobileNav.classList.contains("is-open")) return;
       if (mobileNav.contains(e.target) || menuBtn.contains(e.target)) return;
-      closeMenu();
+      closeMenu(false);
     });
   }
 
@@ -102,6 +127,8 @@
   var grid = document.getElementById("projectGrid");
   var filters = document.getElementById("projectFilters");
   var search = document.getElementById("projectSearch");
+  var clearBtn = document.querySelector("[data-search-clear]");
+  var status = document.getElementById("filterStatus");
   var empty = document.getElementById("emptyState");
   var projects = Array.isArray(window.PROJECTS) ? window.PROJECTS : [];
   var categories = [];
@@ -160,6 +187,50 @@
     if (tagText) tagText.textContent = (projects.length + 1) + " 个项目，持续更新";
   }
 
+  /* 把当前筛选状态写进地址栏：刷新、分享都能还原 */
+  function syncUrl() {
+    if (!window.history || !history.replaceState) return;
+    try {
+      var params = new URLSearchParams();
+      if (query && search && search.value.trim()) params.set("q", search.value.trim());
+      if (activeCategory !== "all") params.set("cat", activeCategory);
+      var qs = params.toString();
+      history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "") + location.hash);
+    } catch (e) { /* file:// 下可能不允许，忽略 */ }
+  }
+
+  function restoreUrlState() {
+    var params;
+    try { params = new URLSearchParams(location.search); } catch (e) { return; }
+    var q = params.get("q") || "";
+    var cat = params.get("cat") || "all";
+    if (q && search) {
+      search.value = q;
+      query = q.trim().toLowerCase();
+      if (clearBtn) clearBtn.hidden = false;
+    }
+    if (cat !== "all" && categories.indexOf(cat) !== -1) {
+      activeCategory = cat;
+      if (filters) {
+        Array.prototype.forEach.call(filters.children, function (btn) {
+          btn.classList.toggle("is-active", btn.getAttribute("data-filter") === cat);
+        });
+      }
+    }
+  }
+
+  function updateStatus(visible) {
+    if (!status) return;
+    if (!query && activeCategory === "all") {
+      status.textContent = "";
+      return;
+    }
+    var parts = [];
+    if (activeCategory !== "all") parts.push("「" + activeCategory + "」");
+    if (query) parts.push("“" + (search ? search.value.trim() : query) + "”");
+    status.textContent = parts.join(" ") + "：找到 " + visible + " 个，共 " + projects.length + " 个。";
+  }
+
   function applyFilter() {
     if (!grid) return;
     var visible = 0;
@@ -176,6 +247,17 @@
       }
     });
     if (empty) empty.hidden = visible !== 0;
+    if (clearBtn && search) clearBtn.hidden = search.value === "";
+    updateStatus(visible);
+    syncUrl();
+  }
+
+  function clearSearch(focus) {
+    if (!search) return;
+    search.value = "";
+    query = "";
+    applyFilter();
+    if (focus) search.focus({ preventScroll: true });
   }
 
   if (grid) {
@@ -203,9 +285,32 @@
         query = search.value.trim().toLowerCase();
         applyFilter();
       });
+      search.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          e.preventDefault();
+          clearSearch(true);
+        }
+      });
     }
 
+    if (clearBtn) {
+      clearBtn.addEventListener("click", function () { clearSearch(true); });
+    }
+
+    // 按 “/” 直接跳到搜索框（输入框里按则不触发）
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "/" || e.ctrlKey || e.metaKey || e.altKey) return;
+      var tag = (e.target && e.target.tagName || "").toLowerCase();
+      if (tag === "input" || tag === "textarea" || tag === "select" || (e.target && e.target.isContentEditable)) return;
+      if (!search) return;
+      e.preventDefault();
+      search.focus({ preventScroll: false });
+      search.select();
+    });
+
     setCounts();
+    restoreUrlState();
+    applyFilter();
   }
 
   /* ---------- Reveal on scroll ---------- */
@@ -236,26 +341,63 @@
   document.querySelectorAll("[data-subscribe]").forEach(function (form) {
     var input = form.querySelector('input[type="email"]');
     var hint = form.querySelector("[data-form-hint]");
+    var button = form.querySelector('button[type="submit"]');
     var defaultHint = hint ? hint.textContent : "";
+
+    function setHint(text, kind) {
+      if (!hint) return;
+      hint.classList.remove("is-error", "is-success");
+      hint.textContent = text;
+      if (kind) hint.classList.add(kind);
+    }
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!input || !hint) return;
       var value = input.value.trim();
       var valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
-      hint.classList.remove("is-error", "is-success");
+
       if (!valid) {
-        hint.textContent = "请输入一个有效的邮箱地址，比如 name@example.com。";
-        hint.classList.add("is-error");
+        setHint("请输入一个有效的邮箱地址，比如 name@example.com。", "is-error");
         input.focus();
         return;
       }
-      hint.textContent = "订阅成功！下次整理完清单，会先寄给你。";
-      hint.classList.add("is-success");
+
+      // 情况一：配置了订阅接口（如 Formspree），真实提交
+      if (SUBSCRIBE_ENDPOINT) {
+        if (button) button.disabled = true;
+        setHint("正在提交…", null);
+        fetch(SUBSCRIBE_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({ email: value, source: location.href })
+        }).then(function (res) {
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          setHint("订阅成功！下次整理完清单，会先寄给你。", "is-success");
+          input.value = "";
+        }).catch(function () {
+          setHint("提交失败，请稍后再试；也可以直接写信到 " + CONTACT_EMAIL + "。", "is-error");
+        }).then(function () {
+          if (button) button.disabled = false;
+        });
+        return;
+      }
+
+      // 情况二：没配接口时，用邮件客户端完成订阅（真正可用，不假装成功）
+      var subject = "订阅《开源拾遗》";
+      var body = "你好，我想订阅开源拾遗的更新。\n\n我的邮箱：" + value + "\n\n（直接发送这封邮件即可）";
+      var mailto = "mailto:" + CONTACT_EMAIL +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+      window.location.href = mailto;
+      setHint("已为你打开邮件客户端，直接发送就能完成订阅；若没有弹出，也可以手动写信到 " + CONTACT_EMAIL + "。", "is-success");
       input.value = "";
       window.setTimeout(function () {
-        hint.textContent = defaultHint;
-        hint.classList.remove("is-success");
-      }, 6000);
+        if (hint && hint.classList.contains("is-success")) {
+          hint.classList.remove("is-success");
+          hint.textContent = defaultHint;
+        }
+      }, 8000);
     });
   });
 })();
