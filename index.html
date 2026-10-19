@@ -4,24 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f7f2e8">
-<meta name="description" content="开源拾遗 · 收集 GitHub 上真正好用的开源项目：效率工具、自托管服务、前端组件、学习资源与 AI 工具，附中文简介和直达链接。">
-<title>开源拾遗 · 把 GitHub 好项目捡回来</title>
+<meta name="description" content="开源拾遗 · 面向大学生的开源项目检索站：按项目名、技术栈或一句话描述搜索 GitHub 上可学习、可做课设、可用于毕业设计的开源项目。">
+<title>开源拾遗 · 大学生开源项目检索</title>
 
-<!-- 分享到微信 / 微博 / X 时的标题、描述与缩略图 -->
 <link rel="canonical" href="https://kqin517-debug.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="开源拾遗 · Open Source Picks">
-<meta property="og:title" content="开源拾遗 · 把 GitHub 好项目捡回来">
-<meta property="og:description" content="收集 GitHub 上真正好用的开源项目：效率工具、自托管服务、前端组件、学习资源与 AI 工具，附中文简介和直达链接。">
+<meta property="og:title" content="开源拾遗 · 大学生开源项目检索">
+<meta property="og:description" content="按项目名、技术栈或一句话描述，搜索 GitHub 上能用作课设、毕设与学习参考的开源项目。">
 <meta property="og:url" content="https://kqin517-debug.github.io/">
 <meta property="og:image" content="https://kqin517-debug.github.io/assets/img/og-cover.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="开源拾遗首页：把好东西，捡回来。">
 <meta property="og:locale" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="开源拾遗 · 把 GitHub 好项目捡回来">
-<meta name="twitter:description" content="收集 GitHub 上真正好用的开源项目，附中文简介和直达链接。">
+<meta name="twitter:title" content="开源拾遗 · 大学生开源项目检索">
+<meta name="twitter:description" content="按项目名、技术栈或一句话描述，搜索可学习、可做课设的开源项目。">
 <meta name="twitter:image" content="https://kqin517-debug.github.io/assets/img/og-cover.jpg">
 <script type="application/ld+json">
 {
@@ -31,16 +29,19 @@
   "alternateName": "Open Source Picks",
   "url": "https://kqin517-debug.github.io/",
   "inLanguage": "zh-CN",
-  "description": "收集 GitHub 上真正好用的开源项目：效率工具、自托管服务、前端组件、学习资源与 AI 工具，附中文简介和直达链接。"
+  "description": "面向大学生的开源项目检索站：按项目名、技术栈或一句话描述搜索 GitHub 上可学习、可做课设、可用于毕业设计的开源项目。",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://kqin517-debug.github.io/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
 }
 </script>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23b5482c'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' fill='%23fff8ee' font-family='serif'%3E%E6%8B%BE%3C/text%3E%3C/svg%3E">
+
 <script>
   (function () {
     var root = document.documentElement;
     root.classList.add("js");
-    // 兜底：任何脚本或资源出错时，去掉 .js，让依赖滚动渐显的内容直接可见，
-    // 避免“JS 挂了 → 整页内容一直是透明”的情况。
     function failOpen() { root.classList.remove("js"); }
     window.addEventListener("error", failOpen, true);
     window.addEventListener("unhandledrejection", failOpen);
@@ -53,6 +54,7 @@
     }
   })();
 </script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23b5482c'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' fill='%23fff8ee' font-family='serif'%3E%E6%8B%BE%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/projects.css">
 </head>
@@ -71,6 +73,8 @@
   <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M19 14v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/></symbol>
   <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.58 1.1 6.47L12 17.45 6.2 20.5l1.1-6.47L2.6 9.45l6.5-.95L12 2.6Z" fill="currentColor" stroke="none"/></symbol>
   <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13.8a4.2 4.2 0 0 0 6 0l3-3a4.24 4.24 0 0 0-6-6l-1.6 1.6"/><path d="M14 10.2a4.2 4.2 0 0 0-6 0l-3 3a4.24 4.24 0 0 0 6 6l1.6-1.6"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 6-5 6 5 6M16 6l5 6-5 6"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 11l5 5 5-5M5 21h14"/></symbol>
 </svg>
 
 <a class="skip-link" href="#main">跳到主要内容</a>
@@ -86,11 +90,10 @@
     </a>
 
     <nav class="nav" aria-label="主导航">
-      <a href="#featured">推荐</a>
-      <a href="#projects">收藏</a>
-      <a href="#standards">标准</a>
+      <a href="#projects">找项目</a>
+      <a href="#categories">分类</a>
+      <a href="#standards">收录标准</a>
       <a href="#about">关于</a>
-      <a href="#subscribe">订阅</a>
     </nav>
 
     <div class="header-actions">
@@ -108,250 +111,1123 @@
   </div>
 
   <nav class="mobile-nav" id="mobileNav" aria-label="移动端导航" aria-hidden="true">
-    <a href="#featured">推荐</a>
-    <a href="#projects">收藏</a>
-    <a href="#standards">标准</a>
+    <a href="#projects">找项目</a>
+    <a href="#categories">分类</a>
+    <a href="#standards">收录标准</a>
     <a href="#about">关于</a>
-    <a href="#subscribe">订阅</a>
   </nav>
 </header>
 
 <main id="main">
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">GitHub 精选 · Vol. 01</p>
-        <h1 class="hero-title">把好东西，<br><span class="hl">捡回来</span><span class="period">。</span></h1>
-        <p class="hero-lead">
-          GitHub 上每天都有好项目诞生，也每天都有好项目被埋没。
-          这里收着我实际用过、愿意推荐的开源清单：效率工具、自托管服务、
-          前端组件和一点学习资源，每一个都附上中文简介与直达链接，拿来即用。
+  <!-- 搜索区：页面视觉中心 -->
+  <section class="search-hero" id="search">
+    <div class="wrap search-hero-inner">
+      <p class="eyebrow">面向大学生的开源项目检索 · 共 <span data-stat-projects>0</span> 个项目</p>
+      <h1 class="search-title">想找什么项目？</h1>
+      <p class="search-sub">输入项目名、技术栈或一句话描述，比如「YOLO 目标检测」「图书管理系统」。</p>
+
+      <form class="search-box" id="searchForm" role="search" action="index.html#projects" method="get">
+        <svg class="icon search-icon" aria-hidden="true"><use href="#i-search"/></svg>
+        <label class="sr-only" for="projectSearch">搜索项目名称、技术栈或关键词</label>
+        <input id="projectSearch" name="q" type="search" autocomplete="off"
+               placeholder="搜索项目名、技术栈或关键词…"
+               aria-controls="projectGrid" aria-describedby="filterStatus">
+        <button class="search-clear" type="button" data-search-clear hidden aria-label="清空搜索" title="清空搜索">
+          <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+        <button class="btn btn-primary search-submit" type="submit">搜索</button>
+      </form>
+
+      <div class="hot-searches" id="hotSearches" aria-label="热门搜索">
+        <span class="hot-label">热门：</span>
+        <button class="hot-chip" type="button" data-hot="YOLO 目标检测">YOLO 目标检测</button>
+        <button class="hot-chip" type="button" data-hot="图像分类">图像分类</button>
+        <button class="hot-chip" type="button" data-hot="图书管理系统">图书管理系统</button>
+        <button class="hot-chip" type="button" data-hot="路径规划">路径规划</button>
+        <button class="hot-chip" type="button" data-hot="学生管理系统">学生管理系统</button>
+        <button class="hot-chip" type="button" data-hot="数据分析">数据分析</button>
+      </div>
+
+      <p class="hero-stats">
+        <span><b data-stat-projects>0</b> 个项目</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span><b data-stat-categories>0</b> 个分类</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span><b data-stat-languages>0</b> 种语言</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span><b data-stat-verified>0</b> 个已完成运行验证</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- 分类入口 -->
+  <section class="section category-section" id="categories">
+    <div class="wrap">
+      <header class="section-head">
+        <div>
+          <span class="section-index">01 — 按方向浏览</span>
+          <h2 class="section-title">不知道搜什么，就从方向入手</h2>
+        </div>
+        <p class="section-note">分类只用来辅助搜索，找到后仍可直接搜索更精确的项目</p>
+      </header>
+      <div class="category-grid" id="categoryGrid">
+        <noscript><p class="muted">分类入口需要 JavaScript；可直接在下方浏览全部项目。</p></noscript>
+      </div>
+    </div>
+  </section>
+
+  <!-- 项目库：搜索 / 筛选 / 列表 -->
+  <section class="section library" id="projects">
+    <div class="wrap">
+      <header class="section-head">
+        <div>
+          <span class="section-index">02 — 项目库</span>
+          <h2 class="section-title">全部项目</h2>
+        </div>
+        <p class="section-note">
+          <span class="result-count" id="resultCount">共 0 个</span>
         </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">浏览收藏
-            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
-          </a>
-          <a class="link-arrow" href="mailto:hi@shiyi.notes?subject=%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE">推荐一个项目
-            <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
-          </a>
-        </div>
-        <div class="hero-meta">
-          <span><strong data-total>13</strong> 个项目</span>
-          <span class="dot" aria-hidden="true"></span>
-          <span><strong data-category-count>06</strong> 个分类</span>
-          <span class="dot" aria-hidden="true"></span>
-          <span>每月更新一次</span>
-        </div>
-      </div>
-
-      <div class="hero-art">
-        <figure class="hero-figure">
-          <img src="assets/img/hero-shelf.svg" alt="拱形壁龛里的书架，摆满彩色的项目积木和一台小终端" width="720" height="860" fetchpriority="high" decoding="async">
-        </figure>
-        <div class="hero-tag">
-          <span class="hero-tag-label">本期</span>
-          <span class="hero-tag-text">13 个项目，持续更新</span>
-        </div>
-        <span class="hero-caption" aria-hidden="true">Open Source · Vol.01</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured -->
-  <section class="section" id="featured">
-    <div class="wrap">
-      <header class="section-head">
-        <div>
-          <span class="section-index">01 — 本期推荐</span>
-          <h2 class="section-title">这周先看这个</h2>
-        </div>
-        <p class="section-note">CURATED PICK · 2026.10</p>
       </header>
 
-      <a class="feature-card reveal" href="https://github.com/excalidraw/excalidraw" target="_blank" rel="noopener noreferrer">
-        <div class="feature-visual">
-          <img src="assets/img/featured-whiteboard.svg" alt="白板上的手绘草图：矩形、圆形、箭头、便签和选中框" width="800" height="600" loading="lazy" decoding="async">
-          <span class="feature-badge">本期置顶</span>
-        </div>
-        <div class="feature-body">
-          <div class="feature-kicker">
-            <span class="project-cat">效率工具</span>
-            <span class="dot" aria-hidden="true"></span>
-            <span>excalidraw/excalidraw</span>
-          </div>
-          <h3 class="feature-title">Excalidraw</h3>
-          <p class="feature-lead">
-            打开浏览器就能画的白板，手绘风格让草图看起来不那么严肃。
-            画流程图、系统架构、会议草稿都很顺手，而且不注册也能用。
-          </p>
-          <ul class="feature-points">
-            <li>本地优先：内容默认只存在浏览器里，不经过服务器</li>
-            <li>手绘线条：自带轻微抖动，白板更像草稿纸</li>
-            <li>支持实时协作，可导出 PNG、SVG 与源文件</li>
-          </ul>
-          <div class="feature-foot">
-            <div class="feature-meta">
-              <span class="project-lang"><i style="--lang:#3178c6"></i>TypeScript</span>
-              <span class="stars-line"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>10 万+</span>
-              <span>MIT</span>
-            </div>
-            <span class="btn btn-primary">打开 GitHub
-              <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg>
-            </span>
-          </div>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section class="section" id="projects">
-    <div class="wrap">
-      <header class="section-head">
-        <div>
-          <span class="section-index">02 — 全部收藏</span>
-          <h2 class="section-title">捡回来的 <span data-grid-count>12</span> 个</h2>
-        </div>
-        <p class="section-note">共 <span data-grid-count>12</span> 个 · 点击卡片直达 GitHub</p>
-      </header>
-
-      <div class="projects-toolbar">
-        <div class="chips" id="projectFilters" role="group" aria-label="按分类筛选项目">
+      <div class="toolbar">
+        <div class="chips" id="projectFilters" role="group" aria-label="按分类筛选">
           <button class="chip is-active" type="button" data-filter="all">全部</button>
         </div>
-        <div class="search">
-          <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
-          <label class="sr-only" for="projectSearch">搜索项目</label>
-          <input id="projectSearch" type="search" placeholder="搜索项目、语言或用途…" autocomplete="off"
-                 aria-controls="projectGrid" aria-describedby="filterStatus">
-          <button class="search-clear" type="button" data-search-clear hidden aria-label="清空搜索" title="清空搜索">
-            <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
-          </button>
+        <div class="filter-selects">
+          <label class="select-field">
+            <span class="sr-only">按编程语言筛选</span>
+            <select id="filterLanguage"><option value="all">全部语言</option></select>
+          </label>
+          <label class="select-field">
+            <span class="sr-only">按项目类型筛选</span>
+            <select id="filterType"><option value="all">全部类型</option></select>
+          </label>
+          <label class="select-field">
+            <span class="sr-only">按验证状态筛选</span>
+            <select id="filterStatusSelect"><option value="all">全部验证状态</option></select>
+          </label>
+          <label class="select-field">
+            <span class="sr-only">按难度筛选</span>
+            <select id="filterDifficulty"><option value="all">全部难度</option></select>
+          </label>
+          <label class="select-field">
+            <span class="sr-only">排序方式</span>
+            <select id="sortOrder">
+              <option value="relevance">按相关度</option>
+              <option value="recent">按最新收录</option>
+              <option value="stars">按 Star 数</option>
+              <option value="name">按名称</option>
+            </select>
+          </label>
+          <button class="btn btn-ghost btn-reset" type="button" id="resetFilters" hidden>重置</button>
         </div>
       </div>
 
       <p class="filter-status" id="filterStatus" role="status" aria-live="polite"></p>
 
-      <div class="project-grid" id="projectGrid"></div>
+      <div class="project-grid" id="projectGrid">
+        <!-- BUILD:PROJECTS:START -->
+        <!-- 以下静态卡片由 scripts/build.js 生成；无 JavaScript 时也可浏览。 -->
+        <article class="project-card tone-1" data-id="rsshub" data-category="开发工具与自动化" data-languages="TypeScript" data-types="repository|download" data-status="not-tested" data-difficulty="">
+          <a class="card-main" href="p/rsshub/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">RS</span>
+              <span class="card-category">开发工具与自动化</span>
+            </div>
+            <h3 class="card-title">RSSHub</h3>
+            <p class="card-summary">把几乎所有网站都变成 RSS 订阅源。可以用公共实例，也可以自己部署一份。</p>
+            <ul class="card-tags"><li>RSS</li><li>自托管</li><li>Node</li></ul>
+            <div class="card-meta">
+              <span class="lang">TypeScript</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>4.7 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/DIYgod/RSSHub" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 RSSHub">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-1" data-id="localsend" data-category="开发工具与自动化" data-languages="Dart" data-types="repository|download" data-status="not-tested" data-difficulty="">
+          <a class="card-main" href="p/localsend/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">LS</span>
+              <span class="card-category">开发工具与自动化</span>
+            </div>
+            <h3 class="card-title">LocalSend</h3>
+            <p class="card-summary">跨平台局域网传文件，手机、电脑互传不经过云端，也不用注册登录。</p>
+            <ul class="card-tags"><li>文件传输</li><li>跨平台</li><li>Flutter</li></ul>
+            <div class="card-meta">
+              <span class="lang">Dart</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>9.5 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/localsend/localsend" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 LocalSend">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-2" data-id="immich" data-category="Web 与软件开发" data-languages="TypeScript" data-types="repository|download" data-status="not-tested" data-difficulty="">
+          <a class="card-main" href="p/immich/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">IM</span>
+              <span class="card-category">Web 与软件开发</span>
+            </div>
+            <h3 class="card-title">Immich</h3>
+            <p class="card-summary">自托管的照片备份方案，移动端自动上传，界面和体验都很接近 Google Photos。</p>
+            <ul class="card-tags"><li>相册</li><li>备份</li><li>Docker</li></ul>
+            <div class="card-meta">
+              <span class="lang">TypeScript</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>11.7 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/immich-app/immich" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 Immich">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-2" data-id="uptime-kuma" data-category="Web 与软件开发" data-languages="JavaScript" data-types="repository|download" data-status="not-tested" data-difficulty="">
+          <a class="card-main" href="p/uptime-kuma/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">UK</span>
+              <span class="card-category">Web 与软件开发</span>
+            </div>
+            <h3 class="card-title">Uptime Kuma</h3>
+            <p class="card-summary">一条 Docker 命令就能跑起来的监控面板，HTTP、TCP、Ping 和多种告警方式都支持。</p>
+            <ul class="card-tags"><li>监控</li><li>告警</li><li>Docker</li></ul>
+            <div class="card-meta">
+              <span class="lang">JavaScript</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>9.3 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/louislam/uptime-kuma" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 Uptime Kuma">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-3" data-id="ui" data-category="Web 与软件开发" data-languages="TypeScript" data-types="repository|download" data-status="not-tested" data-difficulty="">
+          <a class="card-main" href="p/ui/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">SH</span>
+              <span class="card-category">Web 与软件开发</span>
+            </div>
+            <h3 class="card-title">shadcn/ui</h3>
+            <p class="card-summary">不是组件库，而是把组件源码复制进你的项目。基于 Radix 和 Tailwind，想怎么改就怎么改。</p>
+            <ul class="card-tags"><li>React</li><li>组件</li><li>可定制</li></ul>
+            <div class="card-meta">
+              <span class="lang">TypeScript</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>12.6 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/shadcn-ui/ui" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 shadcn/ui">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-3" data-id="tailwindcss" data-category="Web 与软件开发" data-languages="TypeScript" data-types="repository|download" data-status="not-tested" data-difficulty="">
+          <a class="card-main" href="p/tailwindcss/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">TW</span>
+              <span class="card-category">Web 与软件开发</span>
+            </div>
+            <h3 class="card-title">Tailwind CSS</h3>
+            <p class="card-summary">原子化 CSS，把样式写在结构旁边。设计系统、响应式和暗色模式都能顺手做完。</p>
+            <ul class="card-tags"><li>CSS</li><li>设计系统</li><li>工具链</li></ul>
+            <div class="card-meta">
+              <span class="lang">TypeScript</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>9.8 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/tailwindlabs/tailwindcss" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 Tailwind CSS">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-4" data-id="developer-roadmap" data-category="其他开源项目" data-languages="TypeScript" data-types="repository|download" data-status="not-tested" data-difficulty="">
+          <a class="card-main" href="p/developer-roadmap/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">DR</span>
+              <span class="card-category">其他开源项目</span>
+            </div>
+            <h3 class="card-title">developer-roadmap</h3>
+            <p class="card-summary">前端、后端、DevOps 的学习路线图，适合用来对照自己的知识缺口。</p>
+            <ul class="card-tags"><li>路线图</li><li>前端</li><li>面试</li></ul>
+            <div class="card-meta">
+              <span class="lang">TypeScript</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>37 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/nilbuild/developer-roadmap" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 developer-roadmap">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-4" data-id="free-programming-books" data-category="其他开源项目" data-languages="Python" data-types="repository|download" data-status="not-tested" data-difficulty="">
+          <a class="card-main" href="p/free-programming-books/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">FP</span>
+              <span class="card-category">其他开源项目</span>
+            </div>
+            <h3 class="card-title">free-programming-books</h3>
+            <p class="card-summary">免费编程书籍清单，按语言和主题分类，中文资源也有不少。</p>
+            <ul class="card-tags"><li>书单</li><li>免费</li><li>多语言</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>39.9 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/EbookFoundation/free-programming-books" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 free-programming-books">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-5" data-id="ollama" data-category="人工智能与机器学习" data-languages="Go" data-types="repository|download" data-status="not-tested" data-difficulty="">
+          <a class="card-main" href="p/ollama/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">OL</span>
+              <span class="card-category">人工智能与机器学习</span>
+            </div>
+            <h3 class="card-title">Ollama</h3>
+            <p class="card-summary">一条命令在本机跑 Llama、Qwen、DeepSeek 等模型，适合本地实验和隐私敏感场景。</p>
+            <ul class="card-tags"><li>本地模型</li><li>CLI</li><li>推理</li></ul>
+            <div class="card-meta">
+              <span class="lang">Go</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>18.4 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/ollama/ollama" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 Ollama">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-5" data-id="langchain" data-category="人工智能与机器学习" data-languages="Python" data-types="repository|download" data-status="not-tested" data-difficulty="">
+          <a class="card-main" href="p/langchain/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">LC</span>
+              <span class="card-category">人工智能与机器学习</span>
+            </div>
+            <h3 class="card-title">LangChain</h3>
+            <p class="card-summary">构建 LLM 应用的开发框架，链式调用、工具、RAG 都有现成组件，适合快速搭原型。</p>
+            <ul class="card-tags"><li>LLM</li><li>Agent</li><li>RAG</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>14.8 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/langchain-ai/langchain" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 LangChain">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-6" data-id="lazygit" data-category="开发工具与自动化" data-languages="Go" data-types="repository|download" data-status="not-tested" data-difficulty="">
+          <a class="card-main" href="p/lazygit/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">LG</span>
+              <span class="card-category">开发工具与自动化</span>
+            </div>
+            <h3 class="card-title">lazygit</h3>
+            <p class="card-summary">终端里的 Git 图形界面，提交、切分支、rebase 都能用键盘完成。</p>
+            <ul class="card-tags"><li>Git</li><li>TUI</li><li>效率</li></ul>
+            <div class="card-meta">
+              <span class="lang">Go</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>8.3 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/jesseduffield/lazygit" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 lazygit">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-6" data-id="ripgrep" data-category="开发工具与自动化" data-languages="Rust" data-types="repository|download" data-status="not-tested" data-difficulty="">
+          <a class="card-main" href="p/ripgrep/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">RG</span>
+              <span class="card-category">开发工具与自动化</span>
+            </div>
+            <h3 class="card-title">ripgrep</h3>
+            <p class="card-summary">比 grep 快一个数量级的搜索工具，默认跳过 .gitignore 里的文件。</p>
+            <ul class="card-tags"><li>CLI</li><li>搜索</li><li>Rust</li></ul>
+            <div class="card-meta">
+              <span class="lang">Rust</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>6.9 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/BurntSushi/ripgrep" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 ripgrep">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-4" data-id="excalidraw" data-category="Web 与软件开发" data-languages="TypeScript" data-types="repository|download" data-status="not-tested" data-difficulty="">
+          <a class="card-main" href="p/excalidraw/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">EC</span>
+              <span class="card-category">Web 与软件开发</span>
+            </div>
+            <h3 class="card-title">Excalidraw</h3>
+            <p class="card-summary">打开浏览器就能画的手绘风格白板，画流程图和架构草图很顺手，不注册也能用。</p>
+            <ul class="card-tags"><li>白板</li><li>协作</li><li>Canvas</li></ul>
+            <div class="card-meta">
+              <span class="lang">TypeScript</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>13.4 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/excalidraw/excalidraw" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 Excalidraw">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-1" data-id="ga-path-planning" data-category="算法与数学建模" data-languages="Python" data-types="snippet" data-status="experiment-verified" data-difficulty="进阶">
+          <a class="card-main" href="p/ga-path-planning/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">GA</span>
+              <span class="card-category">算法与数学建模</span>
+            </div>
+            <h3 class="card-title">遗传算法求解路径规划</h3>
+            <p class="card-summary">用遗传算法求解路径顺序优化，带种群、交叉、变异和适应度断言。</p>
+            <ul class="card-tags"><li>遗传算法</li><li>路径规划</li><li>智能优化</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-experiment-verified">实验已验证</span>
+              <span class="badge type-snippet">代码片段</span>
+              
+            </div>
+          </a>
+          
+        </article>
+        <article class="project-card tone-2" data-id="dijkstra-path" data-category="算法与数学建模" data-languages="Python" data-types="snippet" data-status="experiment-verified" data-difficulty="入门">
+          <a class="card-main" href="p/dijkstra-path/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">DJ</span>
+              <span class="card-category">算法与数学建模</span>
+            </div>
+            <h3 class="card-title">Dijkstra 最短路径</h3>
+            <p class="card-summary">手写 Dijkstra 最短路径，优先队列加路径回溯，附内置断言。</p>
+            <ul class="card-tags"><li>路径规划</li><li>最短路径</li><li>图算法</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-experiment-verified">实验已验证</span>
+              <span class="badge type-snippet">代码片段</span>
+              
+            </div>
+          </a>
+          
+        </article>
+        <article class="project-card tone-3" data-id="knn-classify" data-category="人工智能与机器学习" data-languages="Python" data-types="snippet" data-status="experiment-verified" data-difficulty="入门">
+          <a class="card-main" href="p/knn-classify/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">KN</span>
+              <span class="card-category">人工智能与机器学习</span>
+            </div>
+            <h3 class="card-title">KNN 图像分类入门</h3>
+            <p class="card-summary">用 scikit-learn 的 KNN 做图像分类，含训练、评估与准确率输出。</p>
+            <ul class="card-tags"><li>图像分类</li><li>KNN</li><li>机器学习</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-experiment-verified">实验已验证</span>
+              <span class="badge type-snippet">代码片段</span>
+              
+            </div>
+          </a>
+          
+        </article>
+        <article class="project-card tone-4" data-id="flask-student-system" data-category="Web 与软件开发" data-languages="Python" data-types="snippet" data-status="smoke-tested" data-difficulty="入门">
+          <a class="card-main" href="p/flask-student-system/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">FS</span>
+              <span class="card-category">Web 与软件开发</span>
+            </div>
+            <h3 class="card-title">Flask 学生管理系统（单文件）</h3>
+            <p class="card-summary">单文件 Flask 学生管理系统，自带 SQLite 与增删改查接口。</p>
+            <ul class="card-tags"><li>Flask</li><li>学生管理系统</li><li>毕设</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-smoke-tested">基本启动已测试</span>
+              <span class="badge type-snippet">代码片段</span>
+              
+            </div>
+          </a>
+          
+        </article>
+        <article class="project-card tone-1" data-id="face-recognition" data-category="人工智能与机器学习" data-languages="Python" data-types="repository|download" data-status="not-tested" data-difficulty="入门">
+          <a class="card-main" href="p/face-recognition/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">FR</span>
+              <span class="card-category">人工智能与机器学习</span>
+            </div>
+            <h3 class="card-title">face_recognition</h3>
+            <p class="card-summary">几行 Python 就能做人脸检测与比对，入门人脸识别最常用的一站式库。</p>
+            <ul class="card-tags"><li>人脸识别</li><li>dlib</li><li>计算机视觉</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>5.7 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/ageitgey/face_recognition" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 face_recognition">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-2" data-id="insightface" data-category="人工智能与机器学习" data-languages="Python" data-types="repository|download" data-status="not-tested" data-difficulty="高级">
+          <a class="card-main" href="p/insightface/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">IF</span>
+              <span class="card-category">人工智能与机器学习</span>
+            </div>
+            <h3 class="card-title">InsightFace</h3>
+            <p class="card-summary">工业级人脸检测与识别工具箱，ArcFace 模型和训练推理代码齐全。</p>
+            <ul class="card-tags"><li>人脸识别</li><li>ArcFace</li><li>模型训练</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>3 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/deepinsight/insightface" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 InsightFace">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-3" data-id="waiter-facerecognition-python" data-category="人工智能与机器学习" data-languages="Python" data-types="repository|download" data-status="not-tested" data-difficulty="高级">
+          <a class="card-main" href="p/waiter-facerecognition-python/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">WF</span>
+              <span class="card-category">人工智能与机器学习</span>
+            </div>
+            <h3 class="card-title">人脸识别考勤系统（Python 后端）</h3>
+            <p class="card-summary">本科毕设级别的人脸识别考勤后端，含人脸录入、识别与考勤管理。</p>
+            <ul class="card-tags"><li>人脸识别</li><li>FaceNet</li><li>考勤系统</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>305</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/waiterxiaoyy/waiter-facerecognition-python" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 人脸识别考勤系统（Python 后端）">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-4" data-id="ultralytics" data-category="人工智能与机器学习" data-languages="Python" data-types="repository|download" data-status="not-tested" data-difficulty="进阶">
+          <a class="card-main" href="p/ultralytics/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">UL</span>
+              <span class="card-category">人工智能与机器学习</span>
+            </div>
+            <h3 class="card-title">Ultralytics YOLO</h3>
+            <p class="card-summary">YOLO 官方主仓库，检测、分割、分类、姿态和跟踪一个框架全包。</p>
+            <ul class="card-tags"><li>YOLO</li><li>目标检测</li><li>图像分类</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>6.3 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/ultralytics/ultralytics" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 Ultralytics YOLO">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-5" data-id="darknet" data-category="人工智能与机器学习" data-languages="C" data-types="repository|download" data-status="not-tested" data-difficulty="高级">
+          <a class="card-main" href="p/darknet/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">DK</span>
+              <span class="card-category">人工智能与机器学习</span>
+            </div>
+            <h3 class="card-title">Darknet（YOLOv4）</h3>
+            <p class="card-summary">YOLOv4 作者维护的 C 语言实现，Windows 下也能编译运行的检测框架。</p>
+            <ul class="card-tags"><li>YOLO</li><li>目标检测</li><li>C</li></ul>
+            <div class="card-meta">
+              <span class="lang">C</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>2.2 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/AlexeyAB/darknet" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 Darknet（YOLOv4）">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-6" data-id="deep-learning-for-image-processing" data-category="人工智能与机器学习" data-languages="Python" data-types="repository|download" data-status="not-tested" data-difficulty="入门">
+          <a class="card-main" href="p/deep-learning-for-image-processing/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">DL</span>
+              <span class="card-category">人工智能与机器学习</span>
+            </div>
+            <h3 class="card-title">深度学习图像处理合集</h3>
+            <p class="card-summary">从图像分类到目标检测的 PyTorch 实战合集，配套视频讲解。</p>
+            <ul class="card-tags"><li>图像分类</li><li>目标检测</li><li>PyTorch</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>2.6 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/WZMIAOMIAO/deep-learning-for-image-processing" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 深度学习图像处理合集">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-1" data-id="scikit-learn" data-category="人工智能与机器学习" data-languages="Python" data-types="repository|download" data-status="not-tested" data-difficulty="入门">
+          <a class="card-main" href="p/scikit-learn/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">SL</span>
+              <span class="card-category">人工智能与机器学习</span>
+            </div>
+            <h3 class="card-title">scikit-learn</h3>
+            <p class="card-summary">Python 机器学习的标准库，分类、回归、聚类和评估工具齐全。</p>
+            <ul class="card-tags"><li>机器学习</li><li>预测模型</li><li>分类</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>6.8 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/scikit-learn/scikit-learn" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 scikit-learn">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-2" data-id="xgboost" data-category="人工智能与机器学习" data-languages="C++" data-types="repository|download" data-status="not-tested" data-difficulty="进阶">
+          <a class="card-main" href="p/xgboost/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">XG</span>
+              <span class="card-category">人工智能与机器学习</span>
+            </div>
+            <h3 class="card-title">XGBoost</h3>
+            <p class="card-summary">梯度提升树的高性能实现，表格数据预测里的常胜方案。</p>
+            <ul class="card-tags"><li>机器学习</li><li>预测模型</li><li>GBDT</li></ul>
+            <div class="card-meta">
+              <span class="lang">C++</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>2.9 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/dmlc/xgboost" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 XGBoost">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-3" data-id="lightgbm" data-category="人工智能与机器学习" data-languages="C++" data-types="repository|download" data-status="not-tested" data-difficulty="进阶">
+          <a class="card-main" href="p/lightgbm/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">LB</span>
+              <span class="card-category">人工智能与机器学习</span>
+            </div>
+            <h3 class="card-title">LightGBM</h3>
+            <p class="card-summary">梯度提升树框架，训练快、内存省，适合大规模表格预测。</p>
+            <ul class="card-tags"><li>机器学习</li><li>预测模型</li><li>GBDT</li></ul>
+            <div class="card-meta">
+              <span class="lang">C++</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>1.9 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/lightgbm-org/LightGBM" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 LightGBM">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-4" data-id="house-price-prediction" data-category="人工智能与机器学习" data-languages="Python" data-types="repository|download" data-status="not-tested" data-difficulty="进阶">
+          <a class="card-main" href="p/house-price-prediction/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">HP</span>
+              <span class="card-category">人工智能与机器学习</span>
+            </div>
+            <h3 class="card-title">房价预测实战</h3>
+            <p class="card-summary">从爬链家数据到模型评估的房价预测完整项目，含两种模型对比。</p>
+            <ul class="card-tags"><li>机器学习</li><li>房价预测</li><li>回归模型</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>250</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/mryuan0428/House-price-prediction" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 房价预测实战">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-5" data-id="networkx" data-category="算法与数学建模" data-languages="Python" data-types="repository|download" data-status="not-tested" data-difficulty="入门">
+          <a class="card-main" href="p/networkx/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">NX</span>
+              <span class="card-category">算法与数学建模</span>
+            </div>
+            <h3 class="card-title">NetworkX</h3>
+            <p class="card-summary">Python 图论与网络分析库，最短路、中心性等算法开箱即用。</p>
+            <ul class="card-tags"><li>图算法</li><li>路径规划</li><li>网络分析</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>1.7 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/networkx/networkx" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 NetworkX">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-6" data-id="or-tools" data-category="算法与数学建模" data-languages="C++" data-types="repository|download" data-status="not-tested" data-difficulty="高级">
+          <a class="card-main" href="p/or-tools/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">OR</span>
+              <span class="card-category">算法与数学建模</span>
+            </div>
+            <h3 class="card-title">OR-Tools</h3>
+            <p class="card-summary">谷歌开源的运筹优化工具箱，求解路径规划、排班与组合优化。</p>
+            <ul class="card-tags"><li>组合优化</li><li>路径规划</li><li>运筹学</li></ul>
+            <div class="card-meta">
+              <span class="lang">C++</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>1.4 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/google/or-tools" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 OR-Tools">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-1" data-id="the-algorithms-python" data-category="算法与数学建模" data-languages="Python" data-types="repository|download" data-status="not-tested" data-difficulty="入门">
+          <a class="card-main" href="p/the-algorithms-python/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">TA</span>
+              <span class="card-category">算法与数学建模</span>
+            </div>
+            <h3 class="card-title">TheAlgorithms/Python</h3>
+            <p class="card-summary">用 Python 实现的各种经典算法合集，按主题分类、可直接运行。</p>
+            <ul class="card-tags"><li>算法</li><li>数据结构</li><li>学习资源</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>22.5 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/TheAlgorithms/Python" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 TheAlgorithms/Python">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-2" data-id="genetic-algorithm-path-planning" data-category="算法与数学建模" data-languages="Python" data-types="repository|download" data-status="not-tested" data-difficulty="进阶">
+          <a class="card-main" href="p/genetic-algorithm-path-planning/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">GP</span>
+              <span class="card-category">算法与数学建模</span>
+            </div>
+            <h3 class="card-title">遗传算法路径规划</h3>
+            <p class="card-summary">用遗传算法做路径规划的 Python 实现，参数集中在配置文件里。</p>
+            <ul class="card-tags"><li>遗传算法</li><li>路径规划</li><li>智能优化</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>54</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/Yaaximus/genetic-algorithm-path-planning" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 遗传算法路径规划">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-3" data-id="robot-plan" data-category="算法与数学建模" data-languages="Python" data-types="repository|download" data-status="not-tested" data-difficulty="进阶">
+          <a class="card-main" href="p/robot-plan/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">RP</span>
+              <span class="card-category">算法与数学建模</span>
+            </div>
+            <h3 class="card-title">带障碍路径规划仿真</h3>
+            <p class="card-summary">带障碍物的路径规划仿真，用进化算法优化路径并可视化结果。</p>
+            <ul class="card-tags"><li>遗传算法</li><li>路径规划</li><li>仿真</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>56</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/streamer-AP/robot-plan" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 带障碍路径规划仿真">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-4" data-id="pandas" data-category="数据分析与可视化" data-languages="Python" data-types="repository|download" data-status="not-tested" data-difficulty="入门">
+          <a class="card-main" href="p/pandas/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">PD</span>
+              <span class="card-category">数据分析与可视化</span>
+            </div>
+            <h3 class="card-title">pandas</h3>
+            <p class="card-summary">Python 数据分析的核心库，表格清洗、聚合、合并都靠它。</p>
+            <ul class="card-tags"><li>数据分析</li><li>DataFrame</li><li>数据清洗</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>5 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/pandas-dev/pandas" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 pandas">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-5" data-id="matplotlib" data-category="数据分析与可视化" data-languages="Python" data-types="repository|download" data-status="not-tested" data-difficulty="入门">
+          <a class="card-main" href="p/matplotlib/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">MP</span>
+              <span class="card-category">数据分析与可视化</span>
+            </div>
+            <h3 class="card-title">Matplotlib</h3>
+            <p class="card-summary">Python 最经典的绘图库，论文级别的静态图表基本都能画。</p>
+            <ul class="card-tags"><li>数据可视化</li><li>绘图</li><li>Python</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>2.3 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/matplotlib/matplotlib" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 Matplotlib">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-6" data-id="echarts" data-category="数据分析与可视化" data-languages="TypeScript" data-types="repository|download" data-status="not-tested" data-difficulty="入门">
+          <a class="card-main" href="p/echarts/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">ECH</span>
+              <span class="card-category">数据分析与可视化</span>
+            </div>
+            <h3 class="card-title">Apache ECharts</h3>
+            <p class="card-summary">开源前端图表库，交互和动画成熟，国内后台系统常用。</p>
+            <ul class="card-tags"><li>数据可视化</li><li>图表</li><li>前端</li></ul>
+            <div class="card-meta">
+              <span class="lang">TypeScript</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>6.8 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/apache/echarts" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 Apache ECharts">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-1" data-id="superset" data-category="数据分析与可视化" data-languages="Python" data-types="repository|download" data-status="not-tested" data-difficulty="进阶">
+          <a class="card-main" href="p/superset/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">SS</span>
+              <span class="card-category">数据分析与可视化</span>
+            </div>
+            <h3 class="card-title">Apache Superset</h3>
+            <p class="card-summary">Apache 出品的开源 BI 平台，连上数据库就能拖拽出数据看板。</p>
+            <ul class="card-tags"><li>数据可视化</li><li>BI</li><li>看板</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>7.5 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/apache/superset" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 Apache Superset">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-2" data-id="streamlit" data-category="数据分析与可视化" data-languages="Python" data-types="repository|download" data-status="not-tested" data-difficulty="入门">
+          <a class="card-main" href="p/streamlit/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">ST</span>
+              <span class="card-category">数据分析与可视化</span>
+            </div>
+            <h3 class="card-title">Streamlit</h3>
+            <p class="card-summary">用纯 Python 写数据应用，脚本一存盘页面就自动刷新。</p>
+            <ul class="card-tags"><li>数据可视化</li><li>数据应用</li><li>Python</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>4.6 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/streamlit/streamlit" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 Streamlit">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-3" data-id="grafana" data-category="数据分析与可视化" data-languages="TypeScript" data-types="repository|download" data-status="not-tested" data-difficulty="进阶">
+          <a class="card-main" href="p/grafana/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">GF</span>
+              <span class="card-category">数据分析与可视化</span>
+            </div>
+            <h3 class="card-title">Grafana</h3>
+            <p class="card-summary">开源的监控与可观测性面板，把指标、日志和链路画成看板。</p>
+            <ul class="card-tags"><li>数据可视化</li><li>监控</li><li>看板</li></ul>
+            <div class="card-meta">
+              <span class="lang">TypeScript</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>7.7 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/grafana/grafana" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 Grafana">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-4" data-id="book-manager" data-category="Web 与软件开发" data-languages="Java" data-types="repository|download" data-status="not-tested" data-difficulty="进阶">
+          <a class="card-main" href="p/book-manager/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">BM</span>
+              <span class="card-category">Web 与软件开发</span>
+            </div>
+            <h3 class="card-title">JavaWeb 图书管理系统</h3>
+            <p class="card-summary">JavaWeb 图书管理系统，借阅、归还、图书与读者管理都已实现。</p>
+            <ul class="card-tags"><li>Java</li><li>图书管理系统</li><li>JavaWeb</li></ul>
+            <div class="card-meta">
+              <span class="lang">Java</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>380</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/LovebuildJ/book-manager" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 JavaWeb 图书管理系统">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-5" data-id="bookmanager2" data-category="Web 与软件开发" data-languages="Java" data-types="repository|download" data-status="not-tested" data-difficulty="进阶">
+          <a class="card-main" href="p/bookmanager2/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">B2</span>
+              <span class="card-category">Web 与软件开发</span>
+            </div>
+            <h3 class="card-title">图书管理系统（SpringBoot + Vue）</h3>
+            <p class="card-summary">SpringBoot + Vue 前后端分离的图书管理系统，适合改造成毕设。</p>
+            <ul class="card-tags"><li>Java</li><li>图书管理系统</li><li>SpringBoot</li></ul>
+            <div class="card-meta">
+              <span class="lang">Java</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>377</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/huanfenz/BookManager2" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 图书管理系统（SpringBoot + Vue）">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-6" data-id="student-management-system" data-category="Web 与软件开发" data-languages="Python|CSS" data-types="repository|download" data-status="not-tested" data-difficulty="入门">
+          <a class="card-main" href="p/student-management-system/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">SM</span>
+              <span class="card-category">Web 与软件开发</span>
+            </div>
+            <h3 class="card-title">Flask 学生管理系统</h3>
+            <p class="card-summary">Python + Flask + MySQL 的学生管理系统，含课程与教师模块。</p>
+            <ul class="card-tags"><li>Flask</li><li>学生管理系统</li><li>Python</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span><span class="lang">CSS</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>42</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/wuyongch/-Student-management-system" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 Flask 学生管理系统">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-1" data-id="graduation-design-management-system" data-category="Web 与软件开发" data-languages="Java" data-types="repository|download" data-status="not-tested" data-difficulty="进阶">
+          <a class="card-main" href="p/graduation-design-management-system/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">GD</span>
+              <span class="card-category">Web 与软件开发</span>
+            </div>
+            <h3 class="card-title">毕业设计管理系统（SSM）</h3>
+            <p class="card-summary">SSM 实现的毕业设计管理系统，覆盖报题、选题、审核到答辩全流程。</p>
+            <ul class="card-tags"><li>毕业设计管理系统</li><li>Java</li><li>SSM</li></ul>
+            <div class="card-meta">
+              <span class="lang">Java</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>77</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/Zhangchao999/Graduation-Design-Management-System" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 毕业设计管理系统（SSM）">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-2" data-id="graduation" data-category="Web 与软件开发" data-languages="JavaScript" data-types="repository|download" data-status="not-tested" data-difficulty="高级">
+          <a class="card-main" href="p/graduation/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">GR</span>
+              <span class="card-category">Web 与软件开发</span>
+            </div>
+            <h3 class="card-title">毕业设计管理系统（graduation）</h3>
+            <p class="card-summary">功能划分清晰的毕业设计管理系统，选题、流程、文件管理齐全。</p>
+            <ul class="card-tags"><li>毕业设计管理系统</li><li>Java</li><li>SSM</li></ul>
+            <div class="card-meta">
+              <span class="lang">JavaScript</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>161</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/Li-Zhan/graduation" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 毕业设计管理系统（graduation）">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-3" data-id="appflowy" data-category="移动应用与桌面软件" data-languages="Dart" data-types="repository|download" data-status="not-tested" data-difficulty="进阶">
+          <a class="card-main" href="p/appflowy/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">AF</span>
+              <span class="card-category">移动应用与桌面软件</span>
+            </div>
+            <h3 class="card-title">AppFlowy</h3>
+            <p class="card-summary">开源的 Notion 替代品，笔记、看板、日历可自托管，数据在自己手里。</p>
+            <ul class="card-tags"><li>笔记</li><li>自托管</li><li>Flutter</li></ul>
+            <div class="card-meta">
+              <span class="lang">Dart</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>7.8 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/AppFlowy-IO/AppFlowy" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 AppFlowy">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-4" data-id="powertoys" data-category="移动应用与桌面软件" data-languages="C" data-types="repository|download" data-status="not-tested" data-difficulty="入门">
+          <a class="card-main" href="p/powertoys/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">PT</span>
+              <span class="card-category">移动应用与桌面软件</span>
+            </div>
+            <h3 class="card-title">PowerToys</h3>
+            <p class="card-summary">微软官方 Windows 效率工具集，窗口布局、批量重命名、取色都齐。</p>
+            <ul class="card-tags"><li>Windows</li><li>效率工具</li><li>桌面</li></ul>
+            <div class="card-meta">
+              <span class="lang">C</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>13.9 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/microsoft/PowerToys" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 PowerToys">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-5" data-id="koodo-reader" data-category="移动应用与桌面软件" data-languages="JavaScript" data-types="repository|download" data-status="not-tested" data-difficulty="入门">
+          <a class="card-main" href="p/koodo-reader/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">KR</span>
+              <span class="card-category">移动应用与桌面软件</span>
+            </div>
+            <h3 class="card-title">Koodo Reader</h3>
+            <p class="card-summary">跨平台电子书阅读器，支持 EPUB、PDF 等格式，可同步与备份书库。</p>
+            <ul class="card-tags"><li>电子书</li><li>阅读器</li><li>跨平台</li></ul>
+            <div class="card-meta">
+              <span class="lang">JavaScript</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>2.9 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/koodo-reader/koodo-reader" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 Koodo Reader">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-6" data-id="godot" data-category="移动应用与桌面软件" data-languages="C++" data-types="repository|download" data-status="not-tested" data-difficulty="进阶">
+          <a class="card-main" href="p/godot/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">GT</span>
+              <span class="card-category">移动应用与桌面软件</span>
+            </div>
+            <h3 class="card-title">Godot 引擎</h3>
+            <p class="card-summary">开源游戏引擎，2D/3D 都能做，编辑器轻量、可导出平台多。</p>
+            <ul class="card-tags"><li>游戏引擎</li><li>开源</li><li>跨平台</li></ul>
+            <div class="card-meta">
+              <span class="lang">C++</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>11.9 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/godotengine/godot" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 Godot 引擎">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-1" data-id="hello-algo" data-category="其他开源项目" data-languages="Java" data-types="repository|download" data-status="not-tested" data-difficulty="入门">
+          <a class="card-main" href="p/hello-algo/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">HA</span>
+              <span class="card-category">其他开源项目</span>
+            </div>
+            <h3 class="card-title">Hello 算法</h3>
+            <p class="card-summary">动画图解的数据结构与算法教程，提供多语言可运行代码。</p>
+            <ul class="card-tags"><li>算法</li><li>数据结构</li><li>教程</li></ul>
+            <div class="card-meta">
+              <span class="lang">Java</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>13.1 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/krahets/hello-algo" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 Hello 算法">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-2" data-id="hellogithub" data-category="其他开源项目" data-languages="Python" data-types="repository|download" data-status="not-tested" data-difficulty="入门">
+          <a class="card-main" href="p/hellogithub/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">HG</span>
+              <span class="card-category">其他开源项目</span>
+            </div>
+            <h3 class="card-title">HelloGitHub</h3>
+            <p class="card-summary">每月一期开源项目推荐，专挑有趣、好上手的项目。</p>
+            <ul class="card-tags"><li>开源项目</li><li>月刊</li><li>资源推荐</li></ul>
+            <div class="card-meta">
+              <span class="lang">Python</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>18.3 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/521xueweihan/HelloGitHub" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 HelloGitHub">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <article class="project-card tone-3" data-id="weekly" data-category="其他开源项目" data-languages="" data-types="repository|download" data-status="not-tested" data-difficulty="入门">
+          <a class="card-main" href="p/weekly/">
+            <div class="card-head">
+              <span class="card-initial" aria-hidden="true">WK</span>
+              <span class="card-category">其他开源项目</span>
+            </div>
+            <h3 class="card-title">科技爱好者周刊</h3>
+            <p class="card-summary">阮一峰的科技爱好者周刊，每周五更新，记录工具、文章与思考。</p>
+            <ul class="card-tags"><li>周刊</li><li>科技资讯</li><li>技术阅读</li></ul>
+            <div class="card-meta">
+              <span class="lang">语言未提供</span>
+              <span class="badge status-not-tested">未测试</span>
+              <span class="badge type-repository">原始仓库</span><span class="badge type-download">可下载</span>
+              <span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>10.6 万</span>
+            </div>
+          </a>
+          <a class="card-repo" href="https://github.com/ruanyf/weekly" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 打开 科技爱好者周刊">GitHub<span aria-hidden="true"> ↗</span></a>
+        </article>
+        <!-- BUILD:PROJECTS:END -->
+      </div>
 
-      <noscript>
-        <p class="empty-state">项目清单需要 JavaScript 渲染，请在浏览器中开启 JavaScript。</p>
-      </noscript>
+      <noscript><p class="muted noscript-note">搜索与筛选需要 JavaScript。上面的项目列表无需脚本即可阅读和点击。</p></noscript>
 
-      <p class="empty-state" id="emptyState" hidden>没有找到匹配的项目，换个关键词试试。</p>
+      <p class="empty-state" id="emptyState" hidden>
+        没有找到匹配的项目。试试换个关键词，或<a href="#projects" data-action="reset">清空筛选</a>。
+      </p>
 
       <div class="projects-note">
         <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
-        <span>所有项目均直达 GitHub 原仓库。Star 数为整理时的大致数量，会随时间变化。</span>
+        <span>项目均指向原始仓库；Star 数为收录当日核对值，会随时间变化。未实际运行的项目不会标记为已验证。</span>
       </div>
     </div>
   </section>
 
-  <!-- Standards -->
+  <!-- 推荐与最近收录 -->
+  <section class="section picks" id="picks">
+    <div class="wrap picks-grid">
+      <div>
+        <header class="section-head section-head--compact">
+          <div>
+            <span class="section-index">03 — 编辑推荐</span>
+            <h2 class="section-title">先看这几个</h2>
+          </div>
+        </header>
+        <div class="pick-list" id="featuredList"></div>
+      </div>
+      <div>
+        <header class="section-head section-head--compact">
+          <div>
+            <span class="section-index">04 — 最近收录</span>
+            <h2 class="section-title">新捡回来的</h2>
+          </div>
+        </header>
+        <ul class="recent-list" id="recentList"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 收录标准 -->
   <section class="standards-band" id="standards">
     <div class="wrap">
       <header class="section-head section-head--band">
         <div>
-          <span class="section-index">03 — 挑选标准</span>
+          <span class="section-index">05 — 收录标准</span>
           <h2 class="section-title">不是什么都收</h2>
         </div>
-        <p class="section-note">一点点门槛，省你很多时间</p>
+        <p class="section-note">只收真实存在、能打开、有源码的项目</p>
       </header>
       <ol class="standard-list">
         <li class="standard reveal">
           <span class="standard-num">01</span>
-          <h3>实际用过</h3>
-          <p>推荐之前，至少在自己的工作流里用过一段时间，确认它真的解决问题，而不是看起来很美。</p>
+          <h3>真实可用</h3>
+          <p>仓库地址、许可证与默认分支均经过核对；失效或纯占位项目不收。</p>
         </li>
         <li class="standard reveal">
           <span class="standard-num">02</span>
-          <h3>仍在维护</h3>
-          <p>最近一年有提交，issue 有人回应，文档不是三年前的。开源项目最怕写着写着就没人了。</p>
+          <h3>对学习有帮助</h3>
+          <p>优先收录能用于课程设计、毕业设计、算法练习或科研入门的项目。</p>
         </li>
         <li class="standard reveal">
           <span class="standard-num">03</span>
-          <h3>上手不难</h3>
-          <p>文档清楚，半小时内能跑起来。再强的工具，如果装三天还没成功，也不适合放进这份清单。</p>
+          <h3>验证状态透明</h3>
+          <p>未测试、装过依赖、能启动、实验验证是四种状态，不把「下载成功」当成「跑通」。</p>
         </li>
       </ol>
     </div>
   </section>
 
-  <!-- About -->
+  <!-- 关于 -->
   <section class="section about" id="about">
     <div class="wrap about-grid">
-      <div class="about-media reveal">
-        <div class="about-photo">
-          <img src="assets/img/avatar.svg" alt="收藏者林之的插画头像：短发、圆框眼镜、红色围巾" width="240" height="240" loading="lazy" decoding="async">
-        </div>
-        <span class="about-badge">since 2022</span>
-      </div>
-
       <div class="about-copy reveal">
-        <span class="section-index">04 — 关于</span>
+        <span class="section-index">06 — 关于</span>
         <h2 class="section-title">关于这份清单</h2>
         <p>
-          我是林之，白天做界面设计，晚上翻 GitHub。这个站用来收那些
-          「早该被更多人知道」的开源项目——不追热点，也不做排行榜，
-          只收真正能解决问题的。
+          这里收的是大学生真正用得上的开源项目：课设、毕设、算法作业、科研复现，
+          都能从这里找到一个起点。每个项目都附中文简介、语言、技术栈和原始仓库入口。
         </p>
         <p>
-          清单每月整理一次，项目都直达 GitHub 原仓库。如果某个项目帮到了你，
-          或者你想推荐一个，欢迎写信告诉我。
+          数据来自 GitHub 公共 API 与人工整理；无法确认的字段会明确写「未提供」，
+          不会为了页面好看而编造。发现错误或想推荐项目，欢迎写信告诉我。
         </p>
-
         <dl class="facts">
-          <div>
-            <dt>已收录</dt>
-            <dd><span data-total>13</span> 个项目</dd>
-          </div>
-          <div>
-            <dt>分类</dt>
-            <dd><span data-category-count>6</span> 个</dd>
-          </div>
-          <div>
-            <dt>更新</dt>
-            <dd>每月一次</dd>
-          </div>
-          <div>
-            <dt>推荐 / 纠错</dt>
-            <dd><a href="mailto:hi@shiyi.notes">hi@shiyi.notes</a></dd>
-          </div>
+          <div><dt>已收录</dt><dd><span data-stat-projects>0</span> 个项目</dd></div>
+          <div><dt>分类</dt><dd><span data-stat-categories>0</span> 个</dd></div>
+          <div><dt>反馈</dt><dd><a href="mailto:hi@shiyi.notes">hi@shiyi.notes</a></dd></div>
         </dl>
-
-        <div class="socials">
-          <a href="mailto:hi@shiyi.notes?subject=%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE">
-            <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>推荐一个项目
-          </a>
-          <a href="https://github.com/kqin517-debug" target="_blank" rel="noopener noreferrer">
-            <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub
-          </a>
-          <a href="#subscribe">
-            <svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>订阅更新
-          </a>
-        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Subscribe -->
-  <section class="subscribe" id="subscribe">
-    <div class="wrap">
-      <div class="subscribe-inner">
-        <div class="subscribe-copy">
-          <span class="section-index">05 — 订阅</span>
-          <h2 class="subscribe-title">每月一封，<br>只寄新捡到的项目。</h2>
-          <p>不刷屏，不推销。下次整理完清单，第一时间发到你的邮箱。</p>
-        </div>
+      <div class="about-subscribe reveal">
+        <h3 class="subscribe-title">想收更新？</h3>
+        <p class="subscribe-text">不定期整理新收录的项目，不发广告。</p>
         <form class="subscribe-form" data-subscribe novalidate>
           <label class="sr-only" for="email">邮箱地址</label>
           <div class="field">
             <input id="email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
-            <button class="btn btn-primary" type="submit">订阅
-              <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
-            </button>
+            <button class="btn btn-primary" type="submit">订阅</button>
           </div>
           <p class="form-hint" data-form-hint>我尊重你的收件箱，随时可以退订。</p>
         </form>
@@ -371,29 +1247,28 @@
           <span class="brand-sub">Open Source Picks</span>
         </span>
       </a>
-      <p>一张慢慢长大的开源清单。把好用的项目捡回来，也把时间留给真正重要的事。</p>
+      <p>面向大学生的开源项目检索站。只收录真实存在、能打开、有源码的项目。</p>
     </div>
 
     <nav class="footer-nav" aria-label="页脚导航">
       <p class="footer-title">浏览</p>
-      <a href="#featured">本期推荐</a>
-      <a href="#projects">全部收藏</a>
-      <a href="#standards">挑选标准</a>
+      <a href="#projects">全部项目</a>
+      <a href="#categories">分类</a>
+      <a href="#standards">收录标准</a>
       <a href="#about">关于</a>
-      <a href="#subscribe">订阅</a>
     </nav>
 
     <div class="footer-contact">
-      <p class="footer-title">联系</p>
+      <p class="footer-title">反馈</p>
       <a href="mailto:hi@shiyi.notes">hi@shiyi.notes</a>
       <a href="https://github.com/kqin517-debug" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <p>每月整理一次<br>欢迎推荐项目或纠正信息</p>
+      <p>发现错误或想推荐项目<br>欢迎写信</p>
     </div>
   </div>
 
   <div class="wrap footer-bottom">
     <span>© 2026 开源拾遗 · Open Source Picks</span>
-    <span>与所收录项目无隶属关系 · Star 数仅供参考</span>
+    <span>项目版权归原作者所有 · 本站仅提供索引与说明</span>
   </div>
 </footer>
 

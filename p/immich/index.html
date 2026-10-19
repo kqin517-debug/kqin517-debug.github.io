@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f7f2e8">
+<meta name="description" content="自托管的照片备份方案，移动端自动上传，界面和体验都很接近 Google Photos。（「开源拾遗」收录 · Web 与软件开发）">
+<title>Immich · 开源拾遗</title>
+
+<link rel="canonical" href="https://kqin517-debug.github.io/p/immich/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="开源拾遗 · Open Source Picks">
+<meta property="og:title" content="Immich · 开源拾遗">
+<meta property="og:description" content="自托管的照片备份方案，移动端自动上传，界面和体验都很接近 Google Photos。（「开源拾遗」收录 · Web 与软件开发）">
+<meta property="og:url" content="https://kqin517-debug.github.io/p/immich/">
+<meta property="og:image" content="https://kqin517-debug.github.io/assets/img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Immich · 开源拾遗项目详情">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Immich · 开源拾遗">
+<meta name="twitter:description" content="自托管的照片备份方案，移动端自动上传，界面和体验都很接近 Google Photos。（「开源拾遗」收录 · Web 与软件开发）">
+<meta name="twitter:image" content="https://kqin517-debug.github.io/assets/img/og-cover.jpg">
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Immich","description":"自托管的照片备份方案，移动端自动上传，界面和体验都很接近 Google Photos。","url":"https://kqin517-debug.github.io/p/immich/","inLanguage":"zh-CN","codeRepository":"https://github.com/immich-app/immich","programmingLanguage":["TypeScript"],"license":"AGPL-3.0","author":{"@type":"Organization","name":"immich-app"},"dateModified":"2026-10-18","dateCreated":"2026-10-18"}</script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23b5482c'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' fill='%23fff8ee' font-family='serif'%3E%E6%8B%BE%3C/text%3E%3C/svg%3E">
+<script>
+  (function () {
+    var root = document.documentElement;
+    root.classList.add("js");
+    // 兜底：任何脚本或资源出错时去掉 .js，让依赖 JS 的隐藏内容直接可见。
+    function failOpen() { root.classList.remove("js"); }
+    window.addEventListener("error", failOpen, true);
+    window.addEventListener("unhandledrejection", failOpen);
+    try {
+      var saved = localStorage.getItem("sg-theme");
+      var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      root.setAttribute("data-theme", theme);
+    } catch (e) {
+      root.setAttribute("data-theme", "light");
+    }
+  })();
+</script>
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="../../assets/css/projects.css">
+<link rel="stylesheet" href="../../assets/css/detail.css">
+</head>
+<body class="page-detail">
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.2 8.2 0 1 0 10.2 10.2Z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.2"/><path d="m3.8 7 8.2 6 8.2-6"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M19 14v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.6l2.9 5.9 6.5.95-4.7 4.58 1.1 6.47L12 17.45 6.2 20.5l1.1-6.47L2.6 9.45l6.5-.95L12 2.6Z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13.8a4.2 4.2 0 0 0 6 0l3-3a4.24 4.24 0 0 0-6-6l-1.6 1.6"/><path d="M14 10.2a4.2 4.2 0 0 0-6 0l-3 3a4.24 4.24 0 0 0 6 6l1.6-1.6"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2.2"/><path d="M15 6.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h1.5"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12 5 5L20 6.5"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.4-2.9 7.7-7 9.5-4.1-1.8-7-5.1-7-9.5V6l7-3Z"/><path d="m9 12 2 2 4-4.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></symbol>
+</svg>
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="brand" href="../../index.html" aria-label="开源拾遗 · 返回首页">
+      <span class="seal" aria-hidden="true">拾</span>
+      <span class="brand-text">
+        <span class="brand-name">开源拾遗</span>
+        <span class="brand-sub">Open Source Picks</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="主导航">
+      <a href="../../index.html#projects">找项目</a>
+      <a href="../../index.html#categories">分类</a>
+      <a href="../../index.html#standards">收录标准</a>
+      <a href="../../index.html#about">关于</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="icon-btn header-github" href="https://github.com/kqin517-debug" target="_blank" rel="noopener noreferrer" aria-label="打开 GitHub" title="GitHub">
+        <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+      </a>
+      <button class="icon-btn theme-toggle" data-theme-toggle type="button" aria-label="切换深色模式" title="切换深浅色">
+        <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" data-menu-toggle type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="打开菜单">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="移动端导航" aria-hidden="true">
+    <a href="../../index.html#projects">找项目</a>
+      <a href="../../index.html#categories">分类</a>
+      <a href="../../index.html#standards">收录标准</a>
+      <a href="../../index.html#about">关于</a>
+  </nav>
+</header>
+
+<main id="main" class="detail-main">
+  <div class="wrap">
+<nav class="breadcrumb" aria-label="面包屑">
+  <ol>
+    <li><a href="../../index.html">首页</a></li>
+    <li><a href="../../index.html#projects">全部项目</a></li>
+    <li aria-current="page">Immich</li>
+  </ol>
+</nav>
+<header class="detail-hero tone-2">
+  <div class="detail-hero-inner">
+    <div class="detail-kicker">
+      <span class="project-cat">Web 与软件开发</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span class="detail-id">immich</span>
+      
+    </div>
+    <h1 class="detail-title">Immich</h1>
+    <p class="detail-sub">原名：immich</p>
+    <p class="detail-lead">自托管的照片备份方案，移动端自动上传，界面和体验都很接近 Google Photos。</p>
+    <ul class="detail-meta" role="list">
+  <li class="detail-meta-item"><span class="inline-lang"><i class="lang-dot" style="--lang:#3178c6" aria-hidden="true"></i>TypeScript</span></li>
+  <li class="detail-meta-item"><span class="meta-label">难度</span><span class="is-missing">未提供</span></li>
+  <li class="detail-meta-item"><svg class="icon icon-star" aria-hidden="true"><use href="#i-star"/></svg>12 万+</li>
+  <li class="detail-meta-item"><span class="meta-label">许可证</span>AGPL-3.0</li>
+</ul>
+    <div class="detail-actions">
+  <a class="btn btn-primary" href="https://github.com/immich-app/immich" target="_blank" rel="noopener noreferrer">打开原始仓库
+    <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg>
+  </a>
+  <a class="btn btn-ghost" href="https://github.com/immich-app/immich/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">下载 ZIP
+    <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+  </a>
+  <a class="link-arrow" href="#access">查看获取方式
+    <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+  </a>
+</div>
+    <p class="detail-dates">收录于 2026-10-18 · 最后核对 2026-10-18</p>
+  </div>
+</header>
+    <div class="detail-grid">
+      <article class="detail-body">
+<section class="detail-sec" id="overview" aria-labelledby="overview-title">
+  <header class="detail-sec-head">
+    <span class="detail-sec-num" aria-hidden="true">01</span>
+    <h2 class="detail-sec-title" id="overview-title">概览</h2>
+    <p class="detail-sec-note">所有字段以收录时的公开信息为准</p>
+  </header>
+  <div class="detail-sec-body">
+<dl class="fact-grid">
+    <div class="fact">
+      <dt>项目名称</dt>
+      <dd>Immich</dd>
+    </div>
+    <div class="fact">
+      <dt>原始名称</dt>
+      <dd>immich</dd>
+    </div>
+    <div class="fact">
+      <dt>别名</dt>
+      <dd><span class="is-missing">未提供</span></dd>
+    </div>
+    <div class="fact fact--wide">
+      <dt>一句话简介</dt>
+      <dd>自托管的照片备份方案，移动端自动上传，界面和体验都很接近 Google Photos。</dd>
+    </div>
+    <div class="fact fact--wide">
+      <dt>详细介绍</dt>
+      <dd><span class="is-missing">未提供</span></dd>
+    </div>
+    <div class="fact">
+      <dt>分类</dt>
+      <dd>Web 与软件开发</dd>
+    </div>
+    <div class="fact">
+      <dt>语言</dt>
+      <dd><span class="inline-lang"><i class="lang-dot" style="--lang:#3178c6" aria-hidden="true"></i>TypeScript</span></dd>
+    </div>
+    <div class="fact fact--wide">
+      <dt>技术栈</dt>
+      <dd><span class="is-missing">未提供</span></dd>
+    </div>
+    <div class="fact">
+      <dt>上手难度</dt>
+      <dd><span class="is-missing">未提供</span></dd>
+    </div>
+    <div class="fact">
+      <dt>Star 数</dt>
+      <dd>12 万+ <span class="fact-sub">（116,585，核对时）</span></dd>
+    </div>
+    <div class="fact">
+      <dt>许可证</dt>
+      <dd><span class="license-pill">AGPL-3.0</span></dd>
+    </div>
+    <div class="fact">
+      <dt>作者</dt>
+      <dd>immich-app</dd>
+    </div>
+</dl>
+  </div>
+</section>
+<section class="detail-sec" id="access" aria-labelledby="access-title">
+  <header class="detail-sec-head">
+    <span class="detail-sec-num" aria-hidden="true">02</span>
+    <h2 class="detail-sec-title" id="access-title">获取方式</h2>
+    <p class="detail-sec-note">优先使用原始仓库</p>
+  </header>
+  <div class="detail-sec-body">
+<p class="sec-intro">本项目通过以下方式获取：<span class="pill-row"><span class="pill pill--type">原始仓库</span><span class="pill pill--type">ZIP 下载</span></span></p>
+<div class="access-card access-repo">
+  <div class="access-head">
+    <span class="access-label">
+      <svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>
+      原始仓库
+    </span>
+    <span class="license-pill">AGPL-3.0</span>
+  </div>
+  <p class="access-link"><a href="https://github.com/immich-app/immich" target="_blank" rel="noopener noreferrer">immich-app/immich <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></p>
+  <p class="access-note">代码、Issue 与最新文档以原始仓库为准；本站只做中文整理，不复制第三方代码。</p>
+  <a class="btn btn-primary access-btn" href="https://github.com/immich-app/immich" target="_blank" rel="noopener noreferrer">打开原始仓库
+    <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg>
+  </a>
+</div>
+<div class="access-card access-download">
+  <div class="access-head">
+    <span class="access-label">
+      <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+      ZIP 下载
+    </span>
+    <span class="access-badge">真实归档地址</span>
+  </div>
+  <p class="access-link access-link--mono"><a href="https://github.com/immich-app/immich/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">https://github.com/immich-app/immich/archive/refs/heads/main.zip</a></p>
+  <p class="access-note">收录时已核对可访问的 ZIP 归档地址；若链接失效，请以原始仓库的 Releases 页面为准。</p>
+  <a class="btn btn-ghost access-btn" href="https://github.com/immich-app/immich/archive/refs/heads/main.zip" target="_blank" rel="noopener noreferrer">下载 ZIP
+    <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+  </a>
+</div>
+  </div>
+</section>
+<section class="detail-sec" id="install" aria-labelledby="install-title">
+  <header class="detail-sec-head">
+    <span class="detail-sec-num" aria-hidden="true">03</span>
+    <h2 class="detail-sec-title" id="install-title">安装与运行</h2>
+    <p class="detail-sec-note">命令均来自公开资料</p>
+  </header>
+  <div class="detail-sec-body">
+<div class="install-grid">
+  <div class="install-item">
+    <p class="cmd-label cmd-label--block">环境与依赖</p>
+    <span class="is-missing">未提供</span>
+  </div>
+  <div class="install-item">
+    <div class="cmd-item cmd-item--missing">
+  <div class="cmd-head">
+    <span class="cmd-label">安装命令</span>
+    <span class="is-missing">未提供</span>
+  </div>
+</div>
+<div class="cmd-item cmd-item--missing">
+  <div class="cmd-head">
+    <span class="cmd-label">运行命令</span>
+    <span class="is-missing">未提供</span>
+  </div>
+</div>
+  </div>
+</div>
+<p class="access-note access-note--warn">收录时没有找到可确认的安装或运行命令，具体步骤请以原始仓库的 README 为准，本站不做推测。</p>
+  </div>
+</section>
+<section class="detail-sec" id="data" aria-labelledby="data-title">
+  <header class="detail-sec-head">
+    <span class="detail-sec-num" aria-hidden="true">04</span>
+    <h2 class="detail-sec-title" id="data-title">数据与硬件</h2>
+    <p class="detail-sec-note">未核实的字段不会编造</p>
+  </header>
+  <div class="detail-sec-body">
+<dl class="fact-grid">
+    <div class="fact fact--wide">
+      <dt>数据集说明</dt>
+      <dd><span class="is-missing">未提供</span></dd>
+    </div>
+    <div class="fact fact--wide">
+      <dt>硬件要求</dt>
+      <dd><span class="is-missing">未提供</span></dd>
+    </div>
+</dl>
+  </div>
+</section>
+<section class="detail-sec" id="verification" aria-labelledby="verification-title">
+  <header class="detail-sec-head">
+    <span class="detail-sec-num" aria-hidden="true">05</span>
+    <h2 class="detail-sec-title" id="verification-title">运行验证状态</h2>
+    <p class="detail-sec-note">四态徽章</p>
+  </header>
+  <div class="detail-sec-body">
+<div class="status-panel">
+  <div class="status-summary">
+    <span class="status-badge status-not-tested"><span class="status-dot" aria-hidden="true"></span>未测试</span>
+    <p class="status-desc">尚未实际安装或运行，只核对了仓库、许可证等公开信息。</p>
+  </div>
+  <ol class="status-track" role="list">
+  <li class="status-step is-reached is-current">
+    <span class="status-step-mark" aria-hidden="true">1</span>
+    <span class="status-step-label">未测试</span>
+  </li>
+  <li class="status-step">
+    <span class="status-step-mark" aria-hidden="true">2</span>
+    <span class="status-step-label">依赖安装已测试</span>
+  </li>
+  <li class="status-step">
+    <span class="status-step-mark" aria-hidden="true">3</span>
+    <span class="status-step-label">基本启动已测试</span>
+  </li>
+  <li class="status-step">
+    <span class="status-step-mark" aria-hidden="true">4</span>
+    <span class="status-step-label">实验已验证</span>
+  </li>
+</ol>
+  <p class="status-rule">说明：只有真正执行过对应步骤才会升级状态；<code class="inline-code">未测试</code> 表示仅核对了公开信息。</p>
+</div>
+<dl class="fact-grid">
+    <div class="fact">
+      <dt>当前状态</dt>
+      <dd><span class="status-badge status-not-tested"><span class="status-dot" aria-hidden="true"></span>未测试</span></dd>
+    </div>
+    <div class="fact">
+      <dt>最后核对</dt>
+      <dd>2026-10-18</dd>
+    </div>
+    <div class="fact">
+      <dt>核对版本</dt>
+      <dd><code class="inline-code">53618ff7496e</code> <span class="fact-sub">53618ff7496ee313d1cff7b3bcdf19c82b765cdf</span></dd>
+    </div>
+    <div class="fact fact--wide">
+      <dt>验证说明</dt>
+      <dd><p class="fact-text">尚未实际安装或运行，仅核对了仓库、许可证与默认分支。</p></dd>
+    </div>
+</dl>
+  </div>
+</section>
+<section class="detail-sec" id="license" aria-labelledby="license-title">
+  <header class="detail-sec-head">
+    <span class="detail-sec-num" aria-hidden="true">06</span>
+    <h2 class="detail-sec-title" id="license-title">许可证与引用</h2>
+    <p class="detail-sec-note">转载与引用请保留出处</p>
+  </header>
+  <div class="detail-sec-body">
+<dl class="fact-grid">
+    <div class="fact">
+      <dt>许可证</dt>
+      <dd><span class="license-pill">AGPL-3.0</span></dd>
+    </div>
+    <div class="fact">
+      <dt>作者 / 组织</dt>
+      <dd>immich-app</dd>
+    </div>
+    <div class="fact">
+      <dt>原始仓库</dt>
+      <dd><a class="inline-link" href="https://github.com/immich-app/immich" target="_blank" rel="noopener noreferrer">immich-app/immich</a></dd>
+    </div>
+    <div class="fact fact--wide">
+      <dt>核对版本</dt>
+      <dd><code class="inline-code">53618ff7496ee313d1cff7b3bcdf19c82b765cdf</code></dd>
+    </div>
+    <div class="fact">
+      <dt>最后核对</dt>
+      <dd>2026-10-18</dd>
+    </div>
+    <div class="fact">
+      <dt>收录日期</dt>
+      <dd>2026-10-18</dd>
+    </div>
+</dl>
+<div class="citation-box">
+  <div class="citation-head">
+    <h3 class="detail-subhead">引用建议</h3>
+    <button class="copy-btn" type="button" data-copy-target="citation-immich">
+      <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>
+      <span class="copy-btn-text">复制引用</span>
+    </button>
+  </div>
+  <p class="citation-text" id="citation-immich">Immich / immich-app. 《开源拾遗》收录，收录日期 2026-10-18，最后核对 2026-10-18. 原始仓库：https://github.com/immich-app/immich. 许可证：AGPL-3.0. 核对版本：53618ff7496ee313d1cff7b3bcdf19c82b765cdf.</p>
+  <p class="access-note">许可证以原始仓库的 LICENSE 文件为准；本站不对许可证做法律判断。</p>
+</div>
+  </div>
+</section>
+<section class="detail-sec" id="related" aria-labelledby="related-title">
+  <header class="detail-sec-head">
+    <span class="detail-sec-num" aria-hidden="true">07</span>
+    <h2 class="detail-sec-title" id="related-title">相关项目</h2>
+    <p class="detail-sec-note">同分类优先</p>
+  </header>
+  <div class="detail-sec-body">
+<ul class="related-grid" role="list">
+<li>
+  <a class="related-card tone-2" href="../uptime-kuma/">
+    <span class="related-initial" aria-hidden="true">UK</span>
+    <span class="related-cat">Web 与软件开发</span>
+    <span class="related-name">Uptime Kuma</span>
+    <span class="related-desc">一条 Docker 命令就能跑起来的监控面板，HTTP、TCP、Ping 和多种告警方式都支持。</span>
+    <span class="related-more">查看详情 <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+  </a>
+</li>
+<li>
+  <a class="related-card tone-3" href="../ui/">
+    <span class="related-initial" aria-hidden="true">SH</span>
+    <span class="related-cat">Web 与软件开发</span>
+    <span class="related-name">shadcn/ui</span>
+    <span class="related-desc">不是组件库，而是把组件源码复制进你的项目。基于 Radix 和 Tailwind，想怎么改就怎么改。</span>
+    <span class="related-more">查看详情 <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+  </a>
+</li>
+<li>
+  <a class="related-card tone-3" href="../tailwindcss/">
+    <span class="related-initial" aria-hidden="true">TW</span>
+    <span class="related-cat">Web 与软件开发</span>
+    <span class="related-name">Tailwind CSS</span>
+    <span class="related-desc">原子化 CSS，把样式写在结构旁边。设计系统、响应式和暗色模式都能顺手做完。</span>
+    <span class="related-more">查看详情 <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+  </a>
+</li>
+</ul>
+<p class="related-all"><a class="link-arrow" href="../../index.html#projects">在首页浏览全部项目
+  <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+</a></p>
+  </div>
+</section>
+      </article>
+<aside class="detail-aside" aria-label="页面辅助信息">
+<nav class="detail-toc" aria-label="本页目录">
+  <p class="toc-title">本页目录</p>
+  <ol>
+    <li><a href="#overview">概览</a></li>
+    <li><a href="#access">获取方式</a></li>
+    <li><a href="#install">安装与运行</a></li>
+    <li><a href="#data">数据与硬件</a></li>
+    <li><a href="#verification">运行验证状态</a></li>
+    <li><a href="#license">许可证与引用</a></li>
+    <li><a href="#related">相关项目</a></li>
+  </ol>
+</nav>
+<div class="aside-card">
+  <p class="aside-title">继续浏览</p>
+  <ul class="aside-links">
+    <li><a href="../../index.html#projects">全部项目</a></li>
+    <li><a href="../../index.html#categories">分类</a></li>
+    <li><a href="../../index.html#standards">收录标准</a></li>
+    <li><a href="../../index.html#about">关于</a></li>
+  </ul>
+  <p class="aside-note">本页信息整理自公开仓库，Star 数与许可证以原始仓库为准。</p>
+</div>
+</aside>
+    </div>
+  </div>
+  <p id="copyStatus" class="sr-only" role="status" aria-live="polite"></p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <a class="brand" href="../../index.html" aria-label="开源拾遗 · 返回首页">
+        <span class="seal" aria-hidden="true">拾</span>
+        <span class="brand-text">
+          <span class="brand-name">开源拾遗</span>
+          <span class="brand-sub">Open Source Picks</span>
+        </span>
+      </a>
+      <p>面向大学生的开源项目检索站。只收录真实存在、能打开、有源码的项目。</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="页脚导航">
+      <p class="footer-title">浏览</p>
+        <a href="../../index.html#projects">全部项目</a>
+        <a href="../../index.html#categories">分类</a>
+        <a href="../../index.html#standards">收录标准</a>
+        <a href="../../index.html#about">关于</a>
+    </nav>
+
+    <div class="footer-contact">
+      <p class="footer-title">反馈</p>
+      <a href="mailto:hi@shiyi.notes">hi@shiyi.notes</a>
+      <a href="https://github.com/kqin517-debug" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <p>发现错误或想推荐项目，欢迎写信。<br>本站仅提供索引与说明，项目内容、许可证与 Star 数均以原始仓库为准。本页信息核对于 2026-10-18。</p>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <span>© 2026 开源拾遗 · Open Source Picks</span>
+    <span>项目版权归原作者所有 · 本站仅提供索引与说明</span>
+  </div>
+</footer>
+
+<button class="back-to-top" data-back-to-top type="button" aria-label="回到顶部" title="回到顶部">
+  <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg>
+</button>
+
+<script src="../../assets/js/app.js" defer></script>
+<script>
+  (function () {
+    "use strict";
+    var statusEl = document.getElementById("copyStatus");
+    function setStatus(text) {
+      if (statusEl) statusEl.textContent = text;
+    }
+    function getCopyText(target) {
+      if (!target) return "";
+      var lines = target.querySelectorAll(".code-line");
+      if (lines.length) {
+        var parts = [];
+        for (var i = 0; i < lines.length; i += 1) parts.push(lines[i].textContent);
+        return parts.join("\n") + (target.getAttribute("data-trailing-newline") === "1" ? "\n" : "");
+      }
+      return target.textContent || "";
+    }
+    function selectTarget(target) {
+      var selection = window.getSelection ? window.getSelection() : null;
+      if (!selection) return false;
+      var range = document.createRange();
+      range.selectNodeContents(target);
+      selection.removeAllRanges();
+      selection.addRange(range);
+      return true;
+    }
+    function mark(btn, text, ok) {
+      var label = btn.querySelector(".copy-btn-text");
+      if (!label) return;
+      if (!btn.getAttribute("data-original-label")) {
+        btn.setAttribute("data-original-label", label.textContent);
+      }
+      label.textContent = text;
+      btn.classList.toggle("is-done", !!ok);
+      window.clearTimeout(btn._copyTimer);
+      btn._copyTimer = window.setTimeout(function () {
+        label.textContent = btn.getAttribute("data-original-label") || "复制";
+        btn.classList.remove("is-done");
+      }, 1500);
+    }
+    function fallback(btn, target) {
+      var selected = selectTarget(target);
+      mark(btn, "复制失败，请手动选中", false);
+      setStatus(selected
+        ? "无法访问剪贴板，已为你选中代码，请按 Ctrl+C 复制。"
+        : "复制失败，请手动选中代码后复制。");
+    }
+    function targetIdOf(btn) {
+      return btn.getAttribute("data-copy-code") || btn.getAttribute("data-copy-target") || "";
+    }
+    function copy(btn) {
+      var target = document.getElementById(targetIdOf(btn));
+      if (!target) return;
+      var text = getCopyText(target);
+      if (!text) {
+        setStatus("没有可复制的内容。");
+        return;
+      }
+      function done() {
+        mark(btn, "已复制 ✓", true);
+        setStatus("已复制到剪贴板。");
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(function () {
+          fallback(btn, target);
+        });
+      } else {
+        fallback(btn, target);
+      }
+    }
+    var buttons = document.querySelectorAll("[data-copy-code], [data-copy-target]");
+    for (var i = 0; i < buttons.length; i += 1) {
+      buttons[i].addEventListener("click", function () {
+        copy(this);
+      });
+    }
+  })();
+</script>
+</body>
+</html>

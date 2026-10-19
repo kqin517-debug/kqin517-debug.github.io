@@ -1,174 +1,2473 @@
 /* ==========================================================================
-   开源拾遗 · 项目数据
-   新增项目：在 PROJECTS 数组里加一条即可（首页会自动渲染卡片、分类和数量）。
-   字段说明：
-     name        项目名（显示在卡片标题）
-     repo        owner/repo
-     url         GitHub 仓库地址
-     category    分类（需与 chips 自动生成一致）
-     tone        配色 1–6，对应 projects.css 里的 .tone-*
-     initial     卡片上的两字母标记
-     desc        中文简介（一句话）
-     tags        标签数组（2–3 个）
-     language    主要语言
-     langColor   语言色点颜色
-     stars       Star 大致数量（展示用）
+   开源拾遗 · 项目数据（自动生成，请勿手工编辑）
+   数据源：data/projects.json
+   重新生成：node scripts/build.js
+   说明：window.PROJECTS 为 data/projects.json 的完整数组，字段与 schema v2 一致；
+         stars 保持数字，由 assets/js/app.js 负责展示格式化。
    ========================================================================== */
 window.PROJECTS = [
   {
-    name: "RSSHub",
-    repo: "DIYgod/RSSHub",
-    url: "https://github.com/DIYgod/RSSHub",
-    category: "效率工具",
-    tone: 1,
-    initial: "RS",
-    desc: "把几乎所有网站都变成 RSS 订阅源。可以用公共实例，也可以自己部署一份。",
-    tags: ["RSS", "自托管", "Node"],
-    language: "TypeScript",
-    langColor: "#3178c6",
-    stars: "3.9 万+"
+    "id": "rsshub",
+    "name": "RSSHub",
+    "originalName": "RSSHub",
+    "aliases": [],
+    "summary": "把几乎所有网站都变成 RSS 订阅源。可以用公共实例，也可以自己部署一份。",
+    "description": null,
+    "category": "开发工具与自动化",
+    "tags": [
+      "RSS",
+      "自托管",
+      "Node"
+    ],
+    "languages": [
+      "TypeScript"
+    ],
+    "techStack": [],
+    "difficulty": null,
+    "repositoryUrl": "https://github.com/DIYgod/RSSHub",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/DIYgod/RSSHub/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "AGPL-3.0",
+    "author": "DIYgod",
+    "sourceRevision": "a251fb5e4298ef034e377950e95d8146cc56485f",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 46575,
+    "tone": 1,
+    "initial": "RS"
   },
   {
-    name: "LocalSend",
-    repo: "localsend/localsend",
-    url: "https://github.com/localsend/localsend",
-    category: "效率工具",
-    tone: 1,
-    initial: "LS",
-    desc: "跨平台局域网传文件，手机、电脑互传不经过云端，也不用注册登录。",
-    tags: ["文件传输", "跨平台", "Flutter"],
-    language: "Dart",
-    langColor: "#00B4AB",
-    stars: "6.5 万+"
+    "id": "localsend",
+    "name": "LocalSend",
+    "originalName": "localsend",
+    "aliases": [],
+    "summary": "跨平台局域网传文件，手机、电脑互传不经过云端，也不用注册登录。",
+    "description": null,
+    "category": "开发工具与自动化",
+    "tags": [
+      "文件传输",
+      "跨平台",
+      "Flutter"
+    ],
+    "languages": [
+      "Dart"
+    ],
+    "techStack": [],
+    "difficulty": null,
+    "repositoryUrl": "https://github.com/localsend/localsend",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/localsend/localsend/archive/refs/heads/main.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "Apache-2.0",
+    "author": "localsend",
+    "sourceRevision": "d01fdb14c978fa8b2b13e29a50cc0feaefe5c1b9",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 94816,
+    "tone": 1,
+    "initial": "LS"
   },
   {
-    name: "Immich",
-    repo: "immich-app/immich",
-    url: "https://github.com/immich-app/immich",
-    category: "自托管",
-    tone: 2,
-    initial: "IM",
-    desc: "自托管的照片备份方案，移动端自动上传，界面和体验都很接近 Google Photos。",
-    tags: ["相册", "备份", "Docker"],
-    language: "TypeScript",
-    langColor: "#3178c6",
-    stars: "7.5 万+"
+    "id": "immich",
+    "name": "Immich",
+    "originalName": "immich",
+    "aliases": [],
+    "summary": "自托管的照片备份方案，移动端自动上传，界面和体验都很接近 Google Photos。",
+    "description": null,
+    "category": "Web 与软件开发",
+    "tags": [
+      "相册",
+      "备份",
+      "Docker"
+    ],
+    "languages": [
+      "TypeScript"
+    ],
+    "techStack": [],
+    "difficulty": null,
+    "repositoryUrl": "https://github.com/immich-app/immich",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/immich-app/immich/archive/refs/heads/main.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "AGPL-3.0",
+    "author": "immich-app",
+    "sourceRevision": "53618ff7496ee313d1cff7b3bcdf19c82b765cdf",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 116585,
+    "tone": 2,
+    "initial": "IM"
   },
   {
-    name: "Uptime Kuma",
-    repo: "louislam/uptime-kuma",
-    url: "https://github.com/louislam/uptime-kuma",
-    category: "自托管",
-    tone: 2,
-    initial: "UK",
-    desc: "一条 Docker 命令就能跑起来的监控面板，HTTP、TCP、Ping 和多种告警方式都支持。",
-    tags: ["监控", "告警", "Docker"],
-    language: "JavaScript",
-    langColor: "#f1e05a",
-    stars: "7 万+"
+    "id": "uptime-kuma",
+    "name": "Uptime Kuma",
+    "originalName": "uptime-kuma",
+    "aliases": [],
+    "summary": "一条 Docker 命令就能跑起来的监控面板，HTTP、TCP、Ping 和多种告警方式都支持。",
+    "description": null,
+    "category": "Web 与软件开发",
+    "tags": [
+      "监控",
+      "告警",
+      "Docker"
+    ],
+    "languages": [
+      "JavaScript"
+    ],
+    "techStack": [],
+    "difficulty": null,
+    "repositoryUrl": "https://github.com/louislam/uptime-kuma",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/louislam/uptime-kuma/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "MIT",
+    "author": "louislam",
+    "sourceRevision": "b092505f894d66669b67f46e1da72b51016eceab",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 92611,
+    "tone": 2,
+    "initial": "UK"
   },
   {
-    name: "shadcn/ui",
-    repo: "shadcn-ui/ui",
-    url: "https://github.com/shadcn-ui/ui",
-    category: "前端开发",
-    tone: 3,
-    initial: "SH",
-    desc: "不是组件库，而是把组件源码复制进你的项目。基于 Radix 和 Tailwind，想怎么改就怎么改。",
-    tags: ["React", "组件", "可定制"],
-    language: "TypeScript",
-    langColor: "#3178c6",
-    stars: "9 万+"
+    "id": "ui",
+    "name": "shadcn/ui",
+    "originalName": "ui",
+    "aliases": [],
+    "summary": "不是组件库，而是把组件源码复制进你的项目。基于 Radix 和 Tailwind，想怎么改就怎么改。",
+    "description": null,
+    "category": "Web 与软件开发",
+    "tags": [
+      "React",
+      "组件",
+      "可定制"
+    ],
+    "languages": [
+      "TypeScript"
+    ],
+    "techStack": [],
+    "difficulty": null,
+    "repositoryUrl": "https://github.com/shadcn-ui/ui",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/shadcn-ui/ui/archive/refs/heads/main.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "MIT",
+    "author": "shadcn-ui",
+    "sourceRevision": "daaf156ee00ed91cc7e6bdd937c1b4973152d141",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 125882,
+    "tone": 3,
+    "initial": "SH"
   },
   {
-    name: "Tailwind CSS",
-    repo: "tailwindlabs/tailwindcss",
-    url: "https://github.com/tailwindlabs/tailwindcss",
-    category: "前端开发",
-    tone: 3,
-    initial: "TW",
-    desc: "原子化 CSS，把样式写在结构旁边。设计系统、响应式和暗色模式都能顺手做完。",
-    tags: ["CSS", "设计系统", "工具链"],
-    language: "TypeScript",
-    langColor: "#3178c6",
-    stars: "8.7 万+"
+    "id": "tailwindcss",
+    "name": "Tailwind CSS",
+    "originalName": "tailwindcss",
+    "aliases": [],
+    "summary": "原子化 CSS，把样式写在结构旁边。设计系统、响应式和暗色模式都能顺手做完。",
+    "description": null,
+    "category": "Web 与软件开发",
+    "tags": [
+      "CSS",
+      "设计系统",
+      "工具链"
+    ],
+    "languages": [
+      "TypeScript"
+    ],
+    "techStack": [],
+    "difficulty": null,
+    "repositoryUrl": "https://github.com/tailwindlabs/tailwindcss",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/tailwindlabs/tailwindcss/archive/refs/heads/main.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "MIT",
+    "author": "tailwindlabs",
+    "sourceRevision": "f7f47f8e98b0312784515605901dbb0c907d28bf",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 97921,
+    "tone": 3,
+    "initial": "TW"
   },
   {
-    name: "developer-roadmap",
-    repo: "kamranahmedse/developer-roadmap",
-    url: "https://github.com/kamranahmedse/developer-roadmap",
-    category: "学习资源",
-    tone: 4,
-    initial: "DR",
-    desc: "前端、后端、DevOps 的学习路线图，适合用来对照自己的知识缺口。",
-    tags: ["路线图", "前端", "面试"],
-    language: "TypeScript",
-    langColor: "#3178c6",
-    stars: "30 万+"
+    "id": "developer-roadmap",
+    "name": "developer-roadmap",
+    "originalName": "developer-roadmap",
+    "aliases": [],
+    "summary": "前端、后端、DevOps 的学习路线图，适合用来对照自己的知识缺口。",
+    "description": null,
+    "category": "其他开源项目",
+    "tags": [
+      "路线图",
+      "前端",
+      "面试"
+    ],
+    "languages": [
+      "TypeScript"
+    ],
+    "techStack": [],
+    "difficulty": null,
+    "repositoryUrl": "https://github.com/nilbuild/developer-roadmap",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/nilbuild/developer-roadmap/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "NOASSERTION",
+    "author": "nilbuild",
+    "sourceRevision": "2584fbd03baaa934d7388086bf0ca90f52462277",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 369800,
+    "tone": 4,
+    "initial": "DR"
   },
   {
-    name: "free-programming-books",
-    repo: "EbookFoundation/free-programming-books",
-    url: "https://github.com/EbookFoundation/free-programming-books",
-    category: "学习资源",
-    tone: 4,
-    initial: "FP",
-    desc: "免费编程书籍清单，按语言和主题分类，中文资源也有不少。",
-    tags: ["书单", "免费", "多语言"],
-    language: "Markdown",
-    langColor: "#083fa1",
-    stars: "35 万+"
+    "id": "free-programming-books",
+    "name": "free-programming-books",
+    "originalName": "free-programming-books",
+    "aliases": [],
+    "summary": "免费编程书籍清单，按语言和主题分类，中文资源也有不少。",
+    "description": null,
+    "category": "其他开源项目",
+    "tags": [
+      "书单",
+      "免费",
+      "多语言"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [],
+    "difficulty": null,
+    "repositoryUrl": "https://github.com/EbookFoundation/free-programming-books",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/EbookFoundation/free-programming-books/archive/refs/heads/main.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "CC-BY-4.0",
+    "author": "EbookFoundation",
+    "sourceRevision": "f42a51cd6cddb8401b18c3d6c774bc381730fcd1",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 399478,
+    "tone": 4,
+    "initial": "FP"
   },
   {
-    name: "Ollama",
-    repo: "ollama/ollama",
-    url: "https://github.com/ollama/ollama",
-    category: "AI 与数据",
-    tone: 5,
-    initial: "OL",
-    desc: "一条命令在本机跑 Llama、Qwen、DeepSeek 等模型，适合本地实验和隐私敏感场景。",
-    tags: ["本地模型", "CLI", "推理"],
-    language: "Go",
-    langColor: "#00ADD8",
-    stars: "12 万+"
+    "id": "ollama",
+    "name": "Ollama",
+    "originalName": "ollama",
+    "aliases": [],
+    "summary": "一条命令在本机跑 Llama、Qwen、DeepSeek 等模型，适合本地实验和隐私敏感场景。",
+    "description": null,
+    "category": "人工智能与机器学习",
+    "tags": [
+      "本地模型",
+      "CLI",
+      "推理"
+    ],
+    "languages": [
+      "Go"
+    ],
+    "techStack": [],
+    "difficulty": null,
+    "repositoryUrl": "https://github.com/ollama/ollama",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/ollama/ollama/archive/refs/heads/main.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "MIT",
+    "author": "ollama",
+    "sourceRevision": "36a6e994d2f6c4ab94b3555185154d069e5dba87",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 183748,
+    "tone": 5,
+    "initial": "OL"
   },
   {
-    name: "LangChain",
-    repo: "langchain-ai/langchain",
-    url: "https://github.com/langchain-ai/langchain",
-    category: "AI 与数据",
-    tone: 5,
-    initial: "LC",
-    desc: "构建 LLM 应用的开发框架，链式调用、工具、RAG 都有现成组件，适合快速搭原型。",
-    tags: ["LLM", "Agent", "RAG"],
-    language: "Python",
-    langColor: "#3572A5",
-    stars: "11 万+"
+    "id": "langchain",
+    "name": "LangChain",
+    "originalName": "langchain",
+    "aliases": [],
+    "summary": "构建 LLM 应用的开发框架，链式调用、工具、RAG 都有现成组件，适合快速搭原型。",
+    "description": null,
+    "category": "人工智能与机器学习",
+    "tags": [
+      "LLM",
+      "Agent",
+      "RAG"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [],
+    "difficulty": null,
+    "repositoryUrl": "https://github.com/langchain-ai/langchain",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/langchain-ai/langchain/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "MIT",
+    "author": "langchain-ai",
+    "sourceRevision": "4fe944a581895ab47b0f56e204829594d5ba74a8",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 148041,
+    "tone": 5,
+    "initial": "LC"
   },
   {
-    name: "lazygit",
-    repo: "jesseduffield/lazygit",
-    url: "https://github.com/jesseduffield/lazygit",
-    category: "开发工具",
-    tone: 6,
-    initial: "LG",
-    desc: "终端里的 Git 图形界面，提交、切分支、rebase 都能用键盘完成。",
-    tags: ["Git", "TUI", "效率"],
-    language: "Go",
-    langColor: "#00ADD8",
-    stars: "6 万+"
+    "id": "lazygit",
+    "name": "lazygit",
+    "originalName": "lazygit",
+    "aliases": [],
+    "summary": "终端里的 Git 图形界面，提交、切分支、rebase 都能用键盘完成。",
+    "description": null,
+    "category": "开发工具与自动化",
+    "tags": [
+      "Git",
+      "TUI",
+      "效率"
+    ],
+    "languages": [
+      "Go"
+    ],
+    "techStack": [],
+    "difficulty": null,
+    "repositoryUrl": "https://github.com/jesseduffield/lazygit",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/jesseduffield/lazygit/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "MIT",
+    "author": "jesseduffield",
+    "sourceRevision": "4e1eebe278790f257a875da6633234391a5a85b3",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 83281,
+    "tone": 6,
+    "initial": "LG"
   },
   {
-    name: "ripgrep",
-    repo: "BurntSushi/ripgrep",
-    url: "https://github.com/BurntSushi/ripgrep",
-    category: "开发工具",
-    tone: 6,
-    initial: "RG",
-    desc: "比 grep 快一个数量级的搜索工具，默认跳过 .gitignore 里的文件。",
-    tags: ["CLI", "搜索", "Rust"],
-    language: "Rust",
-    langColor: "#DEA584",
-    stars: "5.5 万+"
+    "id": "ripgrep",
+    "name": "ripgrep",
+    "originalName": "ripgrep",
+    "aliases": [],
+    "summary": "比 grep 快一个数量级的搜索工具，默认跳过 .gitignore 里的文件。",
+    "description": null,
+    "category": "开发工具与自动化",
+    "tags": [
+      "CLI",
+      "搜索",
+      "Rust"
+    ],
+    "languages": [
+      "Rust"
+    ],
+    "techStack": [],
+    "difficulty": null,
+    "repositoryUrl": "https://github.com/BurntSushi/ripgrep",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/BurntSushi/ripgrep/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "Unlicense",
+    "author": "BurntSushi",
+    "sourceRevision": "3fce3b5bb0236da2df6d99672afb8a719642eca7",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 69222,
+    "tone": 6,
+    "initial": "RG"
+  },
+  {
+    "id": "excalidraw",
+    "name": "Excalidraw",
+    "originalName": "excalidraw",
+    "aliases": [],
+    "summary": "打开浏览器就能画的手绘风格白板，画流程图和架构草图很顺手，不注册也能用。",
+    "description": null,
+    "category": "Web 与软件开发",
+    "tags": [
+      "白板",
+      "协作",
+      "Canvas"
+    ],
+    "languages": [
+      "TypeScript"
+    ],
+    "techStack": [
+      "React",
+      "TypeScript",
+      "Canvas"
+    ],
+    "difficulty": null,
+    "repositoryUrl": "https://github.com/excalidraw/excalidraw",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/excalidraw/excalidraw/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "MIT",
+    "author": "excalidraw",
+    "sourceRevision": "e1b7aacb356a492aa1e0fc6eb57b8896124027f0",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": true,
+    "stars": 134122,
+    "tone": 4,
+    "initial": "EC"
+  },
+  {
+    "id": "ga-path-planning",
+    "name": "遗传算法求解路径规划",
+    "originalName": null,
+    "aliases": [
+      "基于遗传算法的路径规划",
+      "遗传算法",
+      "路径规划",
+      "GA 路径规划",
+      "遗传算法路径优化"
+    ],
+    "summary": "用遗传算法求解路径顺序优化，带种群、交叉、变异和适应度断言。",
+    "description": "单文件 Python 示例：把一条访问顺序编码成染色体，用选择、交叉、变异迭代出更短路径。脚本固定随机种子并内置适应度断言，运行后会打印初始顺序和优化后的距离。适合作为遗传算法的第一个可运行样例，再扩展成带障碍物的二维栅格规划。",
+    "category": "算法与数学建模",
+    "tags": [
+      "遗传算法",
+      "路径规划",
+      "智能优化",
+      "组合优化"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [],
+    "difficulty": "进阶",
+    "repositoryUrl": null,
+    "deliveryType": [
+      "snippet"
+    ],
+    "codePath": "snippets/ga-path-planning.py",
+    "downloadUrl": null,
+    "requirements": [
+      "Python 3.9+"
+    ],
+    "installCommand": null,
+    "runCommand": "python snippets/ga-path-planning.py",
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "experiment-verified",
+    "verificationNotes": "已在本机 Python 3.14.6 实际运行：初始顺序 95.51，优化后 69.00，内置断言通过。",
+    "license": "MIT",
+    "author": "开源拾遗",
+    "sourceRevision": null,
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": null,
+    "tone": 1,
+    "initial": "GA"
+  },
+  {
+    "id": "dijkstra-path",
+    "name": "Dijkstra 最短路径",
+    "originalName": null,
+    "aliases": [
+      "Dijkstra 最短路径",
+      "最短路径",
+      "路径规划",
+      "图算法",
+      "单源最短路径"
+    ],
+    "summary": "手写 Dijkstra 最短路径，优先队列加路径回溯，附内置断言。",
+    "description": "单文件实现邻接表建图、优先队列取最小距离、松弛更新和路径回溯。示例图跑完会输出完整路径与总长度，并用断言校验结果。只依赖 Python 标准库，适合对照课本推导边看边跑。",
+    "category": "算法与数学建模",
+    "tags": [
+      "路径规划",
+      "最短路径",
+      "图算法",
+      "数据结构"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [],
+    "difficulty": "入门",
+    "repositoryUrl": null,
+    "deliveryType": [
+      "snippet"
+    ],
+    "codePath": "snippets/dijkstra-path.py",
+    "downloadUrl": null,
+    "requirements": [
+      "Python 3.9+"
+    ],
+    "installCommand": null,
+    "runCommand": "python snippets/dijkstra-path.py",
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "experiment-verified",
+    "verificationNotes": "已在本机 Python 3.14.6 实际运行：A→C→B→D→E，总长度 10，内置断言通过。",
+    "license": "MIT",
+    "author": "开源拾遗",
+    "sourceRevision": null,
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": null,
+    "tone": 2,
+    "initial": "DJ"
+  },
+  {
+    "id": "knn-classify",
+    "name": "KNN 图像分类入门",
+    "originalName": null,
+    "aliases": [
+      "KNN 图像分类",
+      "图像分类",
+      "KNN",
+      "K 近邻",
+      "机器学习分类"
+    ],
+    "summary": "用 scikit-learn 的 KNN 做图像分类，含训练、评估与准确率输出。",
+    "description": "示例把图像展平成特征向量，交给 KNN 分类器训练，并划分训练集与测试集评估准确率。脚本内置断言校验准确率下限，跑完直接打印结果。适合理解图像分类的最小闭环：特征、模型、评估。",
+    "category": "人工智能与机器学习",
+    "tags": [
+      "图像分类",
+      "KNN",
+      "机器学习",
+      "分类算法"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [
+      "scikit-learn"
+    ],
+    "difficulty": "入门",
+    "repositoryUrl": null,
+    "deliveryType": [
+      "snippet"
+    ],
+    "codePath": "snippets/knn-classify.py",
+    "downloadUrl": null,
+    "requirements": [
+      "Python 3.9+",
+      "scikit-learn"
+    ],
+    "installCommand": null,
+    "runCommand": "python snippets/knn-classify.py",
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "experiment-verified",
+    "verificationNotes": "已在本机 Python 3.14.6 + scikit-learn 1.9.1 实际运行：测试集准确率 0.9833，内置断言通过。",
+    "license": "MIT",
+    "author": "开源拾遗",
+    "sourceRevision": null,
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": null,
+    "tone": 3,
+    "initial": "KN"
+  },
+  {
+    "id": "flask-student-system",
+    "name": "Flask 学生管理系统（单文件）",
+    "originalName": null,
+    "aliases": [
+      "Flask 学生管理系统",
+      "学生管理系统",
+      "毕业设计管理系统",
+      "毕设",
+      "增删改查"
+    ],
+    "summary": "单文件 Flask 学生管理系统，自带 SQLite 与增删改查接口。",
+    "description": "一个文件里包含建表、示例数据、页面模板和 REST 风格接口，数据库用 SQLite 免安装。支持新增、列表、删除学生记录，并带 /health 健康检查，可以直接当作毕设骨架。启动后访问首页就能操作。",
+    "category": "Web 与软件开发",
+    "tags": [
+      "Flask",
+      "学生管理系统",
+      "毕设",
+      "增删改查",
+      "Web"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [
+      "Flask",
+      "SQLite"
+    ],
+    "difficulty": "入门",
+    "repositoryUrl": null,
+    "deliveryType": [
+      "snippet"
+    ],
+    "codePath": "snippets/flask-student-system.py",
+    "downloadUrl": null,
+    "requirements": [
+      "Python 3.9+",
+      "Flask"
+    ],
+    "installCommand": null,
+    "runCommand": "python snippets/flask-student-system.py",
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "smoke-tested",
+    "verificationNotes": "已在本地启动服务并验证：/health 正常，新增/列表/删除接口均通过。",
+    "license": "MIT",
+    "author": "开源拾遗",
+    "sourceRevision": null,
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": null,
+    "tone": 4,
+    "initial": "FS"
+  },
+  {
+    "id": "face-recognition",
+    "name": "face_recognition",
+    "originalName": "face_recognition",
+    "aliases": [
+      "人脸识别",
+      "人脸识别系统",
+      "人脸比对",
+      "Python 人脸识别库"
+    ],
+    "summary": "几行 Python 就能做人脸检测与比对，入门人脸识别最常用的一站式库。",
+    "description": "基于 dlib 的人脸识别库，提供人脸检测、特征编码、比对和实时摄像头识别等接口。API 极简、官方示例齐全，几分钟就能看到效果，适合课程项目或原型验证。它只负责算法能力，人脸库和业务界面需要自己补。",
+    "category": "人工智能与机器学习",
+    "tags": [
+      "人脸识别",
+      "dlib",
+      "计算机视觉",
+      "Python"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [
+      "dlib",
+      "OpenCV"
+    ],
+    "difficulty": "入门",
+    "repositoryUrl": "https://github.com/ageitgey/face_recognition",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/ageitgey/face_recognition/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "MIT",
+    "author": "ageitgey",
+    "sourceRevision": "9f3061aaeed9a8756d2c970f5dfe066617a8281d",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 56835,
+    "tone": 1,
+    "initial": "FR"
+  },
+  {
+    "id": "insightface",
+    "name": "InsightFace",
+    "originalName": "insightface",
+    "aliases": [
+      "人脸识别",
+      "人脸检测",
+      "人脸识别系统",
+      "人脸分析工具箱",
+      "ArcFace"
+    ],
+    "summary": "工业级人脸检测与识别工具箱，ArcFace 模型和训练推理代码齐全。",
+    "description": "开源的人脸分析项目，覆盖检测、对齐、识别、年龄与姿态估计等任务。ArcFace 系列预训练模型精度高，配套训练脚本和 ONNX 导出流程，适合做真实项目而不是玩具演示。上手需要一定的深度学习基础。",
+    "category": "人工智能与机器学习",
+    "tags": [
+      "人脸识别",
+      "ArcFace",
+      "模型训练",
+      "计算机视觉"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [
+      "PyTorch",
+      "MXNet",
+      "ONNX"
+    ],
+    "difficulty": "高级",
+    "repositoryUrl": "https://github.com/deepinsight/insightface",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/deepinsight/insightface/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": null,
+    "author": "deepinsight",
+    "sourceRevision": "81929474ec02e54e3655f6841bced800009c592d",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 29987,
+    "tone": 2,
+    "initial": "IF"
+  },
+  {
+    "id": "waiter-facerecognition-python",
+    "name": "人脸识别考勤系统（Python 后端）",
+    "originalName": "waiter-facerecognition-python",
+    "aliases": [
+      "人脸识别",
+      "人脸识别考勤系统",
+      "人脸识别系统",
+      "人脸考勤",
+      "人脸识别毕设"
+    ],
+    "summary": "本科毕设级别的人脸识别考勤后端，含人脸录入、识别与考勤管理。",
+    "description": "基于 FaceNet 的人脸识别后端，提取人脸特征并判断是否为同一人，对外提供认证接口。业务侧包含人脸录入、识别、考勤、课堂和班级管理等功能，数据库操作完整。README 里附了训练数据集与权重文件说明，适合参考毕设的接口划分。",
+    "category": "人工智能与机器学习",
+    "tags": [
+      "人脸识别",
+      "FaceNet",
+      "考勤系统",
+      "毕业设计"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [
+      "FaceNet",
+      "TensorFlow",
+      "Keras"
+    ],
+    "difficulty": "高级",
+    "repositoryUrl": "https://github.com/waiterxiaoyy/waiter-facerecognition-python",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/waiterxiaoyy/waiter-facerecognition-python/archive/refs/heads/master.zip",
+    "requirements": [
+      "Python 3.x",
+      "tensorflow-gpu 1.13.1",
+      "Keras 2.1.5"
+    ],
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": "CASIA-WebFace 训练，LFW 评估",
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "MIT",
+    "author": "waiterxiaoyy",
+    "sourceRevision": "55182b02815fede072281f18345b7223d5bc336a",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 305,
+    "tone": 3,
+    "initial": "WF"
+  },
+  {
+    "id": "ultralytics",
+    "name": "Ultralytics YOLO",
+    "originalName": "ultralytics",
+    "aliases": [
+      "YOLO",
+      "YOLOv8",
+      "YOLO11",
+      "YOLO 目标检测"
+    ],
+    "summary": "YOLO 官方主仓库，检测、分割、分类、姿态和跟踪一个框架全包。",
+    "description": "Ultralytics 维护的 YOLO 系列实现，一条命令完成训练、验证、推理和模型导出。支持目标检测、实例分割、图像分类、姿态估计与目标跟踪，文档和预训练权重都很完善。想快速跑通 YOLO 目标检测，从这里开始最省事。",
+    "category": "人工智能与机器学习",
+    "tags": [
+      "YOLO",
+      "目标检测",
+      "图像分类",
+      "计算机视觉"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [
+      "PyTorch",
+      "ONNX"
+    ],
+    "difficulty": "进阶",
+    "repositoryUrl": "https://github.com/ultralytics/ultralytics",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/ultralytics/ultralytics/archive/refs/heads/main.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "AGPL-3.0",
+    "author": "ultralytics",
+    "sourceRevision": "e9357d83828fabc4d428af17fc49fff43703bd94",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 62618,
+    "tone": 4,
+    "initial": "UL"
+  },
+  {
+    "id": "darknet",
+    "name": "Darknet（YOLOv4）",
+    "originalName": "darknet",
+    "aliases": [
+      "YOLO",
+      "YOLOv4",
+      "Darknet",
+      "目标检测框架"
+    ],
+    "summary": "YOLOv4 作者维护的 C 语言实现，Windows 下也能编译运行的检测框架。",
+    "description": "Darknet 是 YOLO 系列的原始 C 实现，这个分支补强了 Windows 支持和训练脚本。仓库提供 YOLOv3、YOLOv4、Scaled-YOLOv4 的配置与预训练权重，适合想了解检测网络底层实现、或需要 C 语言部署的场景。编译和调参门槛比 Python 方案高。",
+    "category": "人工智能与机器学习",
+    "tags": [
+      "YOLO",
+      "目标检测",
+      "C",
+      "YOLOv4"
+    ],
+    "languages": [
+      "C"
+    ],
+    "techStack": [
+      "CUDA",
+      "OpenCV"
+    ],
+    "difficulty": "高级",
+    "repositoryUrl": "https://github.com/AlexeyAB/darknet",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/AlexeyAB/darknet/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "NOASSERTION",
+    "author": "AlexeyAB",
+    "sourceRevision": "59596d7880f6504768df41d6daa586f5cb2b932f",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 22137,
+    "tone": 5,
+    "initial": "DK"
+  },
+  {
+    "id": "deep-learning-for-image-processing",
+    "name": "深度学习图像处理合集",
+    "originalName": "deep-learning-for-image-processing",
+    "aliases": [
+      "图像分类",
+      "目标检测",
+      "深度学习实战",
+      "PyTorch 图像分类"
+    ],
+    "summary": "从图像分类到目标检测的 PyTorch 实战合集，配套视频讲解。",
+    "description": "按任务组织代码的深度学习合集，覆盖图像分类、目标检测、语义分割的完整训练与预测流程。每个项目都用 PyTorch 实现，结构清晰、注释细致，并配有视频讲解。很多人拿它当毕设或课程设计的起点。",
+    "category": "人工智能与机器学习",
+    "tags": [
+      "图像分类",
+      "目标检测",
+      "PyTorch",
+      "实战教程"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [
+      "PyTorch",
+      "TensorFlow"
+    ],
+    "difficulty": "入门",
+    "repositoryUrl": "https://github.com/WZMIAOMIAO/deep-learning-for-image-processing",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/WZMIAOMIAO/deep-learning-for-image-processing/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "GPL-3.0",
+    "author": "WZMIAOMIAO",
+    "sourceRevision": "1ec3fe6f374fc9969973a61f819de25658595afa",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 26416,
+    "tone": 6,
+    "initial": "DL"
+  },
+  {
+    "id": "scikit-learn",
+    "name": "scikit-learn",
+    "originalName": "scikit-learn",
+    "aliases": [
+      "sklearn",
+      "机器学习库",
+      "机器学习",
+      "预测模型"
+    ],
+    "summary": "Python 机器学习的标准库，分类、回归、聚类和评估工具齐全。",
+    "description": "最常用的 Python 机器学习库，统一了分类、回归、聚类、降维和模型评估的接口。文档质量高、示例多，适合先建立完整的建模流程，再替换成更复杂的模型。做机器学习预测模型时，通常从它开始搭第一版基线。",
+    "category": "人工智能与机器学习",
+    "tags": [
+      "机器学习",
+      "预测模型",
+      "分类",
+      "回归"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [
+      "NumPy",
+      "SciPy"
+    ],
+    "difficulty": "入门",
+    "repositoryUrl": "https://github.com/scikit-learn/scikit-learn",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/scikit-learn/scikit-learn/archive/refs/heads/main.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "BSD-3-Clause",
+    "author": "scikit-learn",
+    "sourceRevision": "d1b6d438b53e5e6b22d6e1280a2d4b3cf881a87e",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 67750,
+    "tone": 1,
+    "initial": "SL"
+  },
+  {
+    "id": "xgboost",
+    "name": "XGBoost",
+    "originalName": "xgboost",
+    "aliases": [
+      "XGBoost",
+      "梯度提升",
+      "GBDT",
+      "机器学习预测模型"
+    ],
+    "summary": "梯度提升树的高性能实现，表格数据预测里的常胜方案。",
+    "description": "分布式梯度提升树库，支持分类、回归、排序等任务，接口覆盖 Python、R、Java 等多种语言。对缺失值和稀疏特征友好，训练速度和精度在结构化数据上表现稳定。数据竞赛和业务预测模型里出镜率极高。",
+    "category": "人工智能与机器学习",
+    "tags": [
+      "机器学习",
+      "预测模型",
+      "GBDT",
+      "集成学习"
+    ],
+    "languages": [
+      "C++"
+    ],
+    "techStack": [
+      "Python",
+      "R",
+      "Java"
+    ],
+    "difficulty": "进阶",
+    "repositoryUrl": "https://github.com/dmlc/xgboost",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/dmlc/xgboost/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "Apache-2.0",
+    "author": "dmlc",
+    "sourceRevision": "c6588dbc440873bfc38dc70a80601eb238cd419e",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 28887,
+    "tone": 2,
+    "initial": "XG"
+  },
+  {
+    "id": "lightgbm",
+    "name": "LightGBM",
+    "originalName": "LightGBM",
+    "aliases": [
+      "LightGBM",
+      "梯度提升树",
+      "GBDT",
+      "机器学习预测模型"
+    ],
+    "summary": "梯度提升树框架，训练快、内存省，适合大规模表格预测。",
+    "description": "基于决策树的梯度提升框架，用直方图算法和叶子生长策略，在数据量大时比传统 GBDT 更快。支持分布式训练和 GPU 加速，常用于排序、分类和回归任务。做机器学习预测模型时，经常和 XGBoost 一起对比选型。",
+    "category": "人工智能与机器学习",
+    "tags": [
+      "机器学习",
+      "预测模型",
+      "GBDT",
+      "梯度提升"
+    ],
+    "languages": [
+      "C++"
+    ],
+    "techStack": [
+      "Python",
+      "分布式训练"
+    ],
+    "difficulty": "进阶",
+    "repositoryUrl": "https://github.com/lightgbm-org/LightGBM",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/lightgbm-org/LightGBM/archive/refs/heads/main.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "MIT",
+    "author": "lightgbm-org",
+    "sourceRevision": "5831ee577776949d26d21efa581ec904bda80483",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 18890,
+    "tone": 3,
+    "initial": "LB"
+  },
+  {
+    "id": "house-price-prediction",
+    "name": "房价预测实战",
+    "originalName": "House-price-prediction",
+    "aliases": [
+      "房价预测",
+      "机器学习预测模型",
+      "回归预测",
+      "爬虫数据分析"
+    ],
+    "summary": "从爬链家数据到模型评估的房价预测完整项目，含两种模型对比。",
+    "description": "项目先爬取链家房价数据并做清洗，再用 sklearn 的回归模型和 Keras 神经网络分别训练。最后对比效果，作者记录神经网络 R² 约为 0.75，并给出完整流程。适合当作「数据获取—特征处理—建模预测」的参考模板。",
+    "category": "人工智能与机器学习",
+    "tags": [
+      "机器学习",
+      "房价预测",
+      "回归模型",
+      "数据爬取"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [
+      "scikit-learn",
+      "Keras"
+    ],
+    "difficulty": "进阶",
+    "repositoryUrl": "https://github.com/mryuan0428/House-price-prediction",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/mryuan0428/House-price-prediction/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": null,
+    "author": "mryuan0428",
+    "sourceRevision": "098df8ac7f3414a9303e50b0e909881cd2fe4201",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 250,
+    "tone": 4,
+    "initial": "HP"
+  },
+  {
+    "id": "networkx",
+    "name": "NetworkX",
+    "originalName": "networkx",
+    "aliases": [
+      "图算法",
+      "网络分析",
+      "路径规划",
+      "最短路径",
+      "复杂网络"
+    ],
+    "summary": "Python 图论与网络分析库，最短路、中心性等算法开箱即用。",
+    "description": "在 Python 里建图、跑图算法的标准库，支持有向图、无向图、多重图以及节点和边的属性。内置最短路、最小生成树、社区发现、中心性等大量算法，适合做路径规划和网络结构分析的原型。数据量特别大时需要换更专业的图计算框架。",
+    "category": "算法与数学建模",
+    "tags": [
+      "图算法",
+      "路径规划",
+      "网络分析",
+      "数据结构"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [
+      "NumPy",
+      "SciPy"
+    ],
+    "difficulty": "入门",
+    "repositoryUrl": "https://github.com/networkx/networkx",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/networkx/networkx/archive/refs/heads/main.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "NOASSERTION",
+    "author": "networkx",
+    "sourceRevision": "abf2feda2252ee4e0d5a66964addf179225dfe76",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 17338,
+    "tone": 5,
+    "initial": "NX"
+  },
+  {
+    "id": "or-tools",
+    "name": "OR-Tools",
+    "originalName": "or-tools",
+    "aliases": [
+      "运筹优化",
+      "组合优化",
+      "路径规划",
+      "车辆路径问题"
+    ],
+    "summary": "谷歌开源的运筹优化工具箱，求解路径规划、排班与组合优化。",
+    "description": "Google 的运筹优化库，把约束规划、线性规划、整数规划和车辆路径等求解器封装成统一接口。自带路径规划与车辆路径示例，适合处理调度、装箱、排班这类组合优化问题。支持 C++、Python、Java 等多语言调用。",
+    "category": "算法与数学建模",
+    "tags": [
+      "组合优化",
+      "路径规划",
+      "运筹学",
+      "调度"
+    ],
+    "languages": [
+      "C++"
+    ],
+    "techStack": [
+      "Python",
+      "Java"
+    ],
+    "difficulty": "高级",
+    "repositoryUrl": "https://github.com/google/or-tools",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/google/or-tools/archive/refs/heads/stable.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "Apache-2.0",
+    "author": "google",
+    "sourceRevision": "100f66e6242ab8bf8d32feb8f3bf086db66ae2b5",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 14228,
+    "tone": 6,
+    "initial": "OR"
+  },
+  {
+    "id": "the-algorithms-python",
+    "name": "TheAlgorithms/Python",
+    "originalName": "Python",
+    "aliases": [
+      "算法大全",
+      "算法实现",
+      "数据结构与算法",
+      "Python 算法"
+    ],
+    "summary": "用 Python 实现的各种经典算法合集，按主题分类、可直接运行。",
+    "description": "社区维护的算法集合，把排序、搜索、图论、动态规划、密码学等算法都用 Python 写了一遍。每个文件相对独立，配有测试和说明，适合查漏补缺、对照自己的实现。它偏教学用途，生产环境要自己评估复杂度和边界。",
+    "category": "算法与数学建模",
+    "tags": [
+      "算法",
+      "数据结构",
+      "学习资源",
+      "Python"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [],
+    "difficulty": "入门",
+    "repositoryUrl": "https://github.com/TheAlgorithms/Python",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/TheAlgorithms/Python/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "MIT",
+    "author": "TheAlgorithms",
+    "sourceRevision": "25c712f2692449e91a57748d328ef34fccf25654",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 225375,
+    "tone": 1,
+    "initial": "TA"
+  },
+  {
+    "id": "genetic-algorithm-path-planning",
+    "name": "遗传算法路径规划",
+    "originalName": "genetic-algorithm-path-planning",
+    "aliases": [
+      "遗传算法",
+      "路径规划",
+      "基于遗传算法的路径规划",
+      "GA 路径规划"
+    ],
+    "summary": "用遗传算法做路径规划的 Python 实现，参数集中在配置文件里。",
+    "description": "用遗传算法求解路径规划问题，包含种群初始化、轮盘赌选择、交叉、变异和适应度评估的完整流程。路径点、连接关系、种群规模、变异率都在 Config.py 里改，跑 main.py 即可看到结果。代码量不大，适合配合教材逐段理解算法如何收敛。",
+    "category": "算法与数学建模",
+    "tags": [
+      "遗传算法",
+      "路径规划",
+      "智能优化",
+      "Python"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [
+      "NumPy"
+    ],
+    "difficulty": "进阶",
+    "repositoryUrl": "https://github.com/Yaaximus/genetic-algorithm-path-planning",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/Yaaximus/genetic-algorithm-path-planning/archive/refs/heads/master.zip",
+    "requirements": [
+      "Python",
+      "NumPy"
+    ],
+    "installCommand": null,
+    "runCommand": "python main.py",
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "MIT",
+    "author": "Yaaximus",
+    "sourceRevision": "fedc5e83d2adaf76513dda7994dc410ff983c0a4",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 54,
+    "tone": 2,
+    "initial": "GP"
+  },
+  {
+    "id": "robot-plan",
+    "name": "带障碍路径规划仿真",
+    "originalName": "robot-plan",
+    "aliases": [
+      "遗传算法路径规划",
+      "基于遗传算法的路径规划",
+      "路径规划仿真",
+      "遗传算法",
+      "机器人路径规划"
+    ],
+    "summary": "带障碍物的路径规划仿真，用进化算法优化路径并可视化结果。",
+    "description": "面向带障碍场景的路径规划项目，用 geatpy 进化算法做示例求解。评价函数同时考虑碰撞风险、路径长度和路径平滑度，可通过权重调整偏好，并输出规划过程的可视化图。适合作为路径规划的入门参考，也能替换成其他优化算法做对比。",
+    "category": "算法与数学建模",
+    "tags": [
+      "遗传算法",
+      "路径规划",
+      "仿真",
+      "智能优化"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [
+      "geatpy",
+      "NumPy",
+      "OpenCV"
+    ],
+    "difficulty": "进阶",
+    "repositoryUrl": "https://github.com/streamer-AP/robot-plan",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/streamer-AP/robot-plan/archive/refs/heads/master.zip",
+    "requirements": [
+      "Python 3.6",
+      "geatpy",
+      "NumPy",
+      "OpenCV"
+    ],
+    "installCommand": "pip install geatpy numpy opencv-python",
+    "runCommand": "python main.py",
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "Apache-2.0",
+    "author": "streamer-AP",
+    "sourceRevision": "530770008c7f050930d8071b8f217c2e125d39ff",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 56,
+    "tone": 3,
+    "initial": "RP"
+  },
+  {
+    "id": "pandas",
+    "name": "pandas",
+    "originalName": "pandas",
+    "aliases": [
+      "数据处理",
+      "数据分析",
+      "DataFrame",
+      "Python 数据分析"
+    ],
+    "summary": "Python 数据分析的核心库，表格清洗、聚合、合并都靠它。",
+    "description": "提供 DataFrame 和 Series 两种带标签的数据结构，擅长表格数据的读取、清洗、分组聚合与合并。几乎所有 Python 数据分析流程都会用到它，和 NumPy、Matplotlib 配合默契。数据量超过内存时，需要考虑 Polars 或 Dask 之类的替代方案。",
+    "category": "数据分析与可视化",
+    "tags": [
+      "数据分析",
+      "DataFrame",
+      "数据清洗",
+      "Python"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [
+      "NumPy"
+    ],
+    "difficulty": "入门",
+    "repositoryUrl": "https://github.com/pandas-dev/pandas",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/pandas-dev/pandas/archive/refs/heads/main.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "BSD-3-Clause",
+    "author": "pandas-dev",
+    "sourceRevision": "1493a54f37e602025cafcfdf200ce4e962d5d273",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 50155,
+    "tone": 4,
+    "initial": "PD"
+  },
+  {
+    "id": "matplotlib",
+    "name": "Matplotlib",
+    "originalName": "matplotlib",
+    "aliases": [
+      "绘图",
+      "数据可视化",
+      "Python 绘图",
+      "折线图"
+    ],
+    "summary": "Python 最经典的绘图库，论文级别的静态图表基本都能画。",
+    "description": "Python 生态里最常用的二维绘图库，折线、散点、柱状、热力图等常见图表都能画，并支持导出 PDF、SVG 等出版格式。API 偏底层但控制力强，论文和报告里的配图大多出自它。需要交互式图表时，可以配合 ECharts 或 Plotly。",
+    "category": "数据分析与可视化",
+    "tags": [
+      "数据可视化",
+      "绘图",
+      "Python",
+      "图表"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [
+      "NumPy"
+    ],
+    "difficulty": "入门",
+    "repositoryUrl": "https://github.com/matplotlib/matplotlib",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/matplotlib/matplotlib/archive/refs/heads/main.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": null,
+    "author": "matplotlib",
+    "sourceRevision": "5d4e0518fc5dcaa320de69db61fed4f3eec5fb52",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 23380,
+    "tone": 5,
+    "initial": "MP"
+  },
+  {
+    "id": "echarts",
+    "name": "Apache ECharts",
+    "originalName": "echarts",
+    "aliases": [
+      "ECharts",
+      "图表库",
+      "数据可视化",
+      "前端图表"
+    ],
+    "summary": "开源前端图表库，交互和动画成熟，国内后台系统常用。",
+    "description": "浏览器端的图表库，用配置项就能生成折线、柱状、地图、关系图等几十种图表，交互和动画开箱即用。中文文档完善，后台管理系统和数据大屏里很常见。数据量大时可以按需引入模块来控制包体积。",
+    "category": "数据分析与可视化",
+    "tags": [
+      "数据可视化",
+      "图表",
+      "前端",
+      "大屏"
+    ],
+    "languages": [
+      "TypeScript"
+    ],
+    "techStack": [
+      "Canvas",
+      "SVG"
+    ],
+    "difficulty": "入门",
+    "repositoryUrl": "https://github.com/apache/echarts",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/apache/echarts/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "Apache-2.0",
+    "author": "apache",
+    "sourceRevision": "34f4d927eafe251f26f63afd3aeefa30f2feba30",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 67539,
+    "tone": 6,
+    "initial": "ECH"
+  },
+  {
+    "id": "superset",
+    "name": "Apache Superset",
+    "originalName": "superset",
+    "aliases": [
+      "BI 工具",
+      "数据可视化平台",
+      "数据看板",
+      "SQL 查询"
+    ],
+    "summary": "Apache 出品的开源 BI 平台，连上数据库就能拖拽出数据看板。",
+    "description": "开源的商业智能平台，支持连接多种数据库、写 SQL 或拖拽生成图表，再组装成仪表板。内置权限管理和分享能力，适合团队内部做数据看板。部署建议用 Docker Compose，生产环境还要配置缓存和元数据库。",
+    "category": "数据分析与可视化",
+    "tags": [
+      "数据可视化",
+      "BI",
+      "看板",
+      "报表"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [
+      "Flask",
+      "React",
+      "Docker"
+    ],
+    "difficulty": "进阶",
+    "repositoryUrl": "https://github.com/apache/superset",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/apache/superset/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "Apache-2.0",
+    "author": "apache",
+    "sourceRevision": "4f49d24151d1583b225de5df0983e29d8375ca80",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 75203,
+    "tone": 1,
+    "initial": "SS"
+  },
+  {
+    "id": "streamlit",
+    "name": "Streamlit",
+    "originalName": "streamlit",
+    "aliases": [
+      "数据应用",
+      "Python Web",
+      "数据看板",
+      "快速原型"
+    ],
+    "summary": "用纯 Python 写数据应用，脚本一存盘页面就自动刷新。",
+    "description": "把 Python 脚本直接变成 Web 应用，不用写前端，滑块、图表、上传控件都有现成组件。改代码后页面自动重载，非常适合做数据探索和模型演示。它默认单机运行，要做复杂权限或多页面的大型系统，需要额外设计。",
+    "category": "数据分析与可视化",
+    "tags": [
+      "数据可视化",
+      "数据应用",
+      "Python",
+      "快速原型"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [
+      "React",
+      "Tornado"
+    ],
+    "difficulty": "入门",
+    "repositoryUrl": "https://github.com/streamlit/streamlit",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/streamlit/streamlit/archive/refs/heads/develop.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "Apache-2.0",
+    "author": "streamlit",
+    "sourceRevision": "4d1a8568ff8f4e373b7cd9fb1c2c32b58988d1e6",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 46040,
+    "tone": 2,
+    "initial": "ST"
+  },
+  {
+    "id": "grafana",
+    "name": "Grafana",
+    "originalName": "grafana",
+    "aliases": [
+      "监控面板",
+      "数据可视化",
+      "指标看板",
+      "可观测性"
+    ],
+    "summary": "开源的监控与可观测性面板，把指标、日志和链路画成看板。",
+    "description": "面向可观测性的可视化平台，可以对接 Prometheus、Loki、Elasticsearch、MySQL 等多种数据源。告警、变量、面板联动等功能完善，是运维监控面板的事实标准。部署之后主要工作是配置数据源和看懂查询语句。",
+    "category": "数据分析与可视化",
+    "tags": [
+      "数据可视化",
+      "监控",
+      "看板",
+      "可观测性"
+    ],
+    "languages": [
+      "TypeScript"
+    ],
+    "techStack": [
+      "Go",
+      "React",
+      "Prometheus"
+    ],
+    "difficulty": "进阶",
+    "repositoryUrl": "https://github.com/grafana/grafana",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/grafana/grafana/archive/refs/heads/main.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "AGPL-3.0",
+    "author": "grafana",
+    "sourceRevision": "386a7cc7bc9bb6607f314d324015f4412650d483",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 77354,
+    "tone": 3,
+    "initial": "GF"
+  },
+  {
+    "id": "book-manager",
+    "name": "JavaWeb 图书管理系统",
+    "originalName": "book-manager",
+    "aliases": [
+      "Java 图书管理系统",
+      "图书管理系统",
+      "图书借阅系统",
+      "JavaWeb 毕设"
+    ],
+    "summary": "JavaWeb 图书管理系统，借阅、归还、图书与读者管理都已实现。",
+    "description": "基于 JavaWeb 的图书管理系统，覆盖图书信息维护、读者管理、借阅与归还等核心流程。项目提供接口文档和 wiki 使用说明，代码量适中，适合作为课程设计或毕设的基础版本再扩展。作者已说明暂停维护，依赖升级要自己处理。",
+    "category": "Web 与软件开发",
+    "tags": [
+      "Java",
+      "图书管理系统",
+      "JavaWeb",
+      "毕业设计"
+    ],
+    "languages": [
+      "Java"
+    ],
+    "techStack": [
+      "Spring Boot",
+      "Swagger"
+    ],
+    "difficulty": "进阶",
+    "repositoryUrl": "https://github.com/LovebuildJ/book-manager",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/LovebuildJ/book-manager/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "MIT",
+    "author": "LovebuildJ",
+    "sourceRevision": "9dab2090adda73030db811fdc4ed59b7d1971688",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 380,
+    "tone": 4,
+    "initial": "BM"
+  },
+  {
+    "id": "bookmanager2",
+    "name": "图书管理系统（SpringBoot + Vue）",
+    "originalName": "BookManager2",
+    "aliases": [
+      "Java 图书管理系统",
+      "图书管理系统",
+      "SpringBoot 图书管理",
+      "前后端分离毕设"
+    ],
+    "summary": "SpringBoot + Vue 前后端分离的图书管理系统，适合改造成毕设。",
+    "description": "后端用 Java + SpringBoot + MyBatis + MySQL，前端用 Vue + Axios + Element UI，实现图书、借阅、读者等管理功能。README 写了完整的环境和搭建步骤，结构接近企业项目，适合作为进阶练习。作者说明难度不高，初学者按步骤就能跑起来。",
+    "category": "Web 与软件开发",
+    "tags": [
+      "Java",
+      "图书管理系统",
+      "SpringBoot",
+      "Vue"
+    ],
+    "languages": [
+      "Java"
+    ],
+    "techStack": [
+      "Spring Boot",
+      "MyBatis",
+      "Vue",
+      "Element UI"
+    ],
+    "difficulty": "进阶",
+    "repositoryUrl": "https://github.com/huanfenz/BookManager2",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/huanfenz/BookManager2/archive/refs/heads/master.zip",
+    "requirements": [
+      "JDK 1.8",
+      "Maven 3.3.9",
+      "MySQL 5.7"
+    ],
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "GPL-3.0",
+    "author": "huanfenz",
+    "sourceRevision": "9d7941439f818a8c5d9cffd2d56d491086ee432f",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 377,
+    "tone": 5,
+    "initial": "B2"
+  },
+  {
+    "id": "student-management-system",
+    "name": "Flask 学生管理系统",
+    "originalName": "-Student-management-system",
+    "aliases": [
+      "Flask 学生管理系统",
+      "学生管理系统",
+      "Flask 增删改查",
+      "学生课程管理"
+    ],
+    "summary": "Python + Flask + MySQL 的学生管理系统，含课程与教师模块。",
+    "description": "用 Flask 搭配 MySQL 实现的学生管理系统，支持学生录入和信息修改、课程录入与查询、毕业去向查询、教师开课查看以及超级用户管理。代码按功能组织页面，适合练习 Flask 的路由、模板和数据库操作。前后端没有分离，界面比较朴素，改 UI 时要自己写模板。",
+    "category": "Web 与软件开发",
+    "tags": [
+      "Flask",
+      "学生管理系统",
+      "Python",
+      "MySQL"
+    ],
+    "languages": [
+      "Python",
+      "CSS"
+    ],
+    "techStack": [
+      "Flask",
+      "MySQL"
+    ],
+    "difficulty": "入门",
+    "repositoryUrl": "https://github.com/wuyongch/-Student-management-system",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/wuyongch/-Student-management-system/archive/refs/heads/main.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": null,
+    "author": "wuyongch",
+    "sourceRevision": "48574ba82d8ece24ccfa5b46c5467de847e626ba",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 42,
+    "tone": 6,
+    "initial": "SM"
+  },
+  {
+    "id": "graduation-design-management-system",
+    "name": "毕业设计管理系统（SSM）",
+    "originalName": "Graduation-Design-Management-System",
+    "aliases": [
+      "毕业设计管理系统",
+      "毕设管理系统",
+      "毕设选题系统",
+      "毕业设计"
+    ],
+    "summary": "SSM 实现的毕业设计管理系统，覆盖报题、选题、审核到答辩全流程。",
+    "description": "面向高校毕业设计流程的管理系统，包含管理员维护师生信息、教师网上报题与审核、学生选题、任务书与开题报告下载、论文上传和答辩资格等环节。后端是 Spring + SpringMVC + MyBatis 的经典 SSM 组合，Maven 构建。README 给了环境版本和入口地址，适合按步骤本地跑通。",
+    "category": "Web 与软件开发",
+    "tags": [
+      "毕业设计管理系统",
+      "Java",
+      "SSM",
+      "选题系统"
+    ],
+    "languages": [
+      "Java"
+    ],
+    "techStack": [
+      "Spring",
+      "Spring MVC",
+      "MyBatis",
+      "Maven"
+    ],
+    "difficulty": "进阶",
+    "repositoryUrl": "https://github.com/Zhangchao999/Graduation-Design-Management-System",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/Zhangchao999/Graduation-Design-Management-System/archive/refs/heads/master.zip",
+    "requirements": [
+      "JDK 1.8",
+      "Tomcat 7.0",
+      "MySQL 5.7",
+      "Maven"
+    ],
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": null,
+    "author": "Zhangchao999",
+    "sourceRevision": "1f3fd0fe0fe705b8cff315f2d50477a8b10292c5",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 77,
+    "tone": 1,
+    "initial": "GD"
+  },
+  {
+    "id": "graduation",
+    "name": "毕业设计管理系统（graduation）",
+    "originalName": "graduation",
+    "aliases": [
+      "毕业设计管理系统",
+      "毕设管理系统",
+      "毕业设计",
+      "SSM 管理系统"
+    ],
+    "summary": "功能划分清晰的毕业设计管理系统，选题、流程、文件管理齐全。",
+    "description": "把毕业设计管理拆成登录、选题、信息管理、流程管理、文件管理五个模块，支持学生、教师、教务管理员三类角色。后台用 SSM 框架，前端纯 HTML 配合 Ajax，缓存、连接池、权限校验等组件都有涉及。README 附了数据库脚本和测试账号，适合拿来研究完整业务流程。",
+    "category": "Web 与软件开发",
+    "tags": [
+      "毕业设计管理系统",
+      "Java",
+      "SSM",
+      "管理系统"
+    ],
+    "languages": [
+      "JavaScript"
+    ],
+    "techStack": [
+      "Spring",
+      "Spring MVC",
+      "MyBatis",
+      "MySQL",
+      "Shiro"
+    ],
+    "difficulty": "高级",
+    "repositoryUrl": "https://github.com/Li-Zhan/graduation",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/Li-Zhan/graduation/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": null,
+    "author": "Li-Zhan",
+    "sourceRevision": "12e02f9e771601956f9060880df117ef35ddef99",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 161,
+    "tone": 2,
+    "initial": "GR"
+  },
+  {
+    "id": "appflowy",
+    "name": "AppFlowy",
+    "originalName": "AppFlowy",
+    "aliases": [
+      "Notion 替代",
+      "开源笔记",
+      "知识库",
+      "协作工作区"
+    ],
+    "summary": "开源的 Notion 替代品，笔记、看板、日历可自托管，数据在自己手里。",
+    "description": "用 Flutter 和 Rust 写的协作工作区，功能定位接近 Notion，支持文档、看板、日历等视图。可以自托管，数据掌握在自己手里，桌面端体验接近原生应用。项目迭代很快，插件生态还在完善中。",
+    "category": "移动应用与桌面软件",
+    "tags": [
+      "笔记",
+      "自托管",
+      "Flutter",
+      "知识库"
+    ],
+    "languages": [
+      "Dart"
+    ],
+    "techStack": [
+      "Flutter",
+      "Rust",
+      "PostgreSQL"
+    ],
+    "difficulty": "进阶",
+    "repositoryUrl": "https://github.com/AppFlowy-IO/AppFlowy",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/AppFlowy-IO/AppFlowy/archive/refs/heads/main.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "AGPL-3.0",
+    "author": "AppFlowy-IO",
+    "sourceRevision": "5cf3a365dec0d59f64bad1ee4bb1050471a39b93",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 77540,
+    "tone": 3,
+    "initial": "AF"
+  },
+  {
+    "id": "powertoys",
+    "name": "PowerToys",
+    "originalName": "PowerToys",
+    "aliases": [
+      "Windows 效率工具",
+      "微软工具箱",
+      "窗口管理",
+      "批量重命名"
+    ],
+    "summary": "微软官方 Windows 效率工具集，窗口布局、批量重命名、取色都齐。",
+    "description": "微软维护的 Windows 增强工具集，包含 FancyZones 窗口布局、PowerRename 批量重命名、取色器、键盘映射等十几个小工具。安装后按需开启，能明显改善日常操作效率。部分模块需要管理员权限，旧版本 Windows 的兼容性要留意。",
+    "category": "移动应用与桌面软件",
+    "tags": [
+      "Windows",
+      "效率工具",
+      "桌面",
+      "微软"
+    ],
+    "languages": [
+      "C"
+    ],
+    "techStack": [
+      ".NET",
+      "C++"
+    ],
+    "difficulty": "入门",
+    "repositoryUrl": "https://github.com/microsoft/PowerToys",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/microsoft/PowerToys/archive/refs/heads/main.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "MIT",
+    "author": "microsoft",
+    "sourceRevision": "88a197d891e4225e017fc47c04742a0fb65aa45e",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 139467,
+    "tone": 4,
+    "initial": "PT"
+  },
+  {
+    "id": "koodo-reader",
+    "name": "Koodo Reader",
+    "originalName": "koodo-reader",
+    "aliases": [
+      "电子书阅读器",
+      "跨平台阅读器",
+      "EPUB 阅读器",
+      "开源阅读器"
+    ],
+    "summary": "跨平台电子书阅读器，支持 EPUB、PDF 等格式，可同步与备份书库。",
+    "description": "支持 EPUB、PDF、MOBI、AZW3、漫画等格式的电子书管理与阅读工具，覆盖 Windows、macOS、Linux、Android、iOS 和网页端。内置书库管理、阅读进度同步和备份功能，界面简洁。对扫描版 PDF 的排版支持一般。",
+    "category": "移动应用与桌面软件",
+    "tags": [
+      "电子书",
+      "阅读器",
+      "跨平台",
+      "JavaScript"
+    ],
+    "languages": [
+      "JavaScript"
+    ],
+    "techStack": [
+      "Electron",
+      "React"
+    ],
+    "difficulty": "入门",
+    "repositoryUrl": "https://github.com/koodo-reader/koodo-reader",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/koodo-reader/koodo-reader/archive/refs/heads/dev.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "AGPL-3.0",
+    "author": "koodo-reader",
+    "sourceRevision": "234a85b9e70808922b51d9f7a0c9a25e98e8e543",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 28561,
+    "tone": 5,
+    "initial": "KR"
+  },
+  {
+    "id": "godot",
+    "name": "Godot 引擎",
+    "originalName": "godot",
+    "aliases": [
+      "Godot",
+      "游戏引擎",
+      "开源游戏引擎",
+      "2D 3D 游戏开发"
+    ],
+    "summary": "开源游戏引擎，2D/3D 都能做，编辑器轻量、可导出平台多。",
+    "description": "MIT 协议的开源游戏引擎，自带场景编辑器、脚本系统和物理引擎，2D 和 3D 项目都支持。体积小、启动快，可以从 Windows、macOS、Linux 导出到桌面和移动端。生态和商业引擎相比仍有差距，但个人或小团队做独立游戏够用。",
+    "category": "移动应用与桌面软件",
+    "tags": [
+      "游戏引擎",
+      "开源",
+      "跨平台",
+      "C++"
+    ],
+    "languages": [
+      "C++"
+    ],
+    "techStack": [
+      "GDScript",
+      "Vulkan"
+    ],
+    "difficulty": "进阶",
+    "repositoryUrl": "https://github.com/godotengine/godot",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/godotengine/godot/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "MIT",
+    "author": "godotengine",
+    "sourceRevision": "81ab961f91066a63bcbf3ec340962bb1a1ada558",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 118634,
+    "tone": 6,
+    "initial": "GT"
+  },
+  {
+    "id": "hello-algo",
+    "name": "Hello 算法",
+    "originalName": "hello-algo",
+    "aliases": [
+      "Hello 算法",
+      "数据结构与算法教程",
+      "算法动画图解",
+      "算法入门"
+    ],
+    "summary": "动画图解的数据结构与算法教程，提供多语言可运行代码。",
+    "description": "《Hello 算法》的配套仓库，用动画和图示讲解数据结构与算法，并提供 Python、Java、C++、Go 等多语言实现。内容从基础数据结构一路讲到动态规划和图算法，代码可以直接运行。中文学习者口碑很好，适合配合刷题一起看。",
+    "category": "其他开源项目",
+    "tags": [
+      "算法",
+      "数据结构",
+      "教程",
+      "学习资源"
+    ],
+    "languages": [
+      "Java"
+    ],
+    "techStack": [],
+    "difficulty": "入门",
+    "repositoryUrl": "https://github.com/krahets/hello-algo",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/krahets/hello-algo/archive/refs/heads/main.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": "NOASSERTION",
+    "author": "krahets",
+    "sourceRevision": "350f483801b2badb95180047aa82cadb825852a2",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 130835,
+    "tone": 1,
+    "initial": "HA"
+  },
+  {
+    "id": "hellogithub",
+    "name": "HelloGitHub",
+    "originalName": "HelloGitHub",
+    "aliases": [
+      "HelloGitHub",
+      "开源项目推荐",
+      "开源月刊",
+      "项目发现"
+    ],
+    "summary": "每月一期开源项目推荐，专挑有趣、好上手的项目。",
+    "description": "HelloGitHub 月刊的仓库，每月整理一批有趣、入门级的开源项目，覆盖编程语言、工具、教程等方向。每期都有中文简介和上手提示，是发现练手项目的好入口。推荐内容偏入门，想深挖的项目需要自己继续跟进。",
+    "category": "其他开源项目",
+    "tags": [
+      "开源项目",
+      "月刊",
+      "资源推荐",
+      "学习资源"
+    ],
+    "languages": [
+      "Python"
+    ],
+    "techStack": [],
+    "difficulty": "入门",
+    "repositoryUrl": "https://github.com/521xueweihan/HelloGitHub",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/521xueweihan/HelloGitHub/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": null,
+    "author": "521xueweihan",
+    "sourceRevision": "030121514da552ed91e640ef8bde4083c753dd52",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 182907,
+    "tone": 2,
+    "initial": "HG"
+  },
+  {
+    "id": "weekly",
+    "name": "科技爱好者周刊",
+    "originalName": "weekly",
+    "aliases": [
+      "阮一峰周刊",
+      "科技周刊",
+      "每周周刊",
+      "技术资讯"
+    ],
+    "summary": "阮一峰的科技爱好者周刊，每周五更新，记录工具、文章与思考。",
+    "description": "阮一峰维护的科技周刊，每周五发布一期，内容包括值得看的工具、文章、资源和作者自己的思考。更新稳定、视角偏技术人文，适合通勤时快速浏览。仓库本身是 Markdown 文档集合，没有可运行代码。",
+    "category": "其他开源项目",
+    "tags": [
+      "周刊",
+      "科技资讯",
+      "技术阅读",
+      "学习资源"
+    ],
+    "languages": [],
+    "techStack": [],
+    "difficulty": "入门",
+    "repositoryUrl": "https://github.com/ruanyf/weekly",
+    "deliveryType": [
+      "repository",
+      "download"
+    ],
+    "codePath": null,
+    "downloadUrl": "https://github.com/ruanyf/weekly/archive/refs/heads/master.zip",
+    "requirements": null,
+    "installCommand": null,
+    "runCommand": null,
+    "dataset": null,
+    "hardwareRequirements": null,
+    "runStatus": "not-tested",
+    "verificationNotes": "尚未实际安装或运行，仅核对了仓库、许可证与默认分支。",
+    "license": null,
+    "author": "ruanyf",
+    "sourceRevision": "b9d8eb2ac3d55e82e095daebaa7df530995f2dd2",
+    "lastVerifiedAt": "2026-10-18",
+    "addedAt": "2026-10-18",
+    "featured": false,
+    "stars": 106414,
+    "tone": 3,
+    "initial": "WK"
   }
 ];
