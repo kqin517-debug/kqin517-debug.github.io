@@ -23,7 +23,7 @@
 <meta name="twitter:description" content="单文件 Flask 学生管理系统，自带 SQLite 与增删改查接口。（「开源拾遗」收录 · Web 与软件开发）">
 <meta name="twitter:image" content="https://kqin517-debug.github.io/assets/img/og-cover.jpg">
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Flask 学生管理系统（单文件）","description":"一个文件里包含建表、示例数据、页面模板和 REST 风格接口，数据库用 SQLite 免安装。支持新增、列表、删除学生记录，并带 /health 健康检查，可以直接当作毕设骨架。启动后访问首页就能操作。","url":"https://kqin517-debug.github.io/p/flask-student-system/","inLanguage":"zh-CN","programmingLanguage":["Python"],"license":"MIT","author":{"@type":"Organization","name":"开源拾遗"},"dateModified":"2026-10-18","dateCreated":"2026-10-18"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Flask 学生管理系统（单文件）","description":"一个文件里包含建表、示例数据、页面模板和 REST 风格接口，数据库用 SQLite 免安装。支持新增、列表、删除学生记录，并带 /health 健康检查，可以直接当作毕设骨架。启动后访问首页就能操作。","url":"https://kqin517-debug.github.io/p/flask-student-system/","inLanguage":"zh-CN","programmingLanguage":["Python"],"license":"MIT","author":{"@type":"Organization","name":"开源拾遗"},"dateModified":"2026-10-19","dateCreated":"2026-10-18"}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23b5482c'/%3E%3Ctext x='32' y='46' font-size='38' text-anchor='middle' fill='%23fff8ee' font-family='serif'%3E%E6%8B%BE%3C/text%3E%3C/svg%3E">
 <script>
   (function () {
@@ -66,6 +66,12 @@
   <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/></symbol>
   <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.4-2.9 7.7-7 9.5-4.1-1.8-7-5.1-7-9.5V6l7-3Z"/><path d="m9 12 2 2 4-4.5"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4.5V11h-6.5"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12.5" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="m21 15-5-5L5 21"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7Z"/></symbol>
+  <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></symbol>
+  <symbol id="i-warning" viewBox="0 0 24 24"><path d="M12 4 2.5 20h19L12 4Z"/><path d="M12 10v4.2M12 17.4v.1"/></symbol>
 </svg>
 <a class="skip-link" href="#main">跳到主要内容</a>
 
@@ -82,7 +88,7 @@
     <nav class="nav" aria-label="主导航">
       <a href="../../index.html#projects">找项目</a>
       <a href="../../index.html#categories">分类</a>
-      <a href="../../index.html#standards">收录标准</a>
+      <a href="../../index.html#howto">怎么用</a>
       <a href="../../index.html#about">关于</a>
     </nav>
 
@@ -103,7 +109,7 @@
   <nav class="mobile-nav" id="mobileNav" aria-label="移动端导航" aria-hidden="true">
     <a href="../../index.html#projects">找项目</a>
       <a href="../../index.html#categories">分类</a>
-      <a href="../../index.html#standards">收录标准</a>
+      <a href="../../index.html#howto">怎么用</a>
       <a href="../../index.html#about">关于</a>
   </nav>
 </header>
@@ -123,7 +129,8 @@
       <span class="project-cat">Web 与软件开发</span>
       <span class="dot" aria-hidden="true"></span>
       <span class="detail-id">flask-student-system</span>
-      
+      <span class="preview-badge preview-badge--screenshot detail-preview-badge" data-preview-type="screenshot">运行截图</span>
+      <span class="detail-featured">本期推荐</span>
     </div>
     <h1 class="detail-title">Flask 学生管理系统（单文件）</h1>
     
@@ -135,11 +142,14 @@
   <li class="detail-meta-item"><span class="meta-label">许可证</span>MIT</li>
 </ul>
     <div class="detail-actions">
-  <a class="link-arrow" href="#access">查看获取方式
+  <a class="btn btn-primary" href="#preview">查看运行效果
+    <svg class="icon" aria-hidden="true"><use href="#i-image"/></svg>
+  </a>
+  <a class="link-arrow" href="#preview">查看预览与运行效果
     <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
   </a>
 </div>
-    <p class="detail-dates">收录于 2026-10-18 · 最后核对 2026-10-18</p>
+    <p class="detail-dates">收录于 2026-10-18 · 最后核对 2026-10-19</p>
   </div>
 </header>
     <div class="detail-grid">
@@ -203,9 +213,79 @@
 </dl>
   </div>
 </section>
-<section class="detail-sec" id="access" aria-labelledby="access-title">
+<section class="detail-sec" id="preview" aria-labelledby="preview-title">
   <header class="detail-sec-head">
     <span class="detail-sec-num" aria-hidden="true">02</span>
+    <h2 class="detail-sec-title" id="preview-title">预览与运行效果</h2>
+    <p class="detail-sec-note">预览能力取决于项目真实具备的资源</p>
+  </header>
+  <div class="detail-sec-body">
+<div class="preview-wrap" data-preview-mode="screenshot" data-preview-verified="1">
+<div class="preview-panel preview-panel--screenshot"><div class="preview-toolbar">
+    <div class="preview-toolbar-main">
+      <span class="preview-badge preview-badge--screenshot preview-badge--lg" data-preview-type="screenshot">运行截图</span>
+      <span class="preview-source">真实运行截图</span>
+    </div>
+    <div class="preview-actions"><a class="preview-textlink" href="#access">获取源码 / 下载</a></div>
+  </div><div class="preview-block" data-preview-panel="screenshot">
+  
+  <ul class="shot-gallery" role="list">
+  <figure class="shot-item">
+    <a class="shot-link" href="../../assets/img/previews/flask-student-system.png" target="_blank" rel="noopener noreferrer" aria-label="查看原图：Flask 学生管理系统（单文件） 真实运行截图">
+      <img class="shot-img" src="../../assets/img/previews/flask-student-system.png" alt="Flask 学生管理系统（单文件） 真实运行截图" loading="lazy" decoding="async">
+      <span class="shot-zoom" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
+    </a>
+    <figcaption class="shot-cap">图 1 · Flask 学生管理系统（单文件） 运行截图 · 点击查看原图</figcaption>
+  </figure>
+  <figure class="shot-item">
+    <a class="shot-link" href="../../assets/img/previews/flask-student-system-added.png" target="_blank" rel="noopener noreferrer" aria-label="查看原图：Flask 学生管理系统（单文件） 真实运行截图 2">
+      <img class="shot-img" src="../../assets/img/previews/flask-student-system-added.png" alt="Flask 学生管理系统（单文件） 真实运行截图 2" loading="lazy" decoding="async">
+      <span class="shot-zoom" aria-hidden="true"><svg class="icon"><use href="#i-external"/></svg></span>
+    </a>
+    <figcaption class="shot-cap">图 2 · Flask 学生管理系统（单文件） · 点击查看原图</figcaption>
+  </figure>
+  </ul>
+  <p class="preview-proof preview-proof--verified"><svg class="icon" aria-hidden="true"><use href="#i-image"/></svg>截图为项目真实运行画面（2026-10-19 截取） · Windows 11 (10.0.22631) · Python 3.14.6 · Flask 3.1.3 · SQLite 3.50.4</p>
+  <p class="preview-note">截图按容器宽度等比缩放，点击可在新标签页查看原图。
+    本站是纯静态站点，不会在浏览器里运行该项目；复现请按「安装与运行」在本地执行。</p>
+</div></div>
+<div class="preview-block" data-preview-panel="terminal">
+  <h3 class="preview-subhead">终端输出与示例结果</h3>
+  <div class="terminal" data-terminal>
+    <div class="terminal-head">
+      <span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="terminal-title">本地终端 · 实际运行记录</span>
+      <button class="copy-btn" type="button" data-copy-target="preview-output-flask-student-system" aria-label="复制终端输出">
+        <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>
+        <span class="copy-btn-text">复制输出</span>
+      </button>
+    </div>
+    <pre class="terminal-body" id="preview-output-flask-student-system" tabindex="0"><code>$ python snippets/flask-student-system.py
+* Serving Flask app &#39;flask-student-system&#39;
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [19/Oct/2026 00:55:48] &quot;GET /health HTTP/1.1&quot; 200 -
+127.0.0.1 - - [19/Oct/2026 00:55:49] &quot;GET / HTTP/1.1&quot; 200 -
+127.0.0.1 - - [19/Oct/2026 00:55:49] &quot;POST /add HTTP/1.1&quot; 302 -
+127.0.0.1 - - [19/Oct/2026 00:55:51] &quot;POST /delete/1 HTTP/1.1&quot; 302 -
+127.0.0.1 - - [19/Oct/2026 00:55:51] &quot;GET / HTTP/1.1&quot; 200 -</code></pre>
+  </div>
+  <div class="preview-input">
+    <p class="cmd-label cmd-label--block">示例输入</p>
+    <pre class="cmd-block"><code>浏览器打开 http://127.0.0.1:5000，填写学号 2024001、姓名 张三、专业 计算机科学与技术，点击「添加学生」。</code></pre>
+  </div>
+  <p class="preview-proof preview-proof--verified"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>已实际运行验证（2026-10-19） · Windows 11 (10.0.22631) · Python 3.14.6 · Flask 3.1.3 · SQLite 3.50.4</p>
+  <p class="preview-note">输出保留真实换行；没有实际运行记录时，页面不会标注「已验证」。
+    本站是纯静态站点，不会在浏览器里执行 Python / C / C++ 程序：以上是真实运行记录，复现请按「安装与运行」在本地执行。</p>
+</div>
+</div>
+  </div>
+</section>
+<section class="detail-sec" id="access" aria-labelledby="access-title">
+  <header class="detail-sec-head">
+    <span class="detail-sec-num" aria-hidden="true">03</span>
     <h2 class="detail-sec-title" id="access-title">获取方式</h2>
     <p class="detail-sec-note">优先使用原始仓库</p>
   </header>
@@ -371,7 +451,7 @@
 </section>
 <section class="detail-sec" id="install" aria-labelledby="install-title">
   <header class="detail-sec-head">
-    <span class="detail-sec-num" aria-hidden="true">03</span>
+    <span class="detail-sec-num" aria-hidden="true">04</span>
     <h2 class="detail-sec-title" id="install-title">安装与运行</h2>
     <p class="detail-sec-note">命令均来自公开资料</p>
   </header>
@@ -382,11 +462,15 @@
     <ul class="req-list"><li>Python 3.9+</li><li>Flask</li></ul>
   </div>
   <div class="install-item">
-    <div class="cmd-item cmd-item--missing">
+    <div class="cmd-item">
   <div class="cmd-head">
     <span class="cmd-label">安装命令</span>
-    <span class="is-missing">未提供</span>
+    <button class="copy-btn" type="button" data-copy-target="cmd-install-flask-student-system">
+      <svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>
+      <span class="copy-btn-text">复制</span>
+    </button>
   </div>
+  <pre class="cmd-block"><code id="cmd-install-flask-student-system">pip install flask</code></pre>
 </div>
 <div class="cmd-item">
   <div class="cmd-head">
@@ -401,11 +485,19 @@
   </div>
 </div>
 
+<div class="install-trouble">
+    <p class="cmd-label cmd-label--block">常见问题</p>
+    <ul class="req-list req-list--trouble">
+      <li>首次运行前需要安装 Flask：pip install flask。</li>
+      <li>服务默认监听 127.0.0.1:5000，浏览器访问 http://127.0.0.1:5000 操作。</li>
+      <li>运行会在当前工作目录生成 students.db；需要干净数据时可用 DB_PATH 环境变量指向其他文件。</li>
+    </ul>
+  </div>
   </div>
 </section>
 <section class="detail-sec" id="data" aria-labelledby="data-title">
   <header class="detail-sec-head">
-    <span class="detail-sec-num" aria-hidden="true">04</span>
+    <span class="detail-sec-num" aria-hidden="true">05</span>
     <h2 class="detail-sec-title" id="data-title">数据与硬件</h2>
     <p class="detail-sec-note">未核实的字段不会编造</p>
   </header>
@@ -424,7 +516,7 @@
 </section>
 <section class="detail-sec" id="verification" aria-labelledby="verification-title">
   <header class="detail-sec-head">
-    <span class="detail-sec-num" aria-hidden="true">05</span>
+    <span class="detail-sec-num" aria-hidden="true">06</span>
     <h2 class="detail-sec-title" id="verification-title">运行验证状态</h2>
     <p class="detail-sec-note">四态徽章</p>
   </header>
@@ -461,7 +553,7 @@
     </div>
     <div class="fact">
       <dt>最后核对</dt>
-      <dd>2026-10-18</dd>
+      <dd>2026-10-19</dd>
     </div>
     <div class="fact">
       <dt>核对版本</dt>
@@ -469,14 +561,14 @@
     </div>
     <div class="fact fact--wide">
       <dt>验证说明</dt>
-      <dd><p class="fact-text">已在本地启动服务并验证：/health 正常，新增/列表/删除接口均通过。</p></dd>
+      <dd><p class="fact-text">已在本地启动服务并验证：/health 正常，新增/列表/删除接口均通过。；2026-10-19 复跑：/health 200，新增/列表/删除接口全部通过</p></dd>
     </div>
 </dl>
   </div>
 </section>
 <section class="detail-sec" id="license" aria-labelledby="license-title">
   <header class="detail-sec-head">
-    <span class="detail-sec-num" aria-hidden="true">06</span>
+    <span class="detail-sec-num" aria-hidden="true">07</span>
     <h2 class="detail-sec-title" id="license-title">许可证与引用</h2>
     <p class="detail-sec-note">转载与引用请保留出处</p>
   </header>
@@ -500,7 +592,7 @@
     </div>
     <div class="fact">
       <dt>最后核对</dt>
-      <dd>2026-10-18</dd>
+      <dd>2026-10-19</dd>
     </div>
     <div class="fact">
       <dt>收录日期</dt>
@@ -515,14 +607,14 @@
       <span class="copy-btn-text">复制引用</span>
     </button>
   </div>
-  <p class="citation-text" id="citation-flask-student-system">Flask 学生管理系统（单文件） / 开源拾遗. 《开源拾遗》收录，收录日期 2026-10-18，最后核对 2026-10-18. 许可证：MIT.</p>
+  <p class="citation-text" id="citation-flask-student-system">Flask 学生管理系统（单文件） / 开源拾遗. 《开源拾遗》收录，收录日期 2026-10-18，最后核对 2026-10-19. 许可证：MIT.</p>
   <p class="access-note">许可证以原始仓库的 LICENSE 文件为准；本站不对许可证做法律判断。</p>
 </div>
   </div>
 </section>
 <section class="detail-sec" id="related" aria-labelledby="related-title">
   <header class="detail-sec-head">
-    <span class="detail-sec-num" aria-hidden="true">07</span>
+    <span class="detail-sec-num" aria-hidden="true">08</span>
     <h2 class="detail-sec-title" id="related-title">相关项目</h2>
     <p class="detail-sec-note">同分类优先</p>
   </header>
@@ -567,6 +659,7 @@
   <p class="toc-title">本页目录</p>
   <ol>
     <li><a href="#overview">概览</a></li>
+    <li><a href="#preview">预览与运行效果</a></li>
     <li><a href="#access">获取方式</a></li>
     <li><a href="#install">安装与运行</a></li>
     <li><a href="#data">数据与硬件</a></li>
@@ -580,7 +673,7 @@
   <ul class="aside-links">
     <li><a href="../../index.html#projects">全部项目</a></li>
     <li><a href="../../index.html#categories">分类</a></li>
-    <li><a href="../../index.html#standards">收录标准</a></li>
+    <li><a href="../../index.html#howto">怎么用</a></li>
     <li><a href="../../index.html#about">关于</a></li>
   </ul>
   <p class="aside-note">本页信息整理自公开仓库，Star 数与许可证以原始仓库为准。</p>
@@ -601,22 +694,23 @@
           <span class="brand-sub">Open Source Picks</span>
         </span>
       </a>
-      <p>面向大学生的开源项目检索站。只收录真实存在、能打开、有源码的项目。</p>
+      <p>给同班同学用的开源项目索引：能搜项目，也能下载能跑的例子。免费、无广告、无需注册。</p>
     </div>
 
     <nav class="footer-nav" aria-label="页脚导航">
       <p class="footer-title">浏览</p>
         <a href="../../index.html#projects">全部项目</a>
         <a href="../../index.html#categories">分类</a>
-        <a href="../../index.html#standards">收录标准</a>
+        <a href="../../index.html#howto">怎么用</a>
         <a href="../../index.html#about">关于</a>
     </nav>
 
     <div class="footer-contact">
       <p class="footer-title">反馈</p>
-      <a href="mailto:hi@shiyi.notes">hi@shiyi.notes</a>
-      <a href="https://github.com/kqin517-debug" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <p>发现错误或想推荐项目，欢迎写信。<br>本站仅提供索引与说明，项目内容、许可证与 Star 数均以原始仓库为准。本页信息核对于 2026-10-18。</p>
+      <a href="https://github.com/kqin517-debug/kqin517-debug.github.io/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a>
+      <a href="mailto:kqin517@gmail.com">kqin517@gmail.com</a>
+      <a href="https://github.com/kqin517-debug" target="_blank" rel="noopener noreferrer">GitHub 主页</a>
+      <p>发现错误或想推荐项目，欢迎提 Issue、写信或在群里说。<br>本站仅提供索引与说明，项目内容、许可证与 Star 数均以原始仓库为准。本页信息核对于 2026-10-19。</p>
     </div>
   </div>
 
@@ -709,5 +803,6 @@
     }
   })();
 </script>
+
 </body>
 </html>

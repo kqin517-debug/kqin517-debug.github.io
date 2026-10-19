@@ -12,8 +12,9 @@
   var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   var SITE = window.SITE_CONFIG || {};
-  var CONTACT_EMAIL = SITE.contactEmail || "hi@shiyi.notes";
-  var SUBSCRIBE_ENDPOINT = SITE.subscribeEndpoint || "";
+  /* 反馈邮箱留空 = 全站不显示邮箱入口（避免死链接）；填上真实邮箱后自动同步。 */
+  var CONTACT_EMAIL = SITE.contactEmail || "";
+  var FEEDBACK_URL = SITE.feedbackUrl || "https://github.com/kqin517-debug/kqin517-debug.github.io/issues";
 
   /* ---------- 常量 ---------- */
   var STATUS_LABEL = {
@@ -27,7 +28,22 @@
     download: "可下载",
     repository: "原始仓库"
   };
+  /* 难度只在卡片角标里出现，用英文类名做配色 */
+  var DIFFICULTY_CLASS = {
+    "入门": "beginner",
+    "进阶": "intermediate",
+    "高级": "advanced"
+  };
   var JUSTIFIED_STATUS = ["not-tested", "install-tested", "smoke-tested", "experiment-verified"];
+  var PREVIEW_TYPES = ["web", "external", "screenshot", "terminal", "video", "none"];
+  var CARD_PREVIEW_LABELS = {
+    web: "在线预览",
+    external: "外部演示",
+    screenshot: "查看运行效果",
+    terminal: "查看运行效果",
+    video: "观看演示",
+    none: "暂无预览"
+  };
   var CATEGORIES = [
     "人工智能与机器学习",
     "算法与数学建模",
@@ -122,7 +138,35 @@
       stars: typeof raw.stars === "number" ? raw.stars : null,
       tone: raw.tone || 1,
       initial: raw.initial || (raw.name || "?").slice(0, 2).toUpperCase(),
-      langColor: raw.langColor || null
+      langColor: raw.langColor || null,
+      /* 站点自己的可运行包：有 artifact 才会出现「可直接运行」筛选与下载卡 */
+      artifact: normalizeArtifact(raw.artifact),
+      runnable: raw.runnable && typeof raw.runnable === "object" ? raw.runnable : null,
+      expectedOutput: raw.expectedOutput || null,
+      /* 预览：缺省 = 暂无预览；未知模式一律降级为 none，避免卡片显示不存在的预览 */
+      previewType: PREVIEW_TYPES.indexOf(raw.previewType) === -1 ? "none" : raw.previewType,
+      previewUrl: raw.previewUrl || null,
+      previewImages: Array.isArray(raw.previewImages) ? raw.previewImages : [],
+      previewVideoUrl: raw.previewVideoUrl || null,
+      demoInput: raw.demoInput || null,
+      demoOutput: raw.demoOutput || null,
+      outputVerified: raw.outputVerified === true,
+      previewVerifiedAt: raw.previewVerifiedAt || null,
+      demoEnvironment: Array.isArray(raw.demoEnvironment) ? raw.demoEnvironment : [],
+      troubleshooting: Array.isArray(raw.troubleshooting) ? raw.troubleshooting : []
+    };
+  }
+
+  function normalizeArtifact(raw) {
+    if (!raw || typeof raw !== "object") return null;
+    if (!raw.fileName || !raw.url) return null;
+    return {
+      url: raw.url,
+      fileName: raw.fileName,
+      bytes: typeof raw.bytes === "number" ? raw.bytes : null,
+      sha256: raw.sha256 || null,
+      version: raw.version || null,
+      uploadedAt: raw.uploadedAt || null
     };
   }
 
@@ -180,6 +224,7 @@
     type: "all",
     status: "all",
     diff: "all",
+    runnable: false,
     sort: "relevance"
   };
 
@@ -201,6 +246,9 @@
   var diffSelect = document.getElementById("filterDifficulty");
   var sortSelect = document.getElementById("sortOrder");
   var resetBtn = document.getElementById("resetFilters");
+  var liveEl = document.querySelector("[data-search-live]");
+  var liveTextEl = document.querySelector("[data-search-live-text]");
+  var liveJumpEl = document.querySelector("[data-search-live-jump]");
 
   /* ---------- 主题 ---------- */
   var themeMeta = document.querySelector('meta[name="theme-color"]');
@@ -357,8 +405,13 @@
       'data-languages="' + escapeHtml(p.languages.join("|")) + '"',
       'data-types="' + escapeHtml(p.deliveryType.join("|")) + '"',
       'data-status="' + escapeHtml(p.runStatus) + '"',
-      'data-difficulty="' + escapeHtml(p.difficulty || "") + '"'
+      'data-difficulty="' + escapeHtml(p.difficulty || "") + '"',
+      'data-runnable="' + (p.artifact ? "1" : "0") + '"',
+      'data-preview="' + escapeHtml(p.previewType || "none") + '"'
     ].join(" ");
+    var previewChip = '<span class="preview-chip preview-chip--' + escapeHtml(p.previewType || "none") +
+      '" data-preview-type="' + escapeHtml(p.previewType || "none") + '">' +
+      escapeHtml(CARD_PREVIEW_LABELS[p.previewType] || CARD_PREVIEW_LABELS.none) + "</span>";
 
     return "" +
       '<article class="project-card tone-' + escapeHtml(p.tone) + '" ' + attrs + ">" +
@@ -366,12 +419,16 @@
           '<div class="card-head">' +
             '<span class="card-initial" aria-hidden="true">' + escapeHtml(p.initial) + "</span>" +
             '<span class="card-category">' + escapeHtml(p.category) + "</span>" +
+            (DIFFICULTY_CLASS[p.difficulty]
+              ? '<span class="card-difficulty diff-' + DIFFICULTY_CLASS[p.difficulty] + '">' + escapeHtml(p.difficulty) + "</span>"
+              : "") +
           "</div>" +
           '<h3 class="card-title">' + highlight(p.name, tokens) + "</h3>" +
           '<p class="card-summary">' + highlight(p.summary, tokens) + "</p>" +
           '<ul class="card-tags">' + tags + "</ul>" +
           '<div class="card-meta">' +
             (langs || '<span class="lang">语言未提供</span>') +
+            previewChip +
             '<span class="badge status-' + escapeHtml(p.runStatus) + '">' + escapeHtml(STATUS_LABEL[p.runStatus]) + "</span>" +
             types +
             (stars ? '<span class="stars"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg>' + stars + "</span>" : "") +
@@ -385,6 +442,7 @@
   var CLIENT_STATES = ["all"].concat(CATEGORIES);
 
   function matches(p, entry) {
+    if (state.runnable && !p.artifact) return false;
     if (state.cat !== "all" && p.category !== state.cat) return false;
     if (state.lang !== "all" && p.languages.indexOf(state.lang) === -1) return false;
     if (state.type !== "all" && p.deliveryType.indexOf(state.type) === -1) return false;
@@ -429,16 +487,36 @@
       if (state.type !== "all") bits.push("类型 " + (TYPE_LABEL[state.type] || state.type));
       if (state.status !== "all") bits.push("验证 " + (STATUS_LABEL[state.status] || state.status));
       if (state.diff !== "all") bits.push("难度 " + state.diff);
+      if (state.runnable) bits.push("可直接运行");
       statusEl.textContent = bits.length
         ? bits.join(" · ") + "，找到 " + rows.length + " 个，共 " + projects.length + " 个。"
         : "";
     }
 
     var dirty = state.tokens.length || state.cat !== "all" || state.lang !== "all" ||
-      state.type !== "all" || state.status !== "all" || state.diff !== "all";
+      state.type !== "all" || state.status !== "all" || state.diff !== "all" || state.runnable;
     if (resetBtn) resetBtn.hidden = !dirty;
     if (clearBtn && searchInput) clearBtn.hidden = searchInput.value === "";
+    renderLiveHint(rows.length);
     syncUrl();
+  }
+
+  /* 搜索框下方的即时反馈：桌面端不用滚动就能知道命中几个、是否为空 */
+  function renderLiveHint(count) {
+    if (!liveEl) return;
+    var active = state.tokens.length > 0;
+    if (!active) {
+      liveEl.hidden = true;
+      return;
+    }
+    liveEl.hidden = false;
+    if (liveTextEl) {
+      liveTextEl.textContent = count > 0
+        ? "在 " + projects.length + " 个项目里找到 " + count + " 个匹配"
+        : "没有匹配的项目，换个关键词或按方向浏览试试";
+    }
+    if (liveJumpEl) liveJumpEl.hidden = count === 0;
+    liveEl.classList.toggle("is-empty", count === 0);
   }
 
   /* ---------- URL 状态 ---------- */
@@ -452,6 +530,7 @@
       if (state.type !== "all") params.set("type", state.type);
       if (state.status !== "all") params.set("status", state.status);
       if (state.diff !== "all") params.set("diff", state.diff);
+      if (state.runnable) params.set("runnable", "1");
       if (state.sort !== "relevance") params.set("sort", state.sort);
       var qs = params.toString();
       history.replaceState(null, "", location.pathname + (qs ? "?" + qs : "") + location.hash);
@@ -471,6 +550,7 @@
     state.type = take("type") || "all";
     state.status = take("status") || "all";
     state.diff = take("diff") || "all";
+    state.runnable = take("runnable") === "1";
     state.sort = take("sort") || "relevance";
     if (CLIENT_STATES.indexOf(state.cat) === -1) state.cat = "all";
     if (state.sort !== "recent" && state.sort !== "stars" && state.sort !== "name") state.sort = "relevance";
@@ -488,7 +568,20 @@
     select.value = current;
   }
 
+  /* 分类 chip 与「可直接运行」chip 的选中态：两者互斥，点哪个哪个亮 */
+  function syncChipState() {
+    if (!filters) return;
+    Array.prototype.forEach.call(filters.children, function (btn) {
+      var value = btn.getAttribute("data-filter");
+      var active = value === "runnable" ? state.runnable : (value === state.cat && !state.runnable);
+      btn.classList.toggle("is-active", active);
+    });
+  }
+
   function setupControls() {
+    var runnableCount = projects.filter(function (p) { return !!p.artifact; }).length;
+    if (!runnableCount) state.runnable = false;
+
     if (filters) {
       filters.innerHTML = '<button class="chip is-active" type="button" data-filter="all">全部</button>' +
         CATEGORIES.map(function (category) {
@@ -496,22 +589,26 @@
           if (!count) return "";
           return '<button class="chip" type="button" data-filter="' + escapeHtml(category) + '">' +
             escapeHtml(category) + ' <span class="chip-count">' + count + "</span></button>";
-        }).join("");
+        }).join("") +
+        (runnableCount
+          ? '<button class="chip chip--runnable" type="button" data-filter="runnable">可直接运行 <span class="chip-count">' + runnableCount + "</span></button>"
+          : "");
       filters.addEventListener("click", function (e) {
         var chip = e.target.closest(".chip");
         if (!chip) return;
-        state.cat = chip.getAttribute("data-filter") || "all";
-        Array.prototype.forEach.call(filters.children, function (btn) {
-          btn.classList.toggle("is-active", btn === chip);
-        });
+        var value = chip.getAttribute("data-filter") || "all";
+        if (value === "runnable") {
+          state.runnable = !state.runnable;
+        } else {
+          state.cat = value;
+          state.runnable = false;
+        }
+        syncChipState();
         applyFilters();
+        centerActiveChip();
       });
-      // 从 URL 恢复分类时同步选中态
-      if (state.cat !== "all") {
-        Array.prototype.forEach.call(filters.children, function (btn) {
-          btn.classList.toggle("is-active", btn.getAttribute("data-filter") === state.cat);
-        });
-      }
+      // 从 URL 恢复分类 / 「可直接运行」时同步选中态
+      syncChipState();
     }
 
     var allLangs = [];
@@ -583,6 +680,9 @@
     if (clearBtn) {
       clearBtn.addEventListener("click", function () { clearSearch(true); });
     }
+    if (liveJumpEl) {
+      liveJumpEl.addEventListener("click", function () { scrollToProjects(); });
+    }
     if (resetBtn) {
       resetBtn.addEventListener("click", function () { resetFilters(); });
     }
@@ -610,17 +710,20 @@
           '<span class="category-name">' + escapeHtml(category) + "</span>" +
           '<span class="category-count">' + count + " 个项目</span>" +
           "</button>";
-      }).join("");
+      }).join("") +
+        '<a class="category-card category-card--all reveal is-in" href="#projects" data-category-entry="all">' +
+        '<span class="category-name">全部项目</span>' +
+        '<span class="category-count">共 ' + projects.length + " 个 · 直接浏览</span>" +
+        "</a>";
       categoryGrid.addEventListener("click", function (e) {
         var card = e.target.closest("[data-category-entry]");
         if (!card) return;
+        e.preventDefault();
         state.cat = card.getAttribute("data-category-entry");
-        if (filters) {
-          Array.prototype.forEach.call(filters.children, function (btn) {
-            btn.classList.toggle("is-active", btn.getAttribute("data-filter") === state.cat);
-          });
-        }
+        state.runnable = false;
+        syncChipState();
         applyFilters();
+        centerActiveChip();
         scrollToProjects();
       });
     }
@@ -653,19 +756,17 @@
     state.type = "all";
     state.status = "all";
     state.diff = "all";
+    state.runnable = false;
     state.sort = "relevance";
     if (searchInput) searchInput.value = "";
-    if (filters) {
-      Array.prototype.forEach.call(filters.children, function (btn) {
-        btn.classList.toggle("is-active", btn.getAttribute("data-filter") === "all");
-      });
-    }
+    syncChipState();
     if (langSelect) langSelect.value = "all";
     if (typeSelect) typeSelect.value = "all";
     if (statusSelect) statusSelect.value = "all";
     if (diffSelect) diffSelect.value = "all";
     if (sortSelect) sortSelect.value = "relevance";
     applyFilters();
+    centerActiveChip();
   }
 
   function scrollToProjects() {
@@ -673,6 +774,15 @@
     if (!target) return;
     var top = target.getBoundingClientRect().top + window.scrollY - 70;
     window.scrollTo({ top: top, behavior: prefersReduced ? "auto" : "smooth" });
+  }
+
+  /* 手机上分类 chip 是一行横向滚动：让当前选中的那颗保持在可视区中间 */
+  function centerActiveChip() {
+    if (!filters || filters.scrollWidth <= filters.clientWidth + 1) return;
+    var active = filters.querySelector(".chip.is-active");
+    if (!active) return;
+    var target = active.offsetLeft - (filters.clientWidth - active.offsetWidth) / 2;
+    filters.scrollLeft = Math.max(0, Math.min(target, filters.scrollWidth - filters.clientWidth));
   }
 
   /* ---------- 统计 / 推荐 / 最近 ---------- */
@@ -733,62 +843,31 @@
     window.setTimeout(revealAll, 2400);
   }
 
-  /* ---------- 订阅 ---------- */
-  function setupSubscribe() {
-    document.querySelectorAll("[data-subscribe]").forEach(function (form) {
-      var input = form.querySelector('input[type="email"]');
-      var hint = form.querySelector("[data-form-hint]");
-      var button = form.querySelector('button[type="submit"]');
-      var defaultHint = hint ? hint.textContent : "";
+  /* ---------- 反馈入口：全站只认 index.html 里的 SITE_CONFIG ---------- */
+  function syncFeedbackLinks() {
+    document.querySelectorAll("[data-feedback-link]").forEach(function (a) {
+      if (FEEDBACK_URL) a.setAttribute("href", FEEDBACK_URL);
+    });
+  }
 
-      function setHint(text, kind) {
-        if (!hint) return;
-        hint.classList.remove("is-error", "is-success");
-        hint.textContent = text;
-        if (kind) hint.classList.add(kind);
-      }
-
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        if (!input || !hint) return;
-        var value = input.value.trim();
-        var valid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
-        if (!valid) {
-          setHint("请输入一个有效的邮箱地址，比如 name@example.com。", "is-error");
-          input.focus();
-          return;
-        }
-        if (SUBSCRIBE_ENDPOINT) {
-          if (button) button.disabled = true;
-          setHint("正在提交…", null);
-          fetch(SUBSCRIBE_ENDPOINT, {
-            method: "POST",
-            headers: { "Content-Type": "application/json", "Accept": "application/json" },
-            body: JSON.stringify({ email: value, source: location.href })
-          }).then(function (res) {
-            if (!res.ok) throw new Error("HTTP " + res.status);
-            setHint("订阅成功！下次整理完清单，会先寄给你。", "is-success");
-            input.value = "";
-          }).catch(function () {
-            setHint("提交失败，请稍后再试；也可以直接写信到 " + CONTACT_EMAIL + "。", "is-error");
-          }).then(function () {
-            if (button) button.disabled = false;
-          });
-          return;
-        }
-        var subject = "订阅《开源拾遗》";
-        var body = "你好，我想订阅开源拾遗的更新。\n\n我的邮箱：" + value + "\n\n（直接发送这封邮件即可）";
-        window.location.href = "mailto:" + CONTACT_EMAIL +
-          "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-        setHint("已为你打开邮件客户端，直接发送就能完成订阅；若没有弹出，也可以手动写信到 " + CONTACT_EMAIL + "。", "is-success");
-        input.value = "";
-        window.setTimeout(function () {
-          if (hint && hint.classList.contains("is-success")) {
-            hint.classList.remove("is-success");
-            hint.textContent = defaultHint;
-          }
-        }, 8000);
+  /* 邮箱留空时，整行（含页脚/关于区）都隐藏，保证全站没有死链接；
+     将来在 SITE_CONFIG.contactEmail 填上真实邮箱，这里会自动显示并同步。 */
+  function syncContactEmail() {
+    var links = document.querySelectorAll("[data-contact-email]");
+    if (!CONTACT_EMAIL) {
+      links.forEach(function (a) {
+        var row = a.closest("[data-contact-row]");
+        if (row) row.hidden = true;
+        a.setAttribute("hidden", "hidden");
       });
+      return;
+    }
+    links.forEach(function (a) {
+      a.setAttribute("href", "mailto:" + CONTACT_EMAIL);
+      a.textContent = CONTACT_EMAIL;
+      a.removeAttribute("hidden");
+      var row = a.closest("[data-contact-row]");
+      if (row) row.hidden = false;
     });
   }
 
@@ -798,11 +877,13 @@
   renderStats();
   renderPicks();
   setupReveal();
-  setupSubscribe();
+  syncFeedbackLinks();
+  syncContactEmail();
   applyFilters();
+  centerActiveChip();
 
   if (state.tokens.length || state.cat !== "all" || state.lang !== "all" ||
-      state.type !== "all" || state.status !== "all" || state.diff !== "all") {
+      state.type !== "all" || state.status !== "all" || state.diff !== "all" || state.runnable) {
     window.setTimeout(scrollToProjects, 120);
   }
 })();

@@ -66,6 +66,12 @@
   <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/></symbol>
   <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.4-2.9 7.7-7 9.5-4.1-1.8-7-5.1-7-9.5V6l7-3Z"/><path d="m9 12 2 2 4-4.5"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4.5V11h-6.5"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12.5" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="m21 15-5-5L5 21"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7-11-7Z"/></symbol>
+  <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></symbol>
+  <symbol id="i-warning" viewBox="0 0 24 24"><path d="M12 4 2.5 20h19L12 4Z"/><path d="M12 10v4.2M12 17.4v.1"/></symbol>
 </svg>
 <a class="skip-link" href="#main">跳到主要内容</a>
 
@@ -82,7 +88,7 @@
     <nav class="nav" aria-label="主导航">
       <a href="../../index.html#projects">找项目</a>
       <a href="../../index.html#categories">分类</a>
-      <a href="../../index.html#standards">收录标准</a>
+      <a href="../../index.html#howto">怎么用</a>
       <a href="../../index.html#about">关于</a>
     </nav>
 
@@ -103,7 +109,7 @@
   <nav class="mobile-nav" id="mobileNav" aria-label="移动端导航" aria-hidden="true">
     <a href="../../index.html#projects">找项目</a>
       <a href="../../index.html#categories">分类</a>
-      <a href="../../index.html#standards">收录标准</a>
+      <a href="../../index.html#howto">怎么用</a>
       <a href="../../index.html#about">关于</a>
   </nav>
 </header>
@@ -123,6 +129,7 @@
       <span class="project-cat">移动应用与桌面软件</span>
       <span class="dot" aria-hidden="true"></span>
       <span class="detail-id">powertoys</span>
+      <span class="preview-badge preview-badge--none detail-preview-badge" data-preview-type="none">暂无预览</span>
       
     </div>
     <h1 class="detail-title">PowerToys</h1>
@@ -209,9 +216,38 @@
 </dl>
   </div>
 </section>
-<section class="detail-sec" id="access" aria-labelledby="access-title">
+<section class="detail-sec" id="preview" aria-labelledby="preview-title">
   <header class="detail-sec-head">
     <span class="detail-sec-num" aria-hidden="true">02</span>
+    <h2 class="detail-sec-title" id="preview-title">预览与运行效果</h2>
+    <p class="detail-sec-note">预览能力取决于项目真实具备的资源</p>
+  </header>
+  <div class="detail-sec-body">
+<div class="preview-wrap" data-preview-mode="none" data-preview-verified="0">
+<div class="preview-panel preview-panel--none" data-preview-panel="none">
+  <div class="preview-empty">
+    <span class="preview-empty-icon" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-monitor"/></svg></span>
+    <h3 class="preview-empty-title">暂无在线预览</h3>
+    <p class="preview-empty-desc">收录时没有找到可核实的在线演示、运行截图、终端输出或演示视频，因此这里不提供预览；
+      我们不会用占位动画、生成的输出或虚构的演示地址替代真实运行效果。</p>
+    <div class="preview-empty-todo">
+      <p class="cmd-label cmd-label--block">需要补充的演示资料</p>
+      <ul>
+        <li>项目真实运行截图或录屏（含环境说明）</li>
+        <li>可复制的示例输入与对应的真实输出</li>
+        <li>已在本地跑通的运行命令、依赖与预期结果</li>
+        <li>可访问的独立演示地址（如已部署到其他平台）</li>
+      </ul>
+    </div>
+    <div class="preview-actions"><a class="btn btn-ghost preview-btn" href="#install">查看本地运行说明</a><a class="btn btn-ghost preview-btn" href="https://github.com/microsoft/PowerToys" target="_blank" rel="noopener noreferrer">打开原始仓库<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></div>
+  </div>
+</div>
+</div>
+  </div>
+</section>
+<section class="detail-sec" id="access" aria-labelledby="access-title">
+  <header class="detail-sec-head">
+    <span class="detail-sec-num" aria-hidden="true">03</span>
     <h2 class="detail-sec-title" id="access-title">获取方式</h2>
     <p class="detail-sec-note">优先使用原始仓库</p>
   </header>
@@ -249,7 +285,7 @@
 </section>
 <section class="detail-sec" id="install" aria-labelledby="install-title">
   <header class="detail-sec-head">
-    <span class="detail-sec-num" aria-hidden="true">03</span>
+    <span class="detail-sec-num" aria-hidden="true">04</span>
     <h2 class="detail-sec-title" id="install-title">安装与运行</h2>
     <p class="detail-sec-note">命令均来自公开资料</p>
   </header>
@@ -275,11 +311,12 @@
   </div>
 </div>
 <p class="access-note access-note--warn">收录时没有找到可确认的安装或运行命令，具体步骤请以原始仓库的 README 为准，本站不做推测。</p>
+
   </div>
 </section>
 <section class="detail-sec" id="data" aria-labelledby="data-title">
   <header class="detail-sec-head">
-    <span class="detail-sec-num" aria-hidden="true">04</span>
+    <span class="detail-sec-num" aria-hidden="true">05</span>
     <h2 class="detail-sec-title" id="data-title">数据与硬件</h2>
     <p class="detail-sec-note">未核实的字段不会编造</p>
   </header>
@@ -298,7 +335,7 @@
 </section>
 <section class="detail-sec" id="verification" aria-labelledby="verification-title">
   <header class="detail-sec-head">
-    <span class="detail-sec-num" aria-hidden="true">05</span>
+    <span class="detail-sec-num" aria-hidden="true">06</span>
     <h2 class="detail-sec-title" id="verification-title">运行验证状态</h2>
     <p class="detail-sec-note">四态徽章</p>
   </header>
@@ -350,7 +387,7 @@
 </section>
 <section class="detail-sec" id="license" aria-labelledby="license-title">
   <header class="detail-sec-head">
-    <span class="detail-sec-num" aria-hidden="true">06</span>
+    <span class="detail-sec-num" aria-hidden="true">07</span>
     <h2 class="detail-sec-title" id="license-title">许可证与引用</h2>
     <p class="detail-sec-note">转载与引用请保留出处</p>
   </header>
@@ -396,7 +433,7 @@
 </section>
 <section class="detail-sec" id="related" aria-labelledby="related-title">
   <header class="detail-sec-head">
-    <span class="detail-sec-num" aria-hidden="true">07</span>
+    <span class="detail-sec-num" aria-hidden="true">08</span>
     <h2 class="detail-sec-title" id="related-title">相关项目</h2>
     <p class="detail-sec-note">同分类优先</p>
   </header>
@@ -441,6 +478,7 @@
   <p class="toc-title">本页目录</p>
   <ol>
     <li><a href="#overview">概览</a></li>
+    <li><a href="#preview">预览与运行效果</a></li>
     <li><a href="#access">获取方式</a></li>
     <li><a href="#install">安装与运行</a></li>
     <li><a href="#data">数据与硬件</a></li>
@@ -454,7 +492,7 @@
   <ul class="aside-links">
     <li><a href="../../index.html#projects">全部项目</a></li>
     <li><a href="../../index.html#categories">分类</a></li>
-    <li><a href="../../index.html#standards">收录标准</a></li>
+    <li><a href="../../index.html#howto">怎么用</a></li>
     <li><a href="../../index.html#about">关于</a></li>
   </ul>
   <p class="aside-note">本页信息整理自公开仓库，Star 数与许可证以原始仓库为准。</p>
@@ -475,22 +513,23 @@
           <span class="brand-sub">Open Source Picks</span>
         </span>
       </a>
-      <p>面向大学生的开源项目检索站。只收录真实存在、能打开、有源码的项目。</p>
+      <p>给同班同学用的开源项目索引：能搜项目，也能下载能跑的例子。免费、无广告、无需注册。</p>
     </div>
 
     <nav class="footer-nav" aria-label="页脚导航">
       <p class="footer-title">浏览</p>
         <a href="../../index.html#projects">全部项目</a>
         <a href="../../index.html#categories">分类</a>
-        <a href="../../index.html#standards">收录标准</a>
+        <a href="../../index.html#howto">怎么用</a>
         <a href="../../index.html#about">关于</a>
     </nav>
 
     <div class="footer-contact">
       <p class="footer-title">反馈</p>
-      <a href="mailto:hi@shiyi.notes">hi@shiyi.notes</a>
-      <a href="https://github.com/kqin517-debug" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <p>发现错误或想推荐项目，欢迎写信。<br>本站仅提供索引与说明，项目内容、许可证与 Star 数均以原始仓库为准。本页信息核对于 2026-10-18。</p>
+      <a href="https://github.com/kqin517-debug/kqin517-debug.github.io/issues" target="_blank" rel="noopener noreferrer">GitHub Issues</a>
+      <a href="mailto:kqin517@gmail.com">kqin517@gmail.com</a>
+      <a href="https://github.com/kqin517-debug" target="_blank" rel="noopener noreferrer">GitHub 主页</a>
+      <p>发现错误或想推荐项目，欢迎提 Issue、写信或在群里说。<br>本站仅提供索引与说明，项目内容、许可证与 Star 数均以原始仓库为准。本页信息核对于 2026-10-18。</p>
     </div>
   </div>
 
@@ -583,5 +622,6 @@
     }
   })();
 </script>
+
 </body>
 </html>

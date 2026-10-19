@@ -12,7 +12,8 @@
   --paper-3: #efe7d6;
   --ink: #211d18;
   --ink-2: #5b534a;
-  --ink-3: #7c7266;
+  /* 原来的 #7c7266 在纸色背景上只有 4.26:1（不足 AA 的 4.5:1），压暗一档保证小字可读 */
+  --ink-3: #6f6559;
   --line: rgba(33, 29, 24, .13);
   --line-strong: rgba(33, 29, 24, .24);
 
@@ -47,7 +48,8 @@
   --paper-3: #242018;
   --ink: #f1e9db;
   --ink-2: #bdb1a0;
-  --ink-3: #8c8071;
+  /* 深色下 #8c8071 在纸色卡片上约 4.4:1，提亮一档 */
+  --ink-3: #9a8d7c;
   --line: rgba(241, 233, 219, .13);
   --line-strong: rgba(241, 233, 219, .26);
 
@@ -64,6 +66,9 @@
 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
+
+/* hidden 属性必须能压过组件自己的 display（例如 .facts > div / .feedback-list li） */
+[hidden] { display: none !important; }
 
 html {
   background-color: var(--paper);
@@ -88,6 +93,16 @@ body {
 
 h1, h2, h3, h4, p, figure, blockquote, dl, dd, ul, ol {
   margin: 0;
+}
+
+/* 中文排版：标题避免「孤字」结尾，正文避免最后一行只剩一两个字 */
+h1, h2, h3,
+.search-title, .section-title, .pick-title, .related-name,
+.category-name, .pager-card strong {
+  text-wrap: balance;
+}
+p, li, .search-sub, .card-summary, .section-note, .card-title {
+  text-wrap: pretty;
 }
 
 img, svg { display: block; max-width: 100%; }
@@ -151,7 +166,7 @@ button {
 }
 
 .section {
-  padding-block: clamp(50px, 6.5vw, 84px);
+  padding-block: clamp(44px, 5.6vw, 74px);
 }
 
 .icon {
@@ -619,10 +634,14 @@ button {
 .chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 }
 .chip {
-  padding: 9px 17px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 8px 14px;
   border-radius: 999px;
   border: 1px solid var(--line);
   background: transparent;
@@ -961,91 +980,6 @@ button {
   transform: translateY(-2px);
 }
 .socials .icon { width: 14px; height: 14px; }
-
-/* ---------- Subscribe ---------- */
-.subscribe {
-  padding-block: clamp(20px, 3vw, 34px) clamp(60px, 8vw, 96px);
-}
-.subscribe-inner {
-  display: grid;
-  grid-template-columns: minmax(0, .95fr) minmax(0, 1fr);
-  gap: clamp(30px, 5vw, 70px);
-  align-items: center;
-  padding: clamp(32px, 4.6vw, 62px);
-  border-radius: var(--radius-lg);
-  background: var(--ink);
-  color: var(--paper);
-  position: relative;
-  overflow: hidden;
-}
-.subscribe-inner::after {
-  content: "拾";
-  position: absolute;
-  right: -18px;
-  bottom: -58px;
-  font-family: var(--serif);
-  font-size: 260px;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--paper);
-  opacity: .045;
-  pointer-events: none;
-}
-.subscribe .section-index { color: var(--ochre); }
-.subscribe-title {
-  font-family: var(--serif);
-  font-size: clamp(26px, 3.2vw, 40px);
-  font-weight: 700;
-  line-height: 1.45;
-  letter-spacing: .03em;
-}
-.subscribe-copy p {
-  margin-top: 16px;
-  max-width: 24em;
-  font-size: 13.5px;
-  line-height: 1.9;
-  color: color-mix(in srgb, var(--paper) 72%, transparent);
-}
-.subscribe-form { position: relative; z-index: 1; }
-.field {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid color-mix(in srgb, var(--paper) 30%, transparent);
-  transition: border-color .3s var(--ease);
-}
-.field:focus-within { border-bottom-color: var(--ochre); }
-.field input {
-  flex: 1;
-  min-width: 0;
-  padding: 12px 2px;
-  border: 0;
-  background: transparent;
-  color: var(--paper);
-  font-size: 15px;
-  letter-spacing: .02em;
-  outline: none;
-}
-.field input::placeholder { color: color-mix(in srgb, var(--paper) 46%, transparent); }
-.subscribe .btn-primary {
-  background: var(--ochre);
-  color: #211d18;
-  box-shadow: none;
-}
-.subscribe .btn-primary:hover {
-  background: #dbaa58;
-  box-shadow: 0 14px 26px -16px rgba(0, 0, 0, .7);
-}
-.form-hint {
-  margin-top: 14px;
-  font-size: 11.5px;
-  letter-spacing: .04em;
-  color: color-mix(in srgb, var(--paper) 50%, transparent);
-  min-height: 1.6em;
-}
-.form-hint.is-success { color: var(--ochre); }
-.form-hint.is-error { color: #f0a48c; }
 
 /* ---------- Footer ---------- */
 .site-footer {
@@ -1631,8 +1565,6 @@ button {
   .about-media { width: min(74%, 300px); }
   .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
-  .subscribe-inner { grid-template-columns: minmax(0, 1fr); gap: 30px; }
-
   .note-list { grid-template-columns: minmax(0, 1fr); gap: 26px; }
   .note {
     padding: 0 0 24px 0;
@@ -1657,7 +1589,20 @@ button {
   .card-cover { aspect-ratio: 16 / 10; }
 
   .articles-toolbar { flex-direction: column; align-items: stretch; gap: 16px; }
-  .chips { gap: 7px; }
+  /* 手机上分类 chip 改成单行横向滚动，省下 200px 以上竖向空间，首屏就能看到项目 */
+  .chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    margin-inline: calc(var(--gutter) * -1);
+    padding: 2px var(--gutter) 10px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 30px), transparent 100%);
+    mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 30px), transparent 100%);
+  }
+  .chips::-webkit-scrollbar { display: none; }
+  .chips .chip { flex: none; scroll-snap-align: start; }
   .chip { padding: 8px 14px; font-size: 12px; }
   .search { min-width: 0; margin-top: 4px; }
 
@@ -1675,17 +1620,6 @@ button {
 
   .about-media { width: min(78%, 260px); }
   .facts { grid-template-columns: minmax(0, 1fr); gap: 12px; }
-
-  .subscribe-inner { padding: 30px 24px 32px; border-radius: var(--radius); }
-  .field { flex-wrap: wrap; border-bottom: 0; padding-bottom: 0; gap: 12px; }
-  .field input {
-    width: 100%;
-    flex: none;
-    border-bottom: 1px solid color-mix(in srgb, var(--paper) 30%, transparent);
-    padding-bottom: 14px;
-  }
-  .field .btn { width: 100%; }
-  .form-hint { margin-top: 12px; }
 
   .footer-inner { grid-template-columns: minmax(0, 1fr); gap: 30px; }
   .footer-bottom { flex-direction: column; }
@@ -1713,7 +1647,7 @@ button {
 /* ---------- Print ---------- */
 @media print {
   .site-header, .back-to-top, .reading-progress, .post-pager,
-  .post-actions, .subscribe, .site-footer, .toc { display: none !important; }
+  .post-actions, .site-footer, .toc { display: none !important; }
   body { background: #fff; color: #000; }
   .post-body { display: block; max-width: 100%; }
   .prose { font-size: 11pt; line-height: 1.8; }
@@ -1794,10 +1728,11 @@ body.is-nav-open { overflow: hidden; }
 }
 .search-sub {
   margin: 14px auto 0;
-  max-width: 34em;
+  max-width: 36em;
   font-size: clamp(14px, 1.5vw, 16px);
   line-height: 1.7;
   color: var(--ink-2);
+  text-wrap: pretty;
 }
 
 .search-box {
@@ -1857,6 +1792,37 @@ body.is-nav-open { overflow: hidden; }
 .search-clear[hidden] { display: none; }
 .search-clear .icon { width: 13px; height: 13px; }
 .search-submit { flex: none; }
+
+/* 搜索框下方即时反馈 */
+.search-live {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px 12px;
+  margin: 14px auto 0;
+  font-size: 13px;
+  letter-spacing: .02em;
+  color: var(--ink-2);
+}
+.search-live[hidden] { display: none; }
+.search-live.is-empty { color: var(--ink-3); }
+.search-live b { color: var(--ink); }
+.search-live-link {
+  padding: 2px 10px;
+  border: 1px solid color-mix(in srgb, var(--rust) 34%, var(--line));
+  border-radius: 999px;
+  background: var(--rust-soft);
+  color: var(--rust-ink);
+  font-size: 12.5px;
+  cursor: pointer;
+  transition: background-color .2s var(--ease), border-color .2s var(--ease);
+}
+.search-live-link[hidden] { display: none; }
+.search-live-link:hover {
+  background: color-mix(in srgb, var(--rust) 16%, transparent);
+  border-color: var(--rust);
+}
 
 .hot-searches {
   display: flex;
@@ -1952,24 +1918,101 @@ body.is-nav-open { overflow: hidden; }
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
   gap: clamp(24px, 4vw, 56px);
+  align-items: start;
 }
 
-.about-subscribe {
+.about-feedback {
   padding: clamp(20px, 3vw, 32px);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--paper-2);
 }
-.about-subscribe .subscribe-title {
+
+.feedback-title {
   margin: 0 0 8px;
   font-family: var(--serif);
   font-size: clamp(20px, 2.4vw, 26px);
 }
-.subscribe-text {
-  margin: 0 0 16px;
+.feedback-text {
+  margin: 0 0 18px;
   font-size: 14px;
+  line-height: 1.8;
   color: var(--ink-2);
 }
+.feedback-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.feedback-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 3px 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.feedback-label {
+  font-size: 10.5px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.feedback-link,
+.feedback-value {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--ink);
+  justify-self: end;
+  text-align: right;
+}
+.feedback-link {
+  border-bottom: 1px solid var(--line-strong);
+  transition: color .25s, border-color .25s;
+}
+.feedback-link:hover { color: var(--rust); border-color: var(--rust); }
+.feedback-meta {
+  grid-column: 2;
+  justify-self: end;
+  text-align: right;
+  font-size: 11.5px;
+  color: var(--ink-3);
+}
+.feedback-note {
+  margin: 18px 0 0;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--ink-3);
+}
+
+/* 「可直接运行」筛选 chip：与分类 chip 区分，用锈红描边提示这是能力筛选 */
+.chip--runnable {
+  border-color: color-mix(in srgb, var(--rust) 55%, var(--line));
+  color: var(--rust-ink);
+}
+.chip--runnable::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: var(--rust);
+}
+.chip--runnable:hover {
+  border-color: var(--rust);
+  color: var(--rust);
+  background: color-mix(in srgb, var(--rust) 8%, transparent);
+}
+.chip--runnable.is-active {
+  background: var(--rust);
+  border-color: var(--rust);
+  color: #fff8ee;
+}
+.chip--runnable.is-active::before { background: #fff8ee; }
 
 @media (max-width: 900px) {
   .picks-grid { grid-template-columns: minmax(0, 1fr); }
@@ -1979,7 +2022,15 @@ body.is-nav-open { overflow: hidden; }
   .search-box { padding: 6px 8px 6px 14px; gap: 8px; }
   .search-box input { font-size: 15px; padding: 9px 2px; }
   .search-submit { padding: 9px 14px; font-size: 14px; }
-  .hero-stats { gap: 6px 12px; font-size: 12.5px; }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 6px;
+    justify-items: center;
+    align-items: baseline;
+    font-size: 12.5px;
+  }
+  .hero-stats .dot { display: none; }
   .filter-selects { gap: 6px; }
   .select-field select { font-size: 12.5px; padding: 7px 28px 7px 11px; }
 }

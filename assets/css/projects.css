@@ -85,6 +85,31 @@
   letter-spacing: .02em;
 }
 
+/* 难度角标：学生选项目时最关键的一条信息，放在卡片头右侧 */
+.card-difficulty {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+.card-difficulty::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: .8;
+}
+.diff-beginner { color: #52614a; }
+.diff-intermediate { color: #8a6420; }
+.diff-advanced { color: #9b3a22; }
+[data-theme="dark"] .diff-beginner { color: #9db38c; }
+[data-theme="dark"] .diff-intermediate { color: #d0a35f; }
+[data-theme="dark"] .diff-advanced { color: #e08a6d; }
+
 .card-title {
   margin: 2px 0 0;
   font-family: var(--serif);
@@ -202,6 +227,7 @@ mark.hit {
   margin-top: 20px;
 }
 .category-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -232,6 +258,35 @@ mark.hit {
   font-size: 12px;
   color: var(--ink-3);
 }
+
+/* 第 8 格：补齐网格并给出「查看全部」出口 */
+.category-card--all {
+  background: color-mix(in srgb, var(--rust) 8%, var(--paper-2));
+  border-color: color-mix(in srgb, var(--rust) 34%, var(--line));
+  color: var(--rust-ink);
+  text-decoration: none;
+  justify-content: center;
+}
+.category-card--all .category-name { font-size: 16px; color: var(--rust-ink); }
+.category-card--all .category-count { color: color-mix(in srgb, var(--rust-ink) 62%, var(--ink-3)); }
+.category-card--all::after {
+  content: "→";
+  position: absolute;
+  top: 15px;
+  right: 16px;
+  font-size: 15px;
+  color: color-mix(in srgb, var(--rust-ink) 70%, transparent);
+  transition: transform .2s var(--ease);
+}
+.category-card--all:hover,
+.category-card--all:focus-visible {
+  background: var(--rust);
+  border-color: var(--rust);
+  color: #fff8ee;
+}
+.category-card--all:hover .category-name { color: #fff8ee; }
+.category-card--all:hover .category-count { color: rgba(255, 248, 238, .8); }
+.category-card--all:hover::after { transform: translateX(3px); color: #fff8ee; }
 
 /* ---------- 编辑推荐 ---------- */
 .pick-list {
@@ -357,18 +412,69 @@ mark.hit {
 /* ---------- 响应式 ---------- */
 @media (max-width: 1080px) {
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .category-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 900px) {
+  .category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .category-card { padding: 14px 16px; gap: 4px; }
 }
 
 @media (max-width: 780px) {
   .project-grid { grid-template-columns: minmax(0, 1fr); }
-  .category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .standard-list { grid-template-columns: minmax(0, 1fr); gap: 22px; }
   .card-title { font-size: 18px; }
 }
 
 @media (max-width: 460px) {
-  .category-grid { grid-template-columns: minmax(0, 1fr); }
+  /* 手机上分类改为紧凑单行列表，8 个方向一屏可扫完 */
+  .category-grid { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .category-card {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 15px;
+  }
+  .category-card--all::after { display: none; }
   .card-main { padding: 16px 16px 10px; }
   .card-repo { margin: 0 16px 14px; }
 }
+
+/* 卡片预览状态：只做能力标识，不诱导点击不存在的演示 */
+.preview-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 11px;
+  line-height: 1.5;
+  white-space: nowrap;
+  color: var(--ink-3);
+}
+.preview-chip--web {
+  color: var(--rust-ink);
+  border-color: color-mix(in srgb, var(--rust) 38%, transparent);
+  background: var(--rust-soft);
+}
+.preview-chip--external {
+  color: var(--teal);
+  border-color: color-mix(in srgb, var(--teal) 38%, transparent);
+}
+.preview-chip--screenshot {
+  color: color-mix(in srgb, var(--ochre) 82%, var(--ink));
+  border-color: color-mix(in srgb, var(--ochre) 46%, transparent);
+}
+.preview-chip--terminal {
+  color: var(--sage);
+  border-color: color-mix(in srgb, var(--sage) 46%, transparent);
+}
+.preview-chip--video {
+  color: var(--rust-ink);
+  border-color: color-mix(in srgb, var(--rust) 32%, transparent);
+}
+.preview-chip--none {
+  color: var(--ink-3);
+  border-style: dashed;
+}
+
